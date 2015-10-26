@@ -1,0 +1,930 @@
+﻿[2015.10.23-09.24.02:848][  0]Log file open, 10/23/15 11:24:02
+[2015.10.23-09.24.02:848][  0]LogInit:Display: Running engine for game: BOS
+[2015.10.23-09.24.02:848][  0]LogInit:Display: RandInit(170895286) SRandInit(170895287).
+[2015.10.23-09.24.02:848][  0]LogTaskGraph: Started task graph with 4 named threads and 7 total threads.
+[2015.10.23-09.24.02:848][  0]LogStats: Stats thread started at 0.070724
+[2015.10.23-09.24.02:848][  0]LogInit: Version: 4.9.2-2707645+++depot+UE4-Releases+4.9
+[2015.10.23-09.24.02:848][  0]LogInit: API Version: 2672455
+[2015.10.23-09.24.02:848][  0]LogInit: Compiled (64-bit): Sep 28 2015 10:25:44
+[2015.10.23-09.24.02:848][  0]LogInit: Compiled with Visual C++: 18.00.21005.01
+[2015.10.23-09.24.02:848][  0]LogInit: Build Configuration: Development
+[2015.10.23-09.24.02:848][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.9
+[2015.10.23-09.24.02:848][  0]LogInit: Command line:  
+[2015.10.23-09.24.02:848][  0]LogInit: Base directory: C:/Program Files/Epic Games/4.9/Engine/Binaries/Win64/
+[2015.10.23-09.24.02:848][  0]LogInit: Rocket: 1
+[2015.10.23-09.24.02:854][  0]LogInit: Using libcurl 7.41.0
+[2015.10.23-09.24.02:854][  0]LogInit:  - built for x86_64-pc-win32
+[2015.10.23-09.24.02:854][  0]LogInit:  - supports SSL with WinSSL
+[2015.10.23-09.24.02:854][  0]LogInit:  - other features:
+[2015.10.23-09.24.02:854][  0]LogInit:      CURL_VERSION_SSL
+[2015.10.23-09.24.02:854][  0]LogInit:      CURL_VERSION_IPV6
+[2015.10.23-09.24.02:854][  0]LogInit:      CURL_VERSION_ASYNCHDNS
+[2015.10.23-09.24.02:854][  0]LogInit:      CURL_VERSION_LARGEFILE
+[2015.10.23-09.24.02:854][  0]LogInit:      CURL_VERSION_IDN
+[2015.10.23-09.24.02:854][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
+[2015.10.23-09.24.02:854][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+[2015.10.23-09.24.02:854][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+[2015.10.23-09.24.02:854][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+[2015.10.23-09.24.02:854][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+[2015.10.23-09.24.02:859][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2015.10.23-09.24.02:865][  0]LogInit: Object subsystem initialized
+[2015.10.23-09.24.02:866][  0]LogInit: Selected Device Profile: [Windows]
+[2015.10.23-09.24.02:866][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2015.10.23-09.24.02:874][  0]LogInit: Computer: SpellabbA332-19
+[2015.10.23-09.24.02:874][  0]LogInit: User: Spellabbet
+[2015.10.23-09.24.02:874][  0]LogInit: CPU Page size=4096, Cores=4
+[2015.10.23-09.24.02:874][  0]LogInit: High frequency timer resolution =3.507520 MHz
+[2015.10.23-09.24.02:874][  0]LogMemory: Memory total: Physical=15.9GB (16GB approx)
+[2015.10.23-09.24.02:874][  0]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.24.02:874][  0]LogMemory: Process Physical Memory: 52.11 MB used, 52.11 MB peak
+[2015.10.23-09.24.02:874][  0]LogMemory: Process Virtual Memory: 55.07 MB used, 55.07 MB peak
+[2015.10.23-09.24.02:874][  0]LogMemory: Physical Memory: 3965.82 MB used, 16318.82 MB total
+[2015.10.23-09.24.02:874][  0]LogMemory: Virtual Memory: 347.38 MB used, 134217728.00 MB total
+[2015.10.23-09.24.02:900][  0]LogTextLocalizationManager: No translations for ('sv-SE') exist, falling back to 'en' for localization and internationalization data.
+[2015.10.23-09.24.03:502][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA GeForce GTX 960 (Feature Level 11_0)
+[2015.10.23-09.24.03:502][  0]LogD3D11RHI: Adapter has 1965MB of dedicated video memory, 0MB of dedicated system memory, and 2048MB of shared system memory, 1 output[s]
+[2015.10.23-09.24.03:503][  0]LogD3D11RHI: Found D3D11 adapter 1: Microsoft Basic Render Driver (Feature Level 11_0)
+[2015.10.23-09.24.03:503][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 256MB of shared system memory, 0 output[s]
+[2015.10.23-09.24.03:503][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2015.10.23-09.24.03:506][  0]LogD3D11RHI: !Direct3DDevice
+[2015.10.23-09.24.03:506][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
+[2015.10.23-09.24.03:513][  0]LogD3D11RHI: Async texture creation enabled
+[2015.10.23-09.24.03:527][  0]LogShaderCompilers: Guid format shader working directory is 15 characters bigger than the processId version (../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Intermediate/Shaders/WorkingDirectory/5336/).
+[2015.10.23-09.24.03:527][  0]LogShaderCompilers: Cleaned the shader compiler working directory '../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Intermediate/Shaders/tmp/BCCE5F7343025D610B930C9FB7CD666F/'.
+[2015.10.23-09.24.03:527][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2015.10.23-09.24.04:383][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
+[2015.10.23-09.24.04:387][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2015.10.23-09.24.04:392][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2015.10.23-09.24.04:396][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2015.10.23-09.24.04:400][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2015.10.23-09.24.04:402][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2015.10.23-09.24.04:405][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2015.10.23-09.24.04:408][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2015.10.23-09.24.04:410][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2015.10.23-09.24.04:413][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2015.10.23-09.24.04:416][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2015.10.23-09.24.04:418][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2015.10.23-09.24.04:418][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
+[2015.10.23-09.24.04:434][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2015.10.23-09.24.04:436][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2015.10.23-09.24.04:438][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2015.10.23-09.24.04:441][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2015.10.23-09.24.04:441][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.10.23-09.24.04:502][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2015.10.23-09.24.04:535][  0]LogDerivedDataCache: Loaded boot cache 0.03s 42MB C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.10.23-09.24.04:535][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc
+[2015.10.23-09.24.04:536][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2015.10.23-09.24.04:536][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2015.10.23-09.24.04:536][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2015.10.23-09.24.04:536][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2015.10.23-09.24.04:642][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2015.10.23-09.24.04:654][  0]LogDerivedDataCache: Using Local data cache path C:/Users/Spellabbet/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2015.10.23-09.24.04:779][  0]LogInit: Selected Device Profile: [Windows]
+[2015.10.23-09.24.04:781][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2015.10.23-09.24.04:870][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2015.10.23-09.24.04:870][  0]LogMeshUtilities: No automatic mesh merging module available
+[2015.10.23-09.24.05:044][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2015.10.23-09.24.05:550][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2015.10.23-09.24.05:633][  0]LogLinker:Warning: Asset '../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Content/Rolling/Meshes/BallMesh.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.10.23-09.24.05:635][  0]LogLinker:Warning: Asset '../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Content/Rolling/Materials/M_Blue_Checker.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.10.23-09.24.05:637][  0]LogLinker:Warning: Asset '../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Content/Rolling/Materials/PM_Ball.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.10.23-09.24.05:690][  0]LogAssetRegistry: FAssetRegistry took 0.0110 seconds to start up
+[2015.10.23-09.24.05:806][  0]SourceControl: Info Source control is disabled
+[2015.10.23-09.24.05:812][  0]SourceControl: Info Source control is disabled
+[2015.10.23-09.24.05:819][  0]SourceControl: Info Source control is disabled
+[2015.10.23-09.24.05:828][  0]SourceControl: Info Source control is disabled
+[2015.10.23-09.24.05:921][  0]LogLinker:Warning: Asset '../../../Engine/Plugins/Runtime/LeapMotionController/Content/LM_PassthroughMaterial.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.10.23-09.24.05:975][  0]LogObj: 28398 objects as part of root set at end of initial load.
+[2015.10.23-09.24.05:975][  0]LogUObjectAllocator: 6054584 out of 0 bytes used by permanent object pool.
+[2015.10.23-09.24.06:021][  0]LogEngine: Initializing Engine...
+[2015.10.23-09.24.06:022][  0]LogHMD: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.7.0.0
+[2015.10.23-09.24.06:023][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2015.10.23-09.24.06:114][  0]LogAIModule: Creating AISystem for world NewWorld
+[2015.10.23-09.24.06:118][  0]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.10.23-09.24.06:128][  0]LogInit: FAudioDevice initialized.
+[2015.10.23-09.24.06:145][  0]LogDerivedDataCache: Saved boot cache 0.02s 42MB C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.10.23-09.24.06:168][  0]LogInit: Texture streaming: Enabled
+[2015.10.23-09.24.06:172][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
+[2015.10.23-09.24.06:172][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.9.2-2707645+++depot+UE4-Releases+4.9
+[2015.10.23-09.24.06:172][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId 45933c9447afbf6f1ab999917f6accd0|8471e16762be488588a110ad13c08bd6|060e5e79-a789-49c4-8abd-5d8b330400a7
+[2015.10.23-09.24.06:172][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
+[2015.10.23-09.24.06:205][  0]LogInit: Transaction tracking system initialized
+[2015.10.23-09.24.06:251][  0]BlueprintLog: New page: Editor Load
+[2015.10.23-09.24.06:312][  0]LocalizationService: Info Localization service is disabled
+[2015.10.23-09.24.06:373][  0]LogConsoleResponse:Display: 
+[2015.10.23-09.24.06:457][  0]LogCook:Display: Done creating registry. It took  0.00s.
+[2015.10.23-09.24.06:496][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/Unreal Projects/BOS/Content/' took 0.01s
+[2015.10.23-09.24.06:496][  0]SourceControl: Info Source control is disabled
+[2015.10.23-09.24.06:496][  0]Cmd: MAP LOAD FILE="../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Content/RollingCPP/Maps/RollingExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.10.23-09.24.06:497][  0]LogEditorServer:Warning: Can't find file '../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Content/RollingCPP/Maps/RollingExampleMap.umap'
+[2015.10.23-09.24.06:497][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2015.10.23-09.24.06:524][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 27.581ms to complete.
+[2015.10.23-09.24.06:524][  0]LogFileHelpers: Loading map 'RollingExampleMap' took 0.028
+[2015.10.23-09.24.06:643][  0]LogCollectionManager: Loaded 0 collections in 0.001467 seconds
+[2015.10.23-09.24.06:683][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/Unreal Projects/BOS/Saved/Collections/' took 0.01s
+[2015.10.23-09.24.06:683][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/Unreal Projects/BOS/Content/Developers/Spellabbet/Collections/' took 0.01s
+[2015.10.23-09.24.06:683][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/Unreal Projects/BOS/Content/Collections/' took 0.01s
+[2015.10.23-09.24.06:683][  0]LogContentBrowser: Native class hierarchy populated in 0.0062 seconds. Added 1869 classes and 335 folders.
+[2015.10.23-09.24.06:687][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000002 seconds
+[2015.10.23-09.24.06:692][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0007 seconds. Added 0 classes and 0 folders.
+[2015.10.23-09.24.06:720][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0007 seconds. Added 0 classes and 0 folders.
+[2015.10.23-09.24.06:727][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0007 seconds. Added 1 classes and 2 folders.
+[2015.10.23-09.24.06:756][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2015.10.23-09.24.06:759][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
+[2015.10.23-09.24.06:782][  0]LogLoad: Full Startup: 4.59 seconds (BP compile: 0.00 seconds)
+[2015.10.23-09.24.06:828][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2015.10.23-09.24.06:969][  0]LogRenderer: Reallocating scene render targets to support 1208x576 (Frame:2).
+[2015.10.23-09.24.07:026][  2]LogAssetRegistry: Asset discovery search completed in 1.3471 seconds
+[2015.10.23-09.24.07:026][  2]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2015.10.23-09.24.07:026][  2]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000030 seconds (updated 0 objects)
+[2015.10.23-09.24.28:314][402]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.24.28:340][402]Cmd: MAP LOAD FILE="../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Content/RollingCPP/Maps/Map1.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.10.23-09.24.28:340][402]LightingResults: New page: Lighting Build
+[2015.10.23-09.24.28:343][402]LogContentBrowser: Native class hierarchy updated for 'StatsViewer' in 0.0007 seconds. Added 5 classes and 0 folders.
+[2015.10.23-09.24.28:354][402]LoadErrors: New page: Loading map: Map1.umap
+[2015.10.23-09.24.28:354][402]MapCheck: New page: Map Check
+[2015.10.23-09.24.28:354][402]LightingResults: New page: Lighting Build
+[2015.10.23-09.24.28:362][402]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD252C3CE0
+[2015.10.23-09.24.28:395][402]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2015.10.23-09.24.28:419][402]Cmd: MAP CHECKDEP NOCLEARLOG
+[2015.10.23-09.24.28:449][402]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 30.334ms to complete.
+[2015.10.23-09.24.28:449][402]LogFileHelpers: Loading map 'Map1' took 0.110
+[2015.10.23-09.24.29:067][469]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Ground)
+[2015.10.23-09.24.30:292][612]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.24.30:292][612]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.10.23-09.24.30:293][612]PIE: New page: PIE session: Map1 (Oct 23, 2015, 1:24:30 PM)
+[2015.10.23-09.24.30:293][612]LogPlayLevel: Creating play world package: /Game/RollingCPP/Maps/UEDPIE_1_Map1
+[2015.10.23-09.24.30:319][612]LogPlayLevel: PIE: StaticDuplicateObject took: (0.026069s)
+[2015.10.23-09.24.30:321][612]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.24.30:321][612]LogPlayLevel: PIE: World Init took: (0.001268s)
+[2015.10.23-09.24.30:321][612]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 (0.027666s)
+[2015.10.23-09.24.30:340][612]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.10.23-09.24.30:344][612]LogInit: FAudioDevice initialized.
+[2015.10.23-09.24.30:388][612]LogWorld: Game class is 'BOSGameMode'
+[2015.10.23-09.24.30:397][612]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.24.30
+[2015.10.23-09.24.30:397][612]LogActor:Warning: GameSession /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameSession_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.24.30:397][612]LogActor:Warning: GameNetworkManager /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameNetworkManager_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.24.30:397][612]LogWorld: Bringing up level for play took: 0.008369
+[2015.10.23-09.24.30:398][612]LogInit: WinSock: Socket queue 131072 / 131072
+[2015.10.23-09.24.30:399][612]LogInit: WinSock: I am SpellabbA332-19 (192.168.20.30:0)
+[2015.10.23-09.24.30:399][612]LogNet: GameNetDriver IpNetDriver_0 IpNetDriver listening on port 7777
+[2015.10.23-09.24.30:411][612]PIE: Info Play in editor start time for /Game/RollingCPP/Maps/UEDPIE_1_Map1 0.427
+[2015.10.23-09.24.30:412][612]PIE: New page: PIE session: Map1 (Oct 23, 2015, 1:24:30 PM)
+[2015.10.23-09.24.30:442][612]LogNet: Browse: 127.0.0.1//Game/RollingCPP/Maps/Map1
+[2015.10.23-09.24.30:442][612]LogInit: WinSock: Socket queue 32768 / 32768
+[2015.10.23-09.24.30:442][612]LogNet: Game client on port 7777, rate 10000
+[2015.10.23-09.24.30:442][612]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2707645, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 1605316083
+[2015.10.23-09.24.30:455][612]PIE: Info Play in editor start time for /Game/RollingCPP/Maps/Map1 0.472
+[2015.10.23-09.24.30:456][612]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.24.30:457][612]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.10.23-09.24.30:457][612]LogNet: Open Map1 10/23/15 11:24:30 127.0.0.1
+[2015.10.23-09.24.30:457][612]LogNet: Added client connection.  Remote address = 127.0.0.1:50031
+[2015.10.23-09.24.30:457][612]LogNet: NotifyAcceptingChannel Control 0 server World /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1: Accepted
+[2015.10.23-09.24.30:457][612]LogNet: Remote platform little endian=1
+[2015.10.23-09.24.30:457][612]LogNet: This platform little endian=1
+[2015.10.23-09.24.30:457][612]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2707645, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 1605316083
+[2015.10.23-09.24.30:497][613]LogNet: Login request: /Game/RollingCPP/Maps/Map1 userId: Invalid
+[2015.10.23-09.24.30:498][613]LogNet: Welcomed by server (Level: /Game/RollingCPP/Maps/UEDPIE_1_Map1, Game: /Script/BOS.BOSGameMode)
+[2015.10.23-09.24.30:525][613]LogLoad: LoadMap: 127.0.0.1//Game/RollingCPP/Maps/UEDPIE_1_Map1?game=/Script/BOS.BOSGameMode
+[2015.10.23-09.24.30:534][613]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD167231A0
+[2015.10.23-09.24.30:534][613]Cmd: MEM
+[2015.10.23-09.24.30:542][613]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.24.30:542][613]LogMemory: Process Physical Memory: 636.63 MB used, 636.63 MB peak
+[2015.10.23-09.24.30:542][613]LogMemory: Process Virtual Memory: 1192.43 MB used, 1192.43 MB peak
+[2015.10.23-09.24.30:542][613]LogMemory: Physical Memory: 4073.96 MB used, 16318.82 MB total
+[2015.10.23-09.24.30:542][613]LogMemory: Virtual Memory: 1848.07 MB used, 134217728.00 MB total
+[2015.10.23-09.24.30:542][613]LogMemory: 
+[2015.10.23-09.24.30:542][613]Allocator Stats for TBB: (not implemented)
+[2015.10.23-09.24.30:542][613]LogLinker: Can't find file for asset '/Game/RollingCPP/Maps/UEDPIE_1_Map1' while loading NULL.
+[2015.10.23-09.24.30:563][613]LogWorld: PIE: Copying PIE streaming level from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1. OwningWorld: None
+[2015.10.23-09.24.30:564][613]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.24.30:573][613]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.24.30
+[2015.10.23-09.24.30:573][613]LogWorld: Bringing up level for play took: 0.008204
+[2015.10.23-09.24.30:583][614]LogNet: Client netspeed is 10000
+[2015.10.23-09.24.30:583][614]LogNet: Join request: /Game/RollingCPP/Maps/Map1?SplitscreenCount=1
+[2015.10.23-09.24.30:585][614]LogNet: Join succeeded: 257
+[2015.10.23-09.24.35:206][116]LogPackageName: SearchForPackageOnDisk took   0.037s to resolve Map1.umap.
+[2015.10.23-09.24.35:242][116]LogPackageName: SearchForPackageOnDisk took   0.036s to resolve Map1.umap.
+[2015.10.23-09.24.35:242][116]LogNet: Browse: /Game/RollingCPP/Maps/Map1?listen
+[2015.10.23-09.24.35:242][116]LogLoad: LoadMap: /Game/RollingCPP/Maps/Map1?listen
+[2015.10.23-09.24.35:242][116]LogNet: World NetDriver shutdown IpNetDriver_0 [GameNetDriver]
+[2015.10.23-09.24.35:242][116]LogNet: DestroyNamedNetDriver IpNetDriver_0 [GameNetDriver]
+[2015.10.23-09.24.35:243][116]LogNet: UNetConnection::Cleanup: Closing open connection. Name: IpConnection_1, RemoteAddr: 127.0.0.1:50031 Driver: GameNetDriver, PC: PlayerController_2, Owner: PlayerController_2
+[2015.10.23-09.24.35:243][116]LogNet: UNetConnection::Close: Name: IpConnection_1, Driver: GameNetDriver IpNetDriver_0, PC: PlayerController_2, Owner: PlayerController_2, Channels: 11, RemoteAddr: 127.0.0.1:50031, Time: 2015.10.23-09.24.35
+[2015.10.23-09.24.35:243][116]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_1
+[2015.10.23-09.24.35:243][116]LogExit: GameNetDriver IpNetDriver_0 shut down
+[2015.10.23-09.24.35:254][116]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD16723740
+[2015.10.23-09.24.35:256][116]Cmd: MEM
+[2015.10.23-09.24.35:265][116]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.24.35:265][116]LogMemory: Process Physical Memory: 650.39 MB used, 666.30 MB peak
+[2015.10.23-09.24.35:265][116]LogMemory: Process Virtual Memory: 1242.73 MB used, 1277.60 MB peak
+[2015.10.23-09.24.35:265][116]LogMemory: Physical Memory: 4087.93 MB used, 16318.82 MB total
+[2015.10.23-09.24.35:265][116]LogMemory: Virtual Memory: 1899.70 MB used, 134217728.00 MB total
+[2015.10.23-09.24.35:265][116]LogMemory: 
+[2015.10.23-09.24.35:265][116]Allocator Stats for TBB: (not implemented)
+[2015.10.23-09.24.35:265][116]LogPlayLevel: Creating play world package: /Game/RollingCPP/Maps/UEDPIE_1_Map1
+[2015.10.23-09.24.35:285][116]LogPlayLevel: PIE: StaticDuplicateObject took: (0.019594s)
+[2015.10.23-09.24.35:285][116]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.24.35:285][116]LogPlayLevel: PIE: World Init took: (0.000918s)
+[2015.10.23-09.24.35:286][116]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 (0.020811s)
+[2015.10.23-09.24.35:286][116]LogWorld: Game class is 'BOSGameMode'
+[2015.10.23-09.24.35:287][116]LogInit: WinSock: Socket queue 131072 / 131072
+[2015.10.23-09.24.35:287][116]LogNet: GameNetDriver IpNetDriver_2 IpNetDriver listening on port 7777
+[2015.10.23-09.24.35:300][116]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.24.35
+[2015.10.23-09.24.35:300][116]LogActor:Warning: GameSession /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameSession_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.24.35:300][116]LogActor:Warning: GameNetworkManager /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameNetworkManager_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.24.35:301][116]LogWorld: Bringing up level for play took: 0.012595
+[2015.10.23-09.24.35:303][116]LogNet:Warning: Network Failure: GameNetDriver[FailureReceived]: Host closed the connection.
+[2015.10.23-09.24.35:303][116]LogNet:Warning: Network Failure: GameNetDriver[FailureReceived]: Host closed the connection.
+[2015.10.23-09.24.35:303][116]LogNet: NetworkFailure: FailureReceived, Error: 'Host closed the connection.'
+[2015.10.23-09.24.35:303][116]LogNet: UNetConnection::Close: Name: IpConnection_0, Driver: GameNetDriver IpNetDriver_1, PC: PlayerController_3, Owner: PlayerController_3, Channels: 11, RemoteAddr: 127.0.0.1:7777, Time: 2015.10.23-09.24.35
+[2015.10.23-09.24.35:303][116]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_0
+[2015.10.23-09.24.35:303][116]LogNet:Warning: Network Failure: GameNetDriver[ConnectionLost]: Your connection to the host has been lost.
+[2015.10.23-09.24.35:303][116]LogNet:Warning: Network Failure: GameNetDriver[ConnectionLost]: Your connection to the host has been lost.
+[2015.10.23-09.24.35:303][116]LogNet: NetworkFailure: ConnectionLost, Error: 'Your connection to the host has been lost.'
+[2015.10.23-09.24.35:303][116]LogNet:Warning: FObjectReplicator::UpdateUnmappedObjects: Connection->State == USOCK_Closed
+[2015.10.23-09.24.35:303][116]LogNet:Warning: FObjectReplicator::UpdateUnmappedObjects: Connection->State == USOCK_Closed
+[2015.10.23-09.24.35:313][117]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.10.23-09.24.35:314][117]LogNet: Open Map1 10/23/15 11:24:35 127.0.0.1
+[2015.10.23-09.24.35:314][117]LogNet: Added client connection.  Remote address = 127.0.0.1:50031
+[2015.10.23-09.24.35:314][117]LogNetTraffic:Warning: High single frame packet loss: 483
+[2015.10.23-09.24.35:314][117]LogSecurity:Warning: 127.0.0.1:50031: Malformed_Packet: UNetConnection::ReceivedPacket: Received control channel close before open
+[2015.10.23-09.24.35:314][117]LogSecurity:Warning: 127.0.0.1:50031: Closed: Connection closed
+[2015.10.23-09.24.35:314][117]LogNet: UNetConnection::Close: Name: IpConnection_2, Driver: GameNetDriver IpNetDriver_2, PC: NULL, Owner: NULL, Channels: 2, RemoteAddr: 127.0.0.1:50031, Time: 2015.10.23-09.24.35
+[2015.10.23-09.24.35:314][117]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_2
+[2015.10.23-09.24.35:315][117]LogNet: Browse: /Game/RollingCPP/Maps/Map1?closed
+[2015.10.23-09.24.35:315][117]LogNet: Failed; returning to Entry
+[2015.10.23-09.24.35:353][117]LogLoad: LoadMap: /Game/RollingCPP/Maps/Map1?closed
+[2015.10.23-09.24.35:353][117]LogNet: World NetDriver shutdown IpNetDriver_1 [GameNetDriver]
+[2015.10.23-09.24.35:353][117]LogNet: DestroyNamedNetDriver IpNetDriver_1 [GameNetDriver]
+[2015.10.23-09.24.35:353][117]LogExit: GameNetDriver IpNetDriver_1 shut down
+[2015.10.23-09.24.35:366][117]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD123E6AC0
+[2015.10.23-09.24.35:366][117]Cmd: MEM
+[2015.10.23-09.24.35:374][117]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.24.35:374][117]LogMemory: Process Physical Memory: 663.56 MB used, 673.82 MB peak
+[2015.10.23-09.24.35:374][117]LogMemory: Process Virtual Memory: 1202.68 MB used, 1380.24 MB peak
+[2015.10.23-09.24.35:374][117]LogMemory: Physical Memory: 4095.82 MB used, 16318.82 MB total
+[2015.10.23-09.24.35:374][117]LogMemory: Virtual Memory: 1859.82 MB used, 134217728.00 MB total
+[2015.10.23-09.24.35:374][117]LogMemory: 
+[2015.10.23-09.24.35:374][117]Allocator Stats for TBB: (not implemented)
+[2015.10.23-09.24.35:374][117]LogPlayLevel: Creating play world package: /Game/RollingCPP/Maps/UEDPIE_2_Map1
+[2015.10.23-09.24.35:394][117]LogPlayLevel: PIE: StaticDuplicateObject took: (0.019468s)
+[2015.10.23-09.24.35:395][117]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.24.35:395][117]LogPlayLevel: PIE: World Init took: (0.001618s)
+[2015.10.23-09.24.35:396][117]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1 (0.021418s)
+[2015.10.23-09.24.35:396][117]LogWorld: Game class is 'BOSGameMode'
+[2015.10.23-09.24.35:404][117]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.24.35
+[2015.10.23-09.24.35:404][117]LogActor:Warning: GameSession /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1:PersistentLevel.GameSession_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.24.35:405][117]LogActor:Warning: GameNetworkManager /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1:PersistentLevel.GameNetworkManager_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.24.35:405][117]LogWorld: Bringing up level for play took: 0.007969
+[2015.10.23-09.24.35:424][118]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.10.23-09.24.35:424][118]LogNet: Open Map1 10/23/15 11:24:35 127.0.0.1
+[2015.10.23-09.24.35:424][118]LogNet: Added client connection.  Remote address = 127.0.0.1:50031
+[2015.10.23-09.24.35:424][118]LogNetTraffic:Warning: High single frame packet loss: 484
+[2015.10.23-09.24.35:639][142]LogNet: UNetConnection::Cleanup: Closing open connection. Name: IpConnection_3, RemoteAddr: 127.0.0.1:50031 Driver: GameNetDriver, PC: NoPC, Owner: No Owner
+[2015.10.23-09.24.35:640][142]LogNet: UNetConnection::Close: Name: IpConnection_3, Driver: GameNetDriver IpNetDriver_2, PC: NULL, Owner: NULL, Channels: 1, RemoteAddr: 127.0.0.1:50031, Time: 2015.10.23-09.24.35
+[2015.10.23-09.24.39:442][553]Cmd: open127.0.0.1
+[2015.10.23-09.24.39:442][553]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.39:784][594]Cmd: open127.0.0.1
+[2015.10.23-09.24.39:784][594]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.39:925][611]Cmd: open127.0.0.1
+[2015.10.23-09.24.39:925][611]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.40:084][630]Cmd: open127.0.0.1
+[2015.10.23-09.24.40:084][630]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.40:209][645]Cmd: open127.0.0.1
+[2015.10.23-09.24.40:209][645]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.40:350][662]Cmd: open127.0.0.1
+[2015.10.23-09.24.40:350][662]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.40:508][681]Cmd: open127.0.0.1
+[2015.10.23-09.24.40:509][681]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.40:659][699]Cmd: open127.0.0.1
+[2015.10.23-09.24.40:659][699]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.40:809][717]Cmd: open127.0.0.1
+[2015.10.23-09.24.40:809][717]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.40:984][738]Cmd: open127.0.0.1
+[2015.10.23-09.24.40:984][738]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.41:158][759]Cmd: open127.0.0.1
+[2015.10.23-09.24.41:158][759]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.41:318][778]Cmd: open127.0.0.1
+[2015.10.23-09.24.41:318][778]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.41:501][800]Cmd: open127.0.0.1
+[2015.10.23-09.24.41:501][800]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.41:684][822]Cmd: open127.0.0.1
+[2015.10.23-09.24.41:684][822]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.41:834][840]Cmd: open127.0.0.1
+[2015.10.23-09.24.41:834][840]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.42:017][862]Cmd: open127.0.0.1
+[2015.10.23-09.24.42:017][862]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.42:201][884]Cmd: open127.0.0.1
+[2015.10.23-09.24.42:201][884]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.42:351][902]Cmd: open127.0.0.1
+[2015.10.23-09.24.42:351][902]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.42:534][924]Cmd: open127.0.0.1
+[2015.10.23-09.24.42:534][924]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.42:909][969]Cmd: open127.0.0.1
+[2015.10.23-09.24.42:910][969]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.43:101][992]Cmd: open127.0.0.1
+[2015.10.23-09.24.43:101][992]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.43:259][ 11]Cmd: open127.0.0.1
+[2015.10.23-09.24.43:259][ 11]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.43:410][ 29]Cmd: open127.0.0.1
+[2015.10.23-09.24.43:410][ 29]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.43:585][ 50]Cmd: open127.0.0.1
+[2015.10.23-09.24.43:585][ 50]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.43:702][ 64]Cmd: open127.0.0.1
+[2015.10.23-09.24.43:702][ 64]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.43:843][ 81]Cmd: open127.0.0.1
+[2015.10.23-09.24.43:843][ 81]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.43:967][ 96]Cmd: open127.0.0.1
+[2015.10.23-09.24.43:968][ 96]Command not recognized: open127.0.0.1
+[2015.10.23-09.24.44:127][115]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.24.44:179][115]LogSpawn:Warning: SpawnActor failed because we are in the process of tearing down the world
+[2015.10.23-09.24.44:216][115]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.24.44:227][115]LogExit: GameNetDriver None shut down
+[2015.10.23-09.24.44:242][116]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD123E60C0
+[2015.10.23-09.24.44:242][116]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD0652EE80
+[2015.10.23-09.24.47:262][468]LogLinker:Warning: Asset '../../../Engine/Content/ArtTools/RenderToTexture/Macros/RenderToTextureMacros.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.10.23-09.24.47:637][468]LogContentBrowser: Native class hierarchy updated for 'BlueprintGraph' in 0.0010 seconds. Added 107 classes and 0 folders.
+[2015.10.23-09.25.47:355][634]LogBlueprintUserMessages: CustomizeDetails for Blueprint 'Menu', cached variable property's owner is '/Game/Menu/Menu.SKEL_Menu_C'
+[2015.10.23-09.28.33:932][949]BlueprintLog: New page: Compile Menu
+[2015.10.23-09.28.33:996][949]BlueprintEditorCompileResults: Info [0271.81] Compile of Menu successful! [in 64 ms]
+[2015.10.23-09.28.45:845][863]BlueprintLog: New page: Compile Menu
+[2015.10.23-09.28.45:937][863]BlueprintEditorCompileResults: Info [0283.75] Compile of Menu successful! [in 91 ms]
+[2015.10.23-09.28.46:874][924]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Menu/Menu" FILE="../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Content/Menu/Menu.uasset" SILENT=true
+[2015.10.23-09.28.46:897][924]LogSavePackage: Save=18.578653ms
+[2015.10.23-09.28.46:898][924]LogSavePackage: Moving '../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Saved/Menu33B171BA4B217ED48CABB7A75FAC8C1D.tmp' to '../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Content/Menu/Menu.uasset'
+[2015.10.23-09.28.46:900][924]LogSavePackage: Total save time: 24.537850ms
+[2015.10.23-09.28.46:900][924]LogSavePackage:Warning: Finished SavePackage ../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Content/Menu/Menu.uasset
+[2015.10.23-09.28.48:307][ 50]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Ground)
+[2015.10.23-09.28.49:542][193]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.28.49:542][193]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.10.23-09.28.49:543][193]PIE: New page: PIE session: Map1 (Oct 23, 2015, 1:28:49 PM)
+[2015.10.23-09.28.49:543][193]LogPlayLevel: Creating play world package: /Game/RollingCPP/Maps/UEDPIE_1_Map1
+[2015.10.23-09.28.49:566][193]LogPlayLevel: PIE: StaticDuplicateObject took: (0.022651s)
+[2015.10.23-09.28.49:567][193]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.28.49:568][193]LogPlayLevel: PIE: World Init took: (0.001642s)
+[2015.10.23-09.28.49:568][193]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 (0.024615s)
+[2015.10.23-09.28.49:595][193]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.10.23-09.28.49:600][193]LogInit: FAudioDevice initialized.
+[2015.10.23-09.28.49:632][193]LogWorld: Game class is 'BOSGameMode'
+[2015.10.23-09.28.49:641][193]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.28.49
+[2015.10.23-09.28.49:641][193]LogActor:Warning: GameSession /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameSession_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.28.49:641][193]LogActor:Warning: GameNetworkManager /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameNetworkManager_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.28.49:642][193]LogWorld: Bringing up level for play took: 0.008415
+[2015.10.23-09.28.49:642][193]LogInit: WinSock: Socket queue 131072 / 131072
+[2015.10.23-09.28.49:642][193]LogNet: GameNetDriver IpNetDriver_3 IpNetDriver listening on port 7777
+[2015.10.23-09.28.49:663][193]PIE: Info Play in editor start time for /Game/RollingCPP/Maps/UEDPIE_1_Map1 -0.321
+[2015.10.23-09.28.49:664][193]PIE: New page: PIE session: Map1 (Oct 23, 2015, 1:28:49 PM)
+[2015.10.23-09.28.49:698][193]LogNet: Browse: 127.0.0.1//Game/RollingCPP/Maps/Map1
+[2015.10.23-09.28.49:698][193]LogInit: WinSock: Socket queue 32768 / 32768
+[2015.10.23-09.28.49:698][193]LogNet: Game client on port 7777, rate 10000
+[2015.10.23-09.28.49:698][193]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2707645, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 1605316083
+[2015.10.23-09.28.49:722][193]PIE: Info Play in editor start time for /Game/RollingCPP/Maps/Map1 -0.261
+[2015.10.23-09.28.49:723][193]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.28.49:723][193]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.10.23-09.28.49:723][193]LogNet: Open Map1 10/23/15 11:28:49 127.0.0.1
+[2015.10.23-09.28.49:723][193]LogNet: Added client connection.  Remote address = 127.0.0.1:65022
+[2015.10.23-09.28.49:723][193]LogNet: NotifyAcceptingChannel Control 0 server World /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1: Accepted
+[2015.10.23-09.28.49:723][193]LogNet: Remote platform little endian=1
+[2015.10.23-09.28.49:723][193]LogNet: This platform little endian=1
+[2015.10.23-09.28.49:723][193]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2707645, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 1605316083
+[2015.10.23-09.28.49:764][194]LogNet: Login request: /Game/RollingCPP/Maps/Map1 userId: Invalid
+[2015.10.23-09.28.49:765][194]LogNet: Welcomed by server (Level: /Game/RollingCPP/Maps/UEDPIE_1_Map1, Game: /Script/BOS.BOSGameMode)
+[2015.10.23-09.28.49:786][194]LogLoad: LoadMap: 127.0.0.1//Game/RollingCPP/Maps/UEDPIE_1_Map1?game=/Script/BOS.BOSGameMode
+[2015.10.23-09.28.49:811][194]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD20B44540
+[2015.10.23-09.28.49:811][194]Cmd: MEM
+[2015.10.23-09.28.49:844][194]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.28.49:844][194]LogMemory: Process Physical Memory: 806.48 MB used, 818.22 MB peak
+[2015.10.23-09.28.49:844][194]LogMemory: Process Virtual Memory: 1505.65 MB used, 1506.71 MB peak
+[2015.10.23-09.28.49:844][194]LogMemory: Physical Memory: 4271.14 MB used, 16318.82 MB total
+[2015.10.23-09.28.49:844][194]LogMemory: Virtual Memory: 2148.94 MB used, 134217728.00 MB total
+[2015.10.23-09.28.49:844][194]LogMemory: 
+[2015.10.23-09.28.49:844][194]Allocator Stats for TBB: (not implemented)
+[2015.10.23-09.28.49:844][194]LogLinker: Can't find file for asset '/Game/RollingCPP/Maps/UEDPIE_1_Map1' while loading NULL.
+[2015.10.23-09.28.49:875][194]LogWorld: PIE: Copying PIE streaming level from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1. OwningWorld: None
+[2015.10.23-09.28.49:877][194]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.28.49:891][194]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.28.49
+[2015.10.23-09.28.49:891][194]LogWorld: Bringing up level for play took: 0.012668
+[2015.10.23-09.28.49:902][195]LogNet: Client netspeed is 10000
+[2015.10.23-09.28.49:902][195]LogNet: Join request: /Game/RollingCPP/Maps/Map1?SplitscreenCount=1
+[2015.10.23-09.28.49:904][195]LogNet: Join succeeded: 261
+[2015.10.23-09.28.54:848][650]LogPackageName: SearchForPackageOnDisk took   0.036s to resolve Map1.umap.
+[2015.10.23-09.28.54:884][650]LogPackageName: SearchForPackageOnDisk took   0.035s to resolve Map1.umap.
+[2015.10.23-09.28.54:884][650]LogNet: Browse: /Game/RollingCPP/Maps/Map1?listen
+[2015.10.23-09.28.54:884][650]LogLoad: LoadMap: /Game/RollingCPP/Maps/Map1?listen
+[2015.10.23-09.28.54:884][650]LogNet: World NetDriver shutdown IpNetDriver_3 [GameNetDriver]
+[2015.10.23-09.28.54:884][650]LogNet: DestroyNamedNetDriver IpNetDriver_3 [GameNetDriver]
+[2015.10.23-09.28.54:884][650]LogNet: UNetConnection::Cleanup: Closing open connection. Name: IpConnection_5, RemoteAddr: 127.0.0.1:65022 Driver: GameNetDriver, PC: PlayerController_8, Owner: PlayerController_8
+[2015.10.23-09.28.54:884][650]LogNet: UNetConnection::Close: Name: IpConnection_5, Driver: GameNetDriver IpNetDriver_3, PC: PlayerController_8, Owner: PlayerController_8, Channels: 11, RemoteAddr: 127.0.0.1:65022, Time: 2015.10.23-09.28.54
+[2015.10.23-09.28.54:884][650]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_4
+[2015.10.23-09.28.54:885][650]LogExit: GameNetDriver IpNetDriver_3 shut down
+[2015.10.23-09.28.54:905][650]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD20B47E20
+[2015.10.23-09.28.54:909][650]Cmd: MEM
+[2015.10.23-09.28.54:928][650]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.28.54:928][650]LogMemory: Process Physical Memory: 814.78 MB used, 837.32 MB peak
+[2015.10.23-09.28.54:928][650]LogMemory: Process Virtual Memory: 1526.25 MB used, 1587.01 MB peak
+[2015.10.23-09.28.54:928][650]LogMemory: Physical Memory: 4275.16 MB used, 16318.82 MB total
+[2015.10.23-09.28.54:928][650]LogMemory: Virtual Memory: 2172.31 MB used, 134217728.00 MB total
+[2015.10.23-09.28.54:928][650]LogMemory: 
+[2015.10.23-09.28.54:928][650]Allocator Stats for TBB: (not implemented)
+[2015.10.23-09.28.54:928][650]LogPlayLevel: Creating play world package: /Game/RollingCPP/Maps/UEDPIE_1_Map1
+[2015.10.23-09.28.54:947][650]LogPlayLevel: PIE: StaticDuplicateObject took: (0.019500s)
+[2015.10.23-09.28.54:948][650]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.28.54:948][650]LogPlayLevel: PIE: World Init took: (0.000768s)
+[2015.10.23-09.28.54:949][650]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 (0.020576s)
+[2015.10.23-09.28.54:949][650]LogWorld: Game class is 'BOSGameMode'
+[2015.10.23-09.28.54:949][650]LogInit: WinSock: Socket queue 131072 / 131072
+[2015.10.23-09.28.54:950][650]LogNet: GameNetDriver IpNetDriver_5 IpNetDriver listening on port 7777
+[2015.10.23-09.28.54:961][650]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.28.54
+[2015.10.23-09.28.54:961][650]LogActor:Warning: GameSession /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameSession_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.28.54:962][650]LogActor:Warning: GameNetworkManager /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameNetworkManager_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.28.54:962][650]LogWorld: Bringing up level for play took: 0.011469
+[2015.10.23-09.28.54:964][650]LogNet:Warning: Network Failure: GameNetDriver[FailureReceived]: Host closed the connection.
+[2015.10.23-09.28.54:964][650]LogNet:Warning: Network Failure: GameNetDriver[FailureReceived]: Host closed the connection.
+[2015.10.23-09.28.54:964][650]LogNet: NetworkFailure: FailureReceived, Error: 'Host closed the connection.'
+[2015.10.23-09.28.54:964][650]LogNet: UNetConnection::Close: Name: IpConnection_4, Driver: GameNetDriver IpNetDriver_4, PC: PlayerController_9, Owner: PlayerController_9, Channels: 11, RemoteAddr: 127.0.0.1:7777, Time: 2015.10.23-09.28.54
+[2015.10.23-09.28.54:964][650]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_3
+[2015.10.23-09.28.54:964][650]LogNet:Warning: Network Failure: GameNetDriver[ConnectionLost]: Your connection to the host has been lost.
+[2015.10.23-09.28.54:964][650]LogNet:Warning: Network Failure: GameNetDriver[ConnectionLost]: Your connection to the host has been lost.
+[2015.10.23-09.28.54:964][650]LogNet: NetworkFailure: ConnectionLost, Error: 'Your connection to the host has been lost.'
+[2015.10.23-09.28.54:965][650]LogNet:Warning: FObjectReplicator::UpdateUnmappedObjects: Connection->State == USOCK_Closed
+[2015.10.23-09.28.54:965][650]LogNet:Warning: FObjectReplicator::UpdateUnmappedObjects: Connection->State == USOCK_Closed
+[2015.10.23-09.28.54:976][651]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.10.23-09.28.54:977][651]LogNet: Open Map1 10/23/15 11:28:54 127.0.0.1
+[2015.10.23-09.28.54:977][651]LogNet: Added client connection.  Remote address = 127.0.0.1:65022
+[2015.10.23-09.28.54:977][651]LogNetTraffic:Warning: High single frame packet loss: 440
+[2015.10.23-09.28.54:977][651]LogSecurity:Warning: 127.0.0.1:65022: Malformed_Packet: UNetConnection::ReceivedPacket: Received control channel close before open
+[2015.10.23-09.28.54:977][651]LogSecurity:Warning: 127.0.0.1:65022: Closed: Connection closed
+[2015.10.23-09.28.54:977][651]LogNet: UNetConnection::Close: Name: IpConnection_6, Driver: GameNetDriver IpNetDriver_5, PC: NULL, Owner: NULL, Channels: 2, RemoteAddr: 127.0.0.1:65022, Time: 2015.10.23-09.28.54
+[2015.10.23-09.28.54:977][651]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_5
+[2015.10.23-09.28.54:978][651]LogNet: Browse: /Game/RollingCPP/Maps/Map1?closed
+[2015.10.23-09.28.54:978][651]LogNet: Failed; returning to Entry
+[2015.10.23-09.28.55:012][651]LogLoad: LoadMap: /Game/RollingCPP/Maps/Map1?closed
+[2015.10.23-09.28.55:012][651]LogNet: World NetDriver shutdown IpNetDriver_4 [GameNetDriver]
+[2015.10.23-09.28.55:012][651]LogNet: DestroyNamedNetDriver IpNetDriver_4 [GameNetDriver]
+[2015.10.23-09.28.55:012][651]LogExit: GameNetDriver IpNetDriver_4 shut down
+[2015.10.23-09.28.55:035][651]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD0E230EA0
+[2015.10.23-09.28.55:035][651]Cmd: MEM
+[2015.10.23-09.28.55:055][651]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.28.55:055][651]LogMemory: Process Physical Memory: 822.44 MB used, 837.32 MB peak
+[2015.10.23-09.28.55:055][651]LogMemory: Process Virtual Memory: 1485.80 MB used, 1660.68 MB peak
+[2015.10.23-09.28.55:055][651]LogMemory: Physical Memory: 4281.59 MB used, 16318.82 MB total
+[2015.10.23-09.28.55:055][651]LogMemory: Virtual Memory: 2123.00 MB used, 134217728.00 MB total
+[2015.10.23-09.28.55:055][651]LogMemory: 
+[2015.10.23-09.28.55:055][651]Allocator Stats for TBB: (not implemented)
+[2015.10.23-09.28.55:055][651]LogPlayLevel: Creating play world package: /Game/RollingCPP/Maps/UEDPIE_2_Map1
+[2015.10.23-09.28.55:074][651]LogPlayLevel: PIE: StaticDuplicateObject took: (0.019279s)
+[2015.10.23-09.28.55:076][651]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.28.55:076][651]LogPlayLevel: PIE: World Init took: (0.001603s)
+[2015.10.23-09.28.55:076][651]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1 (0.021258s)
+[2015.10.23-09.28.55:076][651]LogWorld: Game class is 'BOSGameMode'
+[2015.10.23-09.28.55:085][651]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.28.55
+[2015.10.23-09.28.55:085][651]LogActor:Warning: GameSession /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1:PersistentLevel.GameSession_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.28.55:085][651]LogActor:Warning: GameNetworkManager /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1:PersistentLevel.GameNetworkManager_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.28.55:085][651]LogWorld: Bringing up level for play took: 0.008379
+[2015.10.23-09.28.55:119][652]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.10.23-09.28.55:119][652]LogNet: Open Map1 10/23/15 11:28:55 127.0.0.1
+[2015.10.23-09.28.55:119][652]LogNet: Added client connection.  Remote address = 127.0.0.1:65022
+[2015.10.23-09.28.55:119][652]LogNetTraffic:Warning: High single frame packet loss: 441
+[2015.10.23-09.28.55:336][671]LogNet: UNetConnection::Cleanup: Closing open connection. Name: IpConnection_7, RemoteAddr: 127.0.0.1:65022 Driver: GameNetDriver, PC: NoPC, Owner: No Owner
+[2015.10.23-09.28.55:336][671]LogNet: UNetConnection::Close: Name: IpConnection_7, Driver: GameNetDriver IpNetDriver_5, PC: NULL, Owner: NULL, Channels: 1, RemoteAddr: 127.0.0.1:65022, Time: 2015.10.23-09.28.55
+[2015.10.23-09.29.01:047][210]LogNet: Browse: 127.0.0.1//Game/RollingCPP/Maps/Map1
+[2015.10.23-09.29.01:048][210]LogInit: WinSock: Socket queue 32768 / 32768
+[2015.10.23-09.29.01:048][210]LogNet: Game client on port 7777, rate 10000
+[2015.10.23-09.29.01:048][210]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2707645, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 1605316083
+[2015.10.23-09.29.01:058][211]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.10.23-09.29.01:059][211]LogNet: Open Map1 10/23/15 11:29:01 127.0.0.1
+[2015.10.23-09.29.01:059][211]LogNet: Added client connection.  Remote address = 127.0.0.1:65023
+[2015.10.23-09.29.01:059][211]LogNet: NotifyAcceptingChannel Control 0 server World /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1: Accepted
+[2015.10.23-09.29.01:059][211]LogNet: Remote platform little endian=1
+[2015.10.23-09.29.01:059][211]LogNet: This platform little endian=1
+[2015.10.23-09.29.01:059][211]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2707645, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 1605316083
+[2015.10.23-09.29.01:070][212]LogNet: Login request: /Game/RollingCPP/Maps/Map1 userId: Invalid
+[2015.10.23-09.29.01:070][212]LogNet: Welcomed by server (Level: /Game/RollingCPP/Maps/UEDPIE_1_Map1, Game: /Script/BOS.BOSGameMode)
+[2015.10.23-09.29.01:071][212]LogLoad: LoadMap: 127.0.0.1//Game/RollingCPP/Maps/UEDPIE_1_Map1?game=/Script/BOS.BOSGameMode
+[2015.10.23-09.29.01:094][212]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD0E230EA0
+[2015.10.23-09.29.01:094][212]Cmd: MEM
+[2015.10.23-09.29.01:113][212]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.29.01:113][212]LogMemory: Process Physical Memory: 816.21 MB used, 843.05 MB peak
+[2015.10.23-09.29.01:113][212]LogMemory: Process Virtual Memory: 1452.07 MB used, 1660.68 MB peak
+[2015.10.23-09.29.01:113][212]LogMemory: Physical Memory: 4276.44 MB used, 16318.82 MB total
+[2015.10.23-09.29.01:113][212]LogMemory: Virtual Memory: 2098.25 MB used, 134217728.00 MB total
+[2015.10.23-09.29.01:113][212]LogMemory: 
+[2015.10.23-09.29.01:113][212]Allocator Stats for TBB: (not implemented)
+[2015.10.23-09.29.01:113][212]LogLinker: Can't find file for asset '/Game/RollingCPP/Maps/UEDPIE_1_Map1' while loading NULL.
+[2015.10.23-09.29.01:132][212]LogWorld: PIE: Copying PIE streaming level from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1. OwningWorld: None
+[2015.10.23-09.29.01:134][212]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.29.01:148][212]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.29.01
+[2015.10.23-09.29.01:148][212]LogWorld: Bringing up level for play took: 0.013021
+[2015.10.23-09.29.01:161][213]LogNet: Client netspeed is 10000
+[2015.10.23-09.29.01:161][213]LogNet: Join request: /Game/RollingCPP/Maps/Map1?SplitscreenCount=1
+[2015.10.23-09.29.01:163][213]LogNet: Join succeeded: 264
+[2015.10.23-09.29.30:144][187]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.29.30:231][187]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.29.30:247][187]LogNet: UChannel::CleanUp: [GameNetDriver] [None] [None]. ChIndex == 0. Closing connection.
+[2015.10.23-09.29.30:247][187]LogNet: UNetConnection::Close: Name: IpConnection_9, Driver: GameNetDriver IpNetDriver_5, PC: None, Owner: None, Channels: 2, RemoteAddr: 127.0.0.1:65023, Time: 2015.10.23-09.29.30
+[2015.10.23-09.29.30:247][187]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_7
+[2015.10.23-09.29.30:247][187]LogNet: UChannel::CleanUp: [GameNetDriver] [None] [None]. ChIndex == 0. Closing connection.
+[2015.10.23-09.29.30:247][187]LogNet: UNetConnection::Close: Name: None, Driver: GameNetDriver None, PC: None, Owner: None, Channels: 1, RemoteAddr: 127.0.0.1:7777, Time: 2015.10.23-09.29.30
+[2015.10.23-09.29.30:247][187]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_6
+[2015.10.23-09.29.30:251][187]LogExit: GameNetDriver None shut down
+[2015.10.23-09.29.30:251][187]LogExit: GameNetDriver None shut down
+[2015.10.23-09.29.30:272][188]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD59F75620
+[2015.10.23-09.29.30:272][188]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD605E6340
+[2015.10.23-09.29.36:134][496]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.29.36:135][496]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.10.23-09.29.36:135][496]PIE: New page: PIE session: Map1 (Oct 23, 2015, 1:29:36 PM)
+[2015.10.23-09.29.36:135][496]LogPlayLevel: Creating play world package: /Game/RollingCPP/Maps/UEDPIE_1_Map1
+[2015.10.23-09.29.36:155][496]LogPlayLevel: PIE: StaticDuplicateObject took: (0.018458s)
+[2015.10.23-09.29.36:155][496]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.29.36:156][496]LogPlayLevel: PIE: World Init took: (0.001615s)
+[2015.10.23-09.29.36:156][496]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 (0.020375s)
+[2015.10.23-09.29.36:183][496]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.10.23-09.29.36:187][496]LogInit: FAudioDevice initialized.
+[2015.10.23-09.29.36:222][496]LogWorld: Game class is 'BOSGameMode'
+[2015.10.23-09.29.36:231][496]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.29.36
+[2015.10.23-09.29.36:231][496]LogActor:Warning: GameSession /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameSession_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.29.36:231][496]LogActor:Warning: GameNetworkManager /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameNetworkManager_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.29.36:231][496]LogWorld: Bringing up level for play took: 0.008305
+[2015.10.23-09.29.36:232][496]LogInit: WinSock: Socket queue 131072 / 131072
+[2015.10.23-09.29.36:232][496]LogNet: GameNetDriver IpNetDriver_7 IpNetDriver listening on port 7777
+[2015.10.23-09.29.36:253][496]PIE: Info Play in editor start time for /Game/RollingCPP/Maps/UEDPIE_1_Map1 0.269
+[2015.10.23-09.29.36:254][496]PIE: New page: PIE session: Map1 (Oct 23, 2015, 1:29:36 PM)
+[2015.10.23-09.29.36:289][496]LogNet: Browse: 127.0.0.1//Game/RollingCPP/Maps/Map1
+[2015.10.23-09.29.36:289][496]LogInit: WinSock: Socket queue 32768 / 32768
+[2015.10.23-09.29.36:289][496]LogNet: Game client on port 7777, rate 10000
+[2015.10.23-09.29.36:289][496]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2707645, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 1605316083
+[2015.10.23-09.29.36:312][496]PIE: Info Play in editor start time for /Game/RollingCPP/Maps/Map1 0.328
+[2015.10.23-09.29.36:313][496]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.29.36:313][496]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.10.23-09.29.36:313][496]LogNet: Open Map1 10/23/15 11:29:36 127.0.0.1
+[2015.10.23-09.29.36:313][496]LogNet: Added client connection.  Remote address = 127.0.0.1:65024
+[2015.10.23-09.29.36:313][496]LogNet: NotifyAcceptingChannel Control 0 server World /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1: Accepted
+[2015.10.23-09.29.36:313][496]LogNet: Remote platform little endian=1
+[2015.10.23-09.29.36:313][496]LogNet: This platform little endian=1
+[2015.10.23-09.29.36:313][496]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2707645, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 1605316083
+[2015.10.23-09.29.36:352][497]LogNet: Login request: /Game/RollingCPP/Maps/Map1 userId: Invalid
+[2015.10.23-09.29.36:353][497]LogNet: Welcomed by server (Level: /Game/RollingCPP/Maps/UEDPIE_1_Map1, Game: /Script/BOS.BOSGameMode)
+[2015.10.23-09.29.36:371][497]LogLoad: LoadMap: 127.0.0.1//Game/RollingCPP/Maps/UEDPIE_1_Map1?game=/Script/BOS.BOSGameMode
+[2015.10.23-09.29.36:393][497]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD5ED2D760
+[2015.10.23-09.29.36:394][497]Cmd: MEM
+[2015.10.23-09.29.36:426][497]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.29.36:426][497]LogMemory: Process Physical Memory: 823.27 MB used, 843.05 MB peak
+[2015.10.23-09.29.36:426][497]LogMemory: Process Virtual Memory: 1521.84 MB used, 1660.68 MB peak
+[2015.10.23-09.29.36:426][497]LogMemory: Physical Memory: 4285.45 MB used, 16318.82 MB total
+[2015.10.23-09.29.36:426][497]LogMemory: Virtual Memory: 2171.77 MB used, 134217728.00 MB total
+[2015.10.23-09.29.36:426][497]LogMemory: 
+[2015.10.23-09.29.36:426][497]Allocator Stats for TBB: (not implemented)
+[2015.10.23-09.29.36:426][497]LogLinker: Can't find file for asset '/Game/RollingCPP/Maps/UEDPIE_1_Map1' while loading NULL.
+[2015.10.23-09.29.36:449][497]LogWorld: PIE: Copying PIE streaming level from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1. OwningWorld: None
+[2015.10.23-09.29.36:451][497]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.29.36:460][497]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.29.36
+[2015.10.23-09.29.36:461][497]LogWorld: Bringing up level for play took: 0.008521
+[2015.10.23-09.29.36:496][498]LogNet: Client netspeed is 10000
+[2015.10.23-09.29.36:496][498]LogNet: Join request: /Game/RollingCPP/Maps/Map1?SplitscreenCount=1
+[2015.10.23-09.29.36:498][498]LogNet: Join succeeded: 266
+[2015.10.23-09.29.46:314][299]LogPackageName: SearchForPackageOnDisk took   0.037s to resolve Map1.umap.
+[2015.10.23-09.29.46:351][299]LogPackageName: SearchForPackageOnDisk took   0.036s to resolve Map1.umap.
+[2015.10.23-09.29.46:351][299]LogNet: Browse: /Game/RollingCPP/Maps/Map1?listen
+[2015.10.23-09.29.46:351][299]LogLoad: LoadMap: /Game/RollingCPP/Maps/Map1?listen
+[2015.10.23-09.29.46:351][299]LogNet: World NetDriver shutdown IpNetDriver_7 [GameNetDriver]
+[2015.10.23-09.29.46:351][299]LogNet: DestroyNamedNetDriver IpNetDriver_7 [GameNetDriver]
+[2015.10.23-09.29.46:352][299]LogNet: UNetConnection::Cleanup: Closing open connection. Name: IpConnection_11, RemoteAddr: 127.0.0.1:65024 Driver: GameNetDriver, PC: PlayerController_17, Owner: PlayerController_17
+[2015.10.23-09.29.46:352][299]LogNet: UNetConnection::Close: Name: IpConnection_11, Driver: GameNetDriver IpNetDriver_7, PC: PlayerController_17, Owner: PlayerController_17, Channels: 11, RemoteAddr: 127.0.0.1:65024, Time: 2015.10.23-09.29.46
+[2015.10.23-09.29.46:352][299]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_9
+[2015.10.23-09.29.46:352][299]LogExit: GameNetDriver IpNetDriver_7 shut down
+[2015.10.23-09.29.46:376][299]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD4685F380
+[2015.10.23-09.29.46:376][299]Cmd: MEM
+[2015.10.23-09.29.46:395][299]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.29.46:395][299]LogMemory: Process Physical Memory: 822.21 MB used, 845.57 MB peak
+[2015.10.23-09.29.46:395][299]LogMemory: Process Virtual Memory: 1534.33 MB used, 1660.68 MB peak
+[2015.10.23-09.29.46:395][299]LogMemory: Physical Memory: 4288.97 MB used, 16318.82 MB total
+[2015.10.23-09.29.46:395][299]LogMemory: Virtual Memory: 2187.20 MB used, 134217728.00 MB total
+[2015.10.23-09.29.46:395][299]LogMemory: 
+[2015.10.23-09.29.46:395][299]Allocator Stats for TBB: (not implemented)
+[2015.10.23-09.29.46:395][299]LogPlayLevel: Creating play world package: /Game/RollingCPP/Maps/UEDPIE_1_Map1
+[2015.10.23-09.29.46:415][299]LogPlayLevel: PIE: StaticDuplicateObject took: (0.019753s)
+[2015.10.23-09.29.46:416][299]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.29.46:416][299]LogPlayLevel: PIE: World Init took: (0.001560s)
+[2015.10.23-09.29.46:417][299]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 (0.021634s)
+[2015.10.23-09.29.46:417][299]LogWorld: Game class is 'BOSGameMode'
+[2015.10.23-09.29.46:417][299]LogInit: WinSock: Socket queue 131072 / 131072
+[2015.10.23-09.29.46:418][299]LogNet: GameNetDriver IpNetDriver_9 IpNetDriver listening on port 7777
+[2015.10.23-09.29.46:429][299]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.29.46
+[2015.10.23-09.29.46:429][299]LogActor:Warning: GameSession /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameSession_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.29.46:429][299]LogActor:Warning: GameNetworkManager /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameNetworkManager_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.29.46:429][299]LogWorld: Bringing up level for play took: 0.011089
+[2015.10.23-09.29.46:431][299]LogNet:Warning: Network Failure: GameNetDriver[FailureReceived]: Host closed the connection.
+[2015.10.23-09.29.46:431][299]LogNet:Warning: Network Failure: GameNetDriver[FailureReceived]: Host closed the connection.
+[2015.10.23-09.29.46:431][299]LogNet: NetworkFailure: FailureReceived, Error: 'Host closed the connection.'
+[2015.10.23-09.29.46:431][299]LogNet: UNetConnection::Close: Name: IpConnection_10, Driver: GameNetDriver IpNetDriver_8, PC: PlayerController_18, Owner: PlayerController_18, Channels: 11, RemoteAddr: 127.0.0.1:7777, Time: 2015.10.23-09.29.46
+[2015.10.23-09.29.46:431][299]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_8
+[2015.10.23-09.29.46:431][299]LogNet:Warning: Network Failure: GameNetDriver[ConnectionLost]: Your connection to the host has been lost.
+[2015.10.23-09.29.46:431][299]LogNet:Warning: Network Failure: GameNetDriver[ConnectionLost]: Your connection to the host has been lost.
+[2015.10.23-09.29.46:431][299]LogNet: NetworkFailure: ConnectionLost, Error: 'Your connection to the host has been lost.'
+[2015.10.23-09.29.46:431][299]LogNet:Warning: FObjectReplicator::UpdateUnmappedObjects: Connection->State == USOCK_Closed
+[2015.10.23-09.29.46:431][299]LogNet:Warning: FObjectReplicator::UpdateUnmappedObjects: Connection->State == USOCK_Closed
+[2015.10.23-09.29.46:444][300]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.10.23-09.29.46:445][300]LogNet: Open Map1 10/23/15 11:29:46 127.0.0.1
+[2015.10.23-09.29.46:445][300]LogNet: Added client connection.  Remote address = 127.0.0.1:65024
+[2015.10.23-09.29.46:445][300]LogNetTraffic:Warning: High single frame packet loss: 787
+[2015.10.23-09.29.46:445][300]LogSecurity:Warning: 127.0.0.1:65024: Malformed_Packet: UNetConnection::ReceivedPacket: Received control channel close before open
+[2015.10.23-09.29.46:445][300]LogSecurity:Warning: 127.0.0.1:65024: Closed: Connection closed
+[2015.10.23-09.29.46:445][300]LogNet: UNetConnection::Close: Name: IpConnection_12, Driver: GameNetDriver IpNetDriver_9, PC: NULL, Owner: NULL, Channels: 2, RemoteAddr: 127.0.0.1:65024, Time: 2015.10.23-09.29.46
+[2015.10.23-09.29.46:445][300]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_10
+[2015.10.23-09.29.46:445][300]LogNet: Browse: /Game/RollingCPP/Maps/Map1?closed
+[2015.10.23-09.29.46:445][300]LogNet: Failed; returning to Entry
+[2015.10.23-09.29.46:477][300]LogLoad: LoadMap: /Game/RollingCPP/Maps/Map1?closed
+[2015.10.23-09.29.46:477][300]LogNet: World NetDriver shutdown IpNetDriver_8 [GameNetDriver]
+[2015.10.23-09.29.46:477][300]LogNet: DestroyNamedNetDriver IpNetDriver_8 [GameNetDriver]
+[2015.10.23-09.29.46:478][300]LogExit: GameNetDriver IpNetDriver_8 shut down
+[2015.10.23-09.29.46:501][300]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD426C6FC0
+[2015.10.23-09.29.46:501][300]Cmd: MEM
+[2015.10.23-09.29.46:521][300]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.29.46:521][300]LogMemory: Process Physical Memory: 827.80 MB used, 845.57 MB peak
+[2015.10.23-09.29.46:521][300]LogMemory: Process Virtual Memory: 1517.60 MB used, 1670.24 MB peak
+[2015.10.23-09.29.46:521][300]LogMemory: Physical Memory: 4295.16 MB used, 16318.82 MB total
+[2015.10.23-09.29.46:521][300]LogMemory: Virtual Memory: 2162.45 MB used, 134217728.00 MB total
+[2015.10.23-09.29.46:521][300]LogMemory: 
+[2015.10.23-09.29.46:521][300]Allocator Stats for TBB: (not implemented)
+[2015.10.23-09.29.46:521][300]LogPlayLevel: Creating play world package: /Game/RollingCPP/Maps/UEDPIE_2_Map1
+[2015.10.23-09.29.46:541][300]LogPlayLevel: PIE: StaticDuplicateObject took: (0.020474s)
+[2015.10.23-09.29.46:542][300]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.29.46:543][300]LogPlayLevel: PIE: World Init took: (0.000999s)
+[2015.10.23-09.29.46:543][300]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1 (0.021836s)
+[2015.10.23-09.29.46:543][300]LogWorld: Game class is 'BOSGameMode'
+[2015.10.23-09.29.46:552][300]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.29.46
+[2015.10.23-09.29.46:552][300]LogActor:Warning: GameSession /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1:PersistentLevel.GameSession_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.29.46:552][300]LogActor:Warning: GameNetworkManager /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1:PersistentLevel.GameNetworkManager_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.10.23-09.29.46:552][300]LogWorld: Bringing up level for play took: 0.008405
+[2015.10.23-09.29.46:584][301]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.10.23-09.29.46:584][301]LogNet: Open Map1 10/23/15 11:29:46 127.0.0.1
+[2015.10.23-09.29.46:584][301]LogNet: Added client connection.  Remote address = 127.0.0.1:65024
+[2015.10.23-09.29.46:584][301]LogNetTraffic:Warning: High single frame packet loss: 788
+[2015.10.23-09.29.46:802][322]LogNet: UNetConnection::Cleanup: Closing open connection. Name: IpConnection_13, RemoteAddr: 127.0.0.1:65024 Driver: GameNetDriver, PC: NoPC, Owner: No Owner
+[2015.10.23-09.29.46:802][322]LogNet: UNetConnection::Close: Name: IpConnection_13, Driver: GameNetDriver IpNetDriver_9, PC: NULL, Owner: NULL, Channels: 1, RemoteAddr: 127.0.0.1:65024, Time: 2015.10.23-09.29.46
+[2015.10.23-09.29.52:418][828]LogNet: Browse: 127.0.0.1//Game/RollingCPP/Maps/Map1
+[2015.10.23-09.29.52:418][828]LogInit: WinSock: Socket queue 32768 / 32768
+[2015.10.23-09.29.52:418][828]LogNet: Game client on port 7777, rate 10000
+[2015.10.23-09.29.52:418][828]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2707645, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 1605316083
+[2015.10.23-09.29.52:429][829]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.10.23-09.29.52:429][829]LogNet: Open Map1 10/23/15 11:29:52 127.0.0.1
+[2015.10.23-09.29.52:429][829]LogNet: Added client connection.  Remote address = 127.0.0.1:55534
+[2015.10.23-09.29.52:429][829]LogNet: NotifyAcceptingChannel Control 0 server World /Game/RollingCPP/Maps/UEDPIE_1_Map1.Map1: Accepted
+[2015.10.23-09.29.52:429][829]LogNet: Remote platform little endian=1
+[2015.10.23-09.29.52:430][829]LogNet: This platform little endian=1
+[2015.10.23-09.29.52:430][829]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2707645, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 1605316083
+[2015.10.23-09.29.52:440][830]LogNet: Login request: /Game/RollingCPP/Maps/Map1 userId: Invalid
+[2015.10.23-09.29.52:441][830]LogNet: Welcomed by server (Level: /Game/RollingCPP/Maps/UEDPIE_1_Map1, Game: /Script/BOS.BOSGameMode)
+[2015.10.23-09.29.52:441][830]LogLoad: LoadMap: 127.0.0.1//Game/RollingCPP/Maps/UEDPIE_1_Map1?game=/Script/BOS.BOSGameMode
+[2015.10.23-09.29.52:464][830]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD426C5800
+[2015.10.23-09.29.52:464][830]Cmd: MEM
+[2015.10.23-09.29.52:485][830]LogMemory: Platform Memory Stats for Windows
+[2015.10.23-09.29.52:485][830]LogMemory: Process Physical Memory: 823.13 MB used, 848.40 MB peak
+[2015.10.23-09.29.52:485][830]LogMemory: Process Virtual Memory: 1449.95 MB used, 1670.24 MB peak
+[2015.10.23-09.29.52:485][830]LogMemory: Physical Memory: 4289.79 MB used, 16318.82 MB total
+[2015.10.23-09.29.52:485][830]LogMemory: Virtual Memory: 2103.08 MB used, 134217728.00 MB total
+[2015.10.23-09.29.52:485][830]LogMemory: 
+[2015.10.23-09.29.52:485][830]Allocator Stats for TBB: (not implemented)
+[2015.10.23-09.29.52:485][830]LogLinker: Can't find file for asset '/Game/RollingCPP/Maps/UEDPIE_1_Map1' while loading NULL.
+[2015.10.23-09.29.52:507][830]LogWorld: PIE: Copying PIE streaming level from /Game/RollingCPP/Maps/Map1.Map1 to /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1. OwningWorld: None
+[2015.10.23-09.29.52:508][830]LogAIModule: Creating AISystem for world Map1
+[2015.10.23-09.29.52:521][830]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_2_Map1.Map1 up for play (max tick rate 0) at 2015.10.23-11.29.52
+[2015.10.23-09.29.52:521][830]LogWorld: Bringing up level for play took: 0.012250
+[2015.10.23-09.29.52:533][831]LogNet: Client netspeed is 10000
+[2015.10.23-09.29.52:533][831]LogNet: Join request: /Game/RollingCPP/Maps/Map1?SplitscreenCount=1
+[2015.10.23-09.29.52:535][831]LogNet: Join succeeded: 269
+[2015.10.23-09.30.22:703][645]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.30.22:767][645]LogSpawn:Warning: SpawnActor failed because we are in the process of tearing down the world
+[2015.10.23-09.30.22:804][645]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/RollingCPP/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/RollingCPP/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.10.23-09.30.22:819][645]LogNet: UChannel::CleanUp: [GameNetDriver] [None] [None]. ChIndex == 0. Closing connection.
+[2015.10.23-09.30.22:819][645]LogNet: UNetConnection::Close: Name: IpConnection_15, Driver: GameNetDriver IpNetDriver_9, PC: None, Owner: None, Channels: 2, RemoteAddr: 127.0.0.1:55534, Time: 2015.10.23-09.30.22
+[2015.10.23-09.30.22:819][645]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_12
+[2015.10.23-09.30.22:819][645]LogNet: UChannel::CleanUp: [GameNetDriver] [None] [None]. ChIndex == 0. Closing connection.
+[2015.10.23-09.30.22:819][645]LogNet: UNetConnection::Close: Name: None, Driver: GameNetDriver None, PC: None, Owner: None, Channels: 1, RemoteAddr: 127.0.0.1:7777, Time: 2015.10.23-09.30.22
+[2015.10.23-09.30.22:819][645]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: ControlChannel_11
+[2015.10.23-09.30.22:823][645]LogExit: GameNetDriver None shut down
+[2015.10.23-09.30.22:823][645]LogExit: GameNetDriver None shut down
+[2015.10.23-09.30.22:843][646]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD599BFC40
+[2015.10.23-09.30.22:843][646]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD1C5F7060
+[2015.10.23-09.30.23:729][751]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Ground)
+[2015.10.23-09.30.24:855][866]LogSavePackage: Save=97.296669ms
+[2015.10.23-09.30.24:855][866]LogSavePackage: Moving '../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Saved/Map13BF3DC9C40EA4C04D20F0DBC2D3EB560.tmp' to '../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Content/RollingCPP/Maps/Map1.umap'
+[2015.10.23-09.30.24:857][866]LogSavePackage: Total save time: 107.087914ms
+[2015.10.23-09.30.24:857][866]LogSavePackage:Warning: Finished SavePackage ../../../../../../Users/Spellabbet/Documents/Unreal Projects/BOS/Content/RollingCPP/Maps/Map1.umap
+[2015.10.23-09.30.26:798][ 74]LogWindowsTextInputMethodSystem:Display: IME system now deactivated.
+[2015.10.23-09.30.27:027][ 75]Cmd: QUIT_EDITOR
+[2015.10.23-09.30.27:709][ 75]LogExit: Preparing to exit.
+[2015.10.23-09.30.28:926][ 75]LogExit: Editor shut down
+[2015.10.23-09.30.28:926][ 75]LogExit: Transaction tracking system shut down
+[2015.10.23-09.30.28:926][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD13D82E80
+[2015.10.23-09.30.28:927][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD140F1580
+[2015.10.23-09.30.28:928][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD09F00400
+[2015.10.23-09.30.28:928][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD09F01620
+[2015.10.23-09.30.28:929][ 75]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000AD070F5440
+[2015.10.23-09.30.29:059][ 75]LogExit: Object subsystem successfully closed.
+[2015.10.23-09.30.29:071][ 75]LogD3D11RHI: Shutdown
+[2015.10.23-09.30.29:071][ 75]LogD3D11RHI: CleanupD3DDevice
+[2015.10.23-09.30.29:107][ 75]LogD3D11RHI: ~FD3D11DynamicRHI
+[2015.10.23-09.30.29:119][ 75]LogModuleManager: Shutting down and abandoning module SequencerWidgets (201)
+[2015.10.23-09.30.29:119][ 75]LogModuleManager: Shutting down and abandoning module BlueprintGraph (200)
+[2015.10.23-09.30.29:119][ 75]LogModuleManager: Shutting down and abandoning module StatsViewer (199)
+[2015.10.23-09.30.29:119][ 75]LogModuleManager: Shutting down and abandoning module ExternalImagePicker (198)
+[2015.10.23-09.30.29:119][ 75]LogModuleManager: Shutting down and abandoning module CrashTracker (197)
+[2015.10.23-09.30.29:119][ 75]LogModuleManager: Shutting down and abandoning module SceneOutliner (196)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module SuperSearch (195)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module WidgetCarousel (194)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module AddContentDialog (193)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module EditorWidgets (192)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module CollectionManager (191)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module FoliageEdit (190)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module LandscapeEditor (189)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module ActorPickerMode (188)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module GeometryMode (187)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module TextureAlignMode (186)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module BspMode (185)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module PlacementMode (184)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module AutomationWorker (183)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module CharacterAI (182)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module SmartSnapping (181)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module ViewportSnapping (180)
+[2015.10.23-09.30.29:120][ 75]LogModuleManager: Shutting down and abandoning module LogVisualizer (179)
+[2015.10.23-09.30.29:121][ 75]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (178)
+[2015.10.23-09.30.29:121][ 75]LogModuleManager: Shutting down and abandoning module IntroTutorials (177)
+[2015.10.23-09.30.29:121][ 75]LogModuleManager: Shutting down and abandoning module EditorLiveStreaming (176)
+[2015.10.23-09.30.29:121][ 75]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (175)
+[2015.10.23-09.30.29:121][ 75]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (174)
+[2015.10.23-09.30.29:121][ 75]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (173)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (172)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (171)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (170)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module MergeActors (169)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module SizeMap (168)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module TreeMap (167)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module ReferenceViewer (166)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module LocalizationService (165)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (164)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module HardwareTargeting (163)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (162)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module UndoHistory (161)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (160)
+[2015.10.23-09.30.29:547][ 75]LogModuleManager: Shutting down and abandoning module UserFeedback (159)
+[2015.10.23-09.30.29:548][ 75]LogModuleManager: Shutting down and abandoning module XmlParser (158)
+[2015.10.23-09.30.29:548][ 75]LogModuleManager: Shutting down and abandoning module Blutility (157)
+[2015.10.23-09.30.29:548][ 75]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (156)
+[2015.10.23-09.30.29:548][ 75]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (155)
+[2015.10.23-09.30.29:548][ 75]LogModuleManager: Shutting down and abandoning module InputBindingEditor (154)
+[2015.10.23-09.30.29:548][ 75]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (153)
+[2015.10.23-09.30.29:548][ 75]LogModuleManager: Shutting down and abandoning module SettingsEditor (152)
+[2015.10.23-09.30.29:549][ 75]LogModuleManager: Shutting down and abandoning module ProjectLauncher (151)
+[2015.10.23-09.30.29:549][ 75]LogModuleManager: Shutting down and abandoning module SessionFrontend (150)
+[2015.10.23-09.30.29:549][ 75]LogModuleManager: Shutting down and abandoning module ProfilerClient (149)
+[2015.10.23-09.30.29:549][ 75]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (148)
+[2015.10.23-09.30.29:549][ 75]LogModuleManager: Shutting down and abandoning module DeviceManager (147)
+[2015.10.23-09.30.29:549][ 75]LogModuleManager: Shutting down and abandoning module AutomationController (146)
+[2015.10.23-09.30.29:549][ 75]LogModuleManager: Shutting down and abandoning module AutomationWindow (145)
+[2015.10.23-09.30.29:549][ 75]LogModuleManager: Shutting down and abandoning module Layers (144)
+[2015.10.23-09.30.29:549][ 75]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (143)
+[2015.10.23-09.30.29:549][ 75]LogModuleManager: Shutting down and abandoning module DetailCustomizations (142)
+[2015.10.23-09.30.29:549][ 75]LogModuleManager: Shutting down and abandoning module PackagesDialog (141)
+[2015.10.23-09.30.29:550][ 75]LogModuleManager: Shutting down and abandoning module Persona (140)
+[2015.10.23-09.30.29:550][ 75]LogModuleManager: Shutting down and abandoning module Kismet (139)
+[2015.10.23-09.30.29:550][ 75]LogModuleManager: Shutting down and abandoning module GraphEditor (138)
+[2015.10.23-09.30.29:550][ 75]LogModuleManager: Shutting down and abandoning module ClassViewer (137)
+[2015.10.23-09.30.29:550][ 75]LogModuleManager: Shutting down and abandoning module Toolbox (136)
+[2015.10.23-09.30.29:550][ 75]LogModuleManager: Shutting down and abandoning module ModuleUI (135)
+[2015.10.23-09.30.29:550][ 75]LogModuleManager: Shutting down and abandoning module MovieSceneTools (134)
+[2015.10.23-09.30.29:550][ 75]LogModuleManager: Shutting down and abandoning module OutputLog (133)
+[2015.10.23-09.30.29:550][ 75]LogModuleManager: Shutting down and abandoning module GammaUI (132)
+[2015.10.23-09.30.29:550][ 75]LogModuleManager: Shutting down and abandoning module Documentation (131)
+[2015.10.23-09.30.29:550][ 75]LogModuleManager: Shutting down and abandoning module GameLiveStreaming (130)
+[2015.10.23-09.30.29:551][ 75]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (129)
+[2015.10.23-09.30.29:551][ 75]LogModuleManager: Shutting down and abandoning module AnalyticsET (128)
+[2015.10.23-09.30.29:551][ 75]LogModuleManager: Shutting down and abandoning module Analytics (127)
+[2015.10.23-09.30.29:551][ 75]LogModuleManager: Shutting down and abandoning module AITestSuite (126)
+[2015.10.23-09.30.29:551][ 75]LogModuleManager: Shutting down and abandoning module GameplayDebugger (125)
+[2015.10.23-09.30.29:551][ 75]LogModuleManager: Shutting down and abandoning module AIModule (124)
+[2015.10.23-09.30.29:551][ 75]LogModuleManager: Shutting down and abandoning module ProfilerService (123)
+[2015.10.23-09.30.29:743][ 75]LogModuleManager: Shutting down and abandoning module TaskGraph (122)
+[2015.10.23-09.30.29:743][ 75]LogModuleManager: Shutting down and abandoning module SlateRemote (121)
+[2015.10.23-09.30.29:743][ 75]LogModuleManager: Shutting down and abandoning module SteamVRController (120)
+[2015.10.23-09.30.29:743][ 75]LogModuleManager: Shutting down and abandoning module SteamVR (119)
+[2015.10.23-09.30.29:743][ 75]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (118)
+[2015.10.23-09.30.29:743][ 75]LogModuleManager: Shutting down and abandoning module OculusRift (117)
+[2015.10.23-09.30.29:743][ 75]LogModuleManager: Shutting down and abandoning module OculusLibrary (116)
+[2015.10.23-09.30.29:743][ 75]LogModuleManager: Shutting down and abandoning module LeapMotionController (115)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (114)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module CableComponent (113)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (112)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module MessagingDebugger (111)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (110)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module HTML5Networking (109)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (108)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module PluginBrowser (107)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module EpicSurvey (106)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module DesktopPlatform (105)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (104)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module UObjectPlugin (103)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (102)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (101)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module SourceControl (100)
+[2015.10.23-09.30.29:764][ 75]LogModuleManager: Shutting down and abandoning module GitSourceControl (99)
+[2015.10.23-09.30.29:765][ 75]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (98)
+[2015.10.23-09.30.29:765][ 75]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (97)
+[2015.10.23-09.30.29:765][ 75]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (96)
+[2015.10.23-09.30.29:765][ 75]LogModuleManager: Shutting down and abandoning module MeshPaint (95)
+[2015.10.23-09.30.29:765][ 75]LogModuleManager: Shutting down and abandoning module SlateReflector (94)
+[2015.10.23-09.30.29:765][ 75]LogModuleManager: Shutting down and abandoning module HotReload (93)
+[2015.10.23-09.30.29:765][ 75]LogModuleManager: Shutting down and abandoning module MainFrame (92)
+[2015.10.23-09.30.29:765][ 75]LogModuleManager: Shutting down and abandoning module LevelEditor (91)
+[2015.10.23-09.30.29:767][ 75]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (90)
+[2015.10.23-09.30.29:767][ 75]LogModuleManager: Shutting down and abandoning module AssetRegistry (89)
+[2015.10.23-09.30.29:869][ 75]LogModuleManager: Shutting down and abandoning module ContentBrowser (88)
+[2015.10.23-09.30.29:870][ 75]LogModuleManager: Shutting down and abandoning module Paper2DEditor (87)
+[2015.10.23-09.30.29:870][ 75]LogModuleManager: Shutting down and abandoning module BOS (86)
+[2015.10.23-09.30.29:870][ 75]LogModuleManager: Shutting down and abandoning module UdpMessaging (85)
+[2015.10.23-09.30.29:971][ 75]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (84)
+[2015.10.23-09.30.29:971][ 75]LogModuleManager: Shutting down and abandoning module Paper2D (83)
+[2015.10.23-09.30.29:971][ 75]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (82)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module Media (81)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module WmfMedia (80)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (79)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (78)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module PropertyEditor (77)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (76)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module FunctionalTesting (75)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (74)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (73)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module MessageLog (72)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module Sequencer (71)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module AssetTools (70)
+[2015.10.23-09.30.29:978][ 75]LogModuleManager: Shutting down and abandoning module UMGEditor (69)
+[2015.10.23-09.30.29:979][ 75]LogModuleManager: Shutting down and abandoning module UMG (68)
+[2015.10.23-09.30.29:979][ 75]LogModuleManager: Shutting down and abandoning module Slate (67)
+[2015.10.23-09.30.29:979][ 75]LogModuleManager: Shutting down and abandoning module EditorStyle (66)
+[2015.10.23-09.30.29:985][ 75]LogModuleManager: Shutting down and abandoning module SessionServices (65)
+[2015.10.23-09.30.29:985][ 75]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (64)
+[2015.10.23-09.30.29:985][ 75]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (63)
+[2015.10.23-09.30.29:985][ 75]LogModuleManager: Shutting down and abandoning module XAudio2 (62)
+[2015.10.23-09.30.29:985][ 75]LogModuleManager: Shutting down and abandoning module Networking (60)
+[2015.10.23-09.30.29:985][ 75]LogModuleManager: Shutting down and abandoning module Core (59)
+[2015.10.23-09.30.29:985][ 75]LogModuleManager: Shutting down and abandoning module KismetCompiler (58)
+[2015.10.23-09.30.29:985][ 75]LogModuleManager: Shutting down and abandoning module PhysXFormats (57)
+[2015.10.23-09.30.29:985][ 75]LogModuleManager: Shutting down and abandoning module MeshUtilities (56)
+[2015.10.23-09.30.29:985][ 75]LogModuleManager: Shutting down and abandoning module CookingStats (55)
+[2015.10.23-09.30.29:989][ 75]LogModuleManager: Shutting down and abandoning module DerivedDataCache (54)
+[2015.10.23-09.30.30:017][ 75]LogDerivedDataCache: Shutdown
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (53)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (52)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (51)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (50)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (49)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (48)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (47)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module ImageWrapper (46)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (45)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module TextureFormatAndroid (44)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (43)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (42)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (41)
+[2015.10.23-09.30.30:017][ 75]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (40)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (39)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (38)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module Messaging (37)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (36)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (35)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module Android_PVRTCTargetPlatform (34)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module Android_ETC2TargetPlatform (33)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module Android_ETC1TargetPlatform (32)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module Android_DXTTargetPlatform (31)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module Android_ATCTargetPlatform (30)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module Android_ASTCTargetPlatform (29)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (28)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (27)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (26)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (25)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (24)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (23)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module TargetPlatform (22)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module InputCore (21)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module Settings (20)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (18)
+[2015.10.23-09.30.30:018][ 75]LogModuleManager: Shutting down and abandoning module HTTP (17)
+[2015.10.23-09.30.31:021][ 75]LogModuleManager: Shutting down and abandoning module XMPP (16)
+[2015.10.23-09.30.31:021][ 75]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (15)
+[2015.10.23-09.30.31:021][ 75]LogModuleManager: Shutting down and abandoning module TextureCompressor (14)
+[2015.10.23-09.30.31:021][ 75]LogModuleManager: Shutting down and abandoning module ShaderCore (13)
+[2015.10.23-09.30.31:021][ 75]LogModuleManager: Shutting down and abandoning module Landscape (12)
+[2015.10.23-09.30.31:021][ 75]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (11)
+[2015.10.23-09.30.31:022][ 75]LogModuleManager: Shutting down and abandoning module OpenGLDrv (10)
+[2015.10.23-09.30.31:022][ 75]LogModuleManager: Shutting down and abandoning module D3D11RHI (9)
+[2015.10.23-09.30.31:022][ 75]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (8)
+[2015.10.23-09.30.31:022][ 75]LogModuleManager: Shutting down and abandoning module Renderer (7)
+[2015.10.23-09.30.31:022][ 75]LogModuleManager: Shutting down and abandoning module Engine (6)
+[2015.10.23-09.30.31:022][ 75]LogModuleManager: Shutting down and abandoning module CoreUObject (5)
+[2015.10.23-09.30.31:022][ 75]LogModuleManager: Shutting down and abandoning module NetworkFile (4)
+[2015.10.23-09.30.31:022][ 75]LogModuleManager: Shutting down and abandoning module StreamingFile (3)
+[2015.10.23-09.30.31:022][ 75]LogModuleManager: Shutting down and abandoning module SandboxFile (2)
+[2015.10.23-09.30.31:022][ 75]LogModuleManager: Shutting down and abandoning module PakFile (1)
+[2015.10.23-09.30.31:023][ 75]LogExit: Exiting.
+[2015.10.23-09.30.31:039][ 75]Log file closed, 10/23/15 11:30:31
