@@ -37,7 +37,7 @@ ABOSBall::ABOSBall()
 	// Set up forces
 	RollTorque = 50000000.0f;
 	JumpImpulse = 350000.0f;
-	MaxDashImpulse = 1000000.0f;
+	MaxDashImpulse = 3000000.0f;
 	DashChargeRate = 500000.0f;
 	DashImpulse = 0.0f;
 	bCanJump = true; // Start being able to jump
