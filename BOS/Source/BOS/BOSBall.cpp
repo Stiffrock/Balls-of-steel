@@ -22,7 +22,7 @@ ABOSBall::ABOSBall()
 	// Create a camera boom attached to the root (ball)
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm0"));
 	SpringArm->AttachTo(RootComponent);
-	SpringArm->bDoCollisionTest = false;
+	SpringArm->bDoCollisionTest = true;
 	SpringArm->bAbsoluteRotation = true; // Rotation of the ball should not affect rotation of boom
 	SpringArm->RelativeRotation = FRotator(-45.f, 0.f, 0.f);
 	SpringArm->TargetArmLength = 1200.f;
@@ -37,33 +37,91 @@ ABOSBall::ABOSBall()
 	// Set up forces
 	RollTorque = 50000000.0f;
 	JumpImpulse = 350000.0f;
+	MaxDashImpulse = 1000000.0f;
+	DashChargeRate = 500000.0f;
+	DashImpulse = 0.0f;
 	bCanJump = true; // Start being able to jump
+	dashCharging = false;
 }
 
+void ABOSBall::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	if (dashCharging)
+		DashImpulse += DashChargeRate * DeltaTime;
+	DashImpulse = FMath::Clamp(DashImpulse, 0.0f, MaxDashImpulse);
+}
 
 void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 {
 	// set up gameplay key bindings
-	InputComponent->BindAxis("MoveRight", this, &ABOSBall::MoveRight);
+	InputComponent->BindAxis("YawCamera", this, &ABOSBall::YawCamera);
+	InputComponent->BindAxis("PitchCamera", this, &ABOSBall::PitchCamera);
 	InputComponent->BindAxis("MoveForward", this, &ABOSBall::MoveForward);
+	InputComponent->BindAxis("MoveRight", this, &ABOSBall::MoveRight);
 
+	InputComponent->BindAction("Dash", IE_Pressed, this, &ABOSBall::DashCharge);
+	InputComponent->BindAction("Dash", IE_Released, this, &ABOSBall::DashRelease);
 	InputComponent->BindAction("Jump", IE_Pressed, this, &ABOSBall::Jump);
+}
+
+void ABOSBall::YawCamera(float Val)
+{
+	FRotator newRotation = SpringArm->GetComponentRotation();
+	newRotation.Yaw += Val;
+	SpringArm->SetRelativeRotation(newRotation);
+}
+
+void ABOSBall::PitchCamera(float Val)
+{
+	FRotator newRotation = SpringArm->GetComponentRotation();
+	newRotation.Pitch = FMath::Clamp(newRotation.Pitch + Val, -80.0f, 80.0f);
+	SpringArm->SetRelativeRotation(newRotation);
 }
 
 void ABOSBall::MoveRight(float Val)
 {
-	const FVector Torque = FVector(-1.f * Val * RollTorque, 0.f, 0.f);
+	FVector Direction = SpringArm->GetForwardVector();
+	Direction.Z = 0;
+	const FVector Torque = Direction * -FMath::Clamp(Val, -1.0f, 1.0f) * RollTorque;
 	Add_Torque(Torque);
-	//Ball->AddTorque(Torque);
 }
 
 void ABOSBall::MoveForward(float Val)
 {
-	const FVector Torque = FVector(0.f, Val * RollTorque, 0.f);
+	FVector Direction = SpringArm->GetRightVector();
+	Direction.Z = 0;
+	const FVector Torque = Direction * 	FMath::Clamp(Val, -1.0f, 1.0f) * RollTorque;
 	Add_Torque(Torque);
-	//Ball->AddTorque(Torque);	
 }
 
+void ABOSBall::DashCharge()
+{
+	dashCharging = true;
+}
+
+void ABOSBall::DashRelease()
+{
+	const FVector Impulse = SpringArm->GetForwardVector() * DashImpulse;
+	Add_Impulse(Impulse);
+	DashImpulse = 0.0f;
+	dashCharging = false;
+}
+
+//void ABOSBall::MoveRight(float Val)
+//{
+//	const FVector Torque = FVector(-1.f * Val * RollTorque, 0.f, 0.f);
+//	Add_Torque(Torque);
+//	//Ball->AddTorque(Torque);
+//}
+//
+//void ABOSBall::MoveForward(float Val)
+//{
+//	const FVector Torque = FVector(0.f, Val * RollTorque, 0.f);
+//	Add_Torque(Torque);
+//	//Ball->AddTorque(Torque);	
+//}
+//
 void ABOSBall::Jump()
 {
 	if(bCanJump)

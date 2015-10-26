@@ -23,6 +23,9 @@ class ABOSBall : public APawn
 public:
 	ABOSBall();
 
+	void Tick(float DeltaTime) override;
+
+
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Add_Torque(FVector torque);	
 	void Add_Torque_Implementation(FVector torque);
@@ -33,6 +36,12 @@ public:
 	void Add_Impulse_Implementation(FVector torque);
 	bool Add_Impulse_Validate(FVector torque);
 
+	UPROPERTY(EditAnywhere, Category = Ball)
+	float MaxDashImpulse;
+	UPROPERTY(EditAnywhere, Category = Ball)
+	float DashChargeRate;
+	float DashImpulse;
+
 	UPROPERTY(EditAnywhere, Category=Ball)
 	float JumpImpulse;
 
@@ -40,8 +49,15 @@ public:
 	float RollTorque;
 
 	bool bCanJump;
+	bool dashCharging;
 
 protected:
+
+	void YawCamera(float Val);
+	void PitchCamera(float Val);
+
+	void DashCharge();
+	void DashRelease();
 
 	void MoveRight(float Val);
 
