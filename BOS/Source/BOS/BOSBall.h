@@ -25,7 +25,6 @@ public:
 
 	void Tick(float DeltaTime) override;
 
-
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Add_Torque(FVector torque);	
 	void Add_Torque_Implementation(FVector torque);
@@ -38,6 +37,7 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = Ball)
 	float MaxDashImpulse;
+
 	UPROPERTY(EditAnywhere, Category = Ball)
 	float DashChargeRate;
 	float DashImpulse;
@@ -52,6 +52,7 @@ public:
 	bool dashCharging;
 
 protected:
+	void Fire();
 
 	void YawCamera(float Val);
 	void PitchCamera(float Val);
@@ -64,6 +65,9 @@ protected:
 	void MoveForward(float Val);
 
 	void Jump();
+
+	UPROPERTY()
+	TSubclassOf<class ABasicProjectile> ABasicProjectile_BP;
 
 	// AActor interface
 	virtual void NotifyHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override;

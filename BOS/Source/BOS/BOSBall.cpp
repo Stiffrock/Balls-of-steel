@@ -2,6 +2,7 @@
 
 #include "BOS.h"
 #include "BOSBall.h"
+#include "BasicProjectile.h"
 
 ABOSBall::ABOSBall()
 {
@@ -42,6 +43,11 @@ ABOSBall::ABOSBall()
 	DashImpulse = 0.0f;
 	bCanJump = true; // Start being able to jump
 	dashCharging = false;
+
+	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint(TEXT("Blueprint'/Game/BasicProjectile_BP.BasicProjectile_BP'"));
+	if (ItemBlueprint.Object){
+		ABasicProjectile_BP = (UClass*)ItemBlueprint.Object->GeneratedClass;
+	}
 }
 
 void ABOSBall::Tick(float DeltaTime)
@@ -55,14 +61,18 @@ void ABOSBall::Tick(float DeltaTime)
 void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 {
 	// set up gameplay key bindings
+
+	//Bind Axis
 	InputComponent->BindAxis("YawCamera", this, &ABOSBall::YawCamera);
 	InputComponent->BindAxis("PitchCamera", this, &ABOSBall::PitchCamera);
 	InputComponent->BindAxis("MoveForward", this, &ABOSBall::MoveForward);
 	InputComponent->BindAxis("MoveRight", this, &ABOSBall::MoveRight);
 
+	//Bind Action
 	InputComponent->BindAction("Dash", IE_Pressed, this, &ABOSBall::DashCharge);
 	InputComponent->BindAction("Dash", IE_Released, this, &ABOSBall::DashRelease);
 	InputComponent->BindAction("Jump", IE_Pressed, this, &ABOSBall::Jump);
+	InputComponent->BindAction("Fire", IE_Pressed, this, &ABOSBall::Fire);
 }
 
 void ABOSBall::YawCamera(float Val)
@@ -108,20 +118,6 @@ void ABOSBall::DashRelease()
 	dashCharging = false;
 }
 
-//void ABOSBall::MoveRight(float Val)
-//{
-//	const FVector Torque = FVector(-1.f * Val * RollTorque, 0.f, 0.f);
-//	Add_Torque(Torque);
-//	//Ball->AddTorque(Torque);
-//}
-//
-//void ABOSBall::MoveForward(float Val)
-//{
-//	const FVector Torque = FVector(0.f, Val * RollTorque, 0.f);
-//	Add_Torque(Torque);
-//	//Ball->AddTorque(Torque);	
-//}
-//
 void ABOSBall::Jump()
 {
 	if(bCanJump)
@@ -156,4 +152,21 @@ void ABOSBall::Add_Impulse_Implementation(FVector impulse)
 bool ABOSBall::Add_Impulse_Validate(FVector torque)
 {
 	return true;
+}
+
+void ABOSBall::Fire()
+{
+	const FRotator SpawnRotation = SpringArm->GetComponentRotation();
+	const FVector SpawnLocation = GetActorLocation() + FVector(0.f, 0.f, 200.0f);
+
+	UWorld* const World = GetWorld();
+	if (World != NULL)
+	{
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.Instigator = this;
+		ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
+
+		//World->SpawnActor<AMyProjectile>(AMyProjectile::StaticClass(), SpawnLocation, SpawnRotation);
+	}
+
 }

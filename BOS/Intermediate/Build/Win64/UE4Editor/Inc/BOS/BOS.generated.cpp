@@ -9,6 +9,11 @@
 #include "BOS.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBOS() {}
+	void ABasicProjectile::StaticRegisterNativesABasicProjectile()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(ABasicProjectile::StaticClass(),"OnHit",(Native)&ABasicProjectile::execOnHit);
+	}
+	IMPLEMENT_CLASS(ABasicProjectile, 2956645023);
 	void ABOSBall::Add_Impulse(FVector impulse)
 	{
 		BOSBall_eventAdd_Impulse_Parms Parms;
@@ -26,7 +31,7 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Add_Impulse",(Native)&ABOSBall::execAdd_Impulse);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Add_Torque",(Native)&ABOSBall::execAdd_Torque);
 	}
-	IMPLEMENT_CLASS(ABOSBall, 4071750072);
+	IMPLEMENT_CLASS(ABOSBall, 224537871);
 	void ABOSGameMode::StaticRegisterNativesABOSGameMode()
 	{
 	}
@@ -35,13 +40,22 @@ FName BOS_Add_Impulse = FName(TEXT("Add_Impulse"));
 FName BOS_Add_Torque = FName(TEXT("Add_Torque"));
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
+	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_AActor();
+	ENGINE_API class UClass* Z_Construct_UClass_USphereComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
-	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
+	BOS_API class UFunction* Z_Construct_UFunction_ABasicProjectile_OnHit();
+	BOS_API class UClass* Z_Construct_UClass_ABasicProjectile_NoRegister();
+	BOS_API class UClass* Z_Construct_UClass_ABasicProjectile();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_Add_Impulse();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_Add_Torque();
 	BOS_API class UClass* Z_Construct_UClass_ABOSBall_NoRegister();
@@ -49,6 +63,81 @@ FName BOS_Add_Torque = FName(TEXT("Add_Torque"));
 	BOS_API class UClass* Z_Construct_UClass_ABOSGameMode_NoRegister();
 	BOS_API class UClass* Z_Construct_UClass_ABOSGameMode();
 	BOS_API class UPackage* Z_Construct_UPackage_BOS();
+	UFunction* Z_Construct_UFunction_ABasicProjectile_OnHit()
+	{
+		struct BasicProjectile_eventOnHit_Parms
+		{
+			AActor* OtherActor;
+			UPrimitiveComponent* OtherComp;
+			FVector NormalImpulse;
+			FHitResult Hit;
+		};
+		UObject* Outer=Z_Construct_UClass_ABasicProjectile();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnHit"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00C20401, 65535, sizeof(BasicProjectile_eventOnHit_Parms));
+			UProperty* NewProp_Hit = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Hit"), RF_Public|RF_Transient|RF_Native) UStructProperty(CPP_PROPERTY_BASE(Hit, BasicProjectile_eventOnHit_Parms), 0x0000008008000182, Z_Construct_UScriptStruct_FHitResult());
+			UProperty* NewProp_NormalImpulse = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("NormalImpulse"), RF_Public|RF_Transient|RF_Native) UStructProperty(CPP_PROPERTY_BASE(NormalImpulse, BasicProjectile_eventOnHit_Parms), 0x0000000000000080, Z_Construct_UScriptStruct_FVector());
+			UProperty* NewProp_OtherComp = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherComp, BasicProjectile_eventOnHit_Parms), 0x0000000000080080, Z_Construct_UClass_UPrimitiveComponent_NoRegister());
+			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, BasicProjectile_eventOnHit_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("BasicProjectile.h"));
+			MetaData->SetValue(NewProp_OtherComp, TEXT("EditInline"), TEXT("true"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_ABasicProjectile_NoRegister()
+	{
+		return ABasicProjectile::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ABasicProjectile()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_BOS();
+			OuterClass = ABasicProjectile::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_ABasicProjectile_OnHit());
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_CollisionComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollisionComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CollisionComp, ABasicProjectile), 0x00000000000b0009, Z_Construct_UClass_USphereComponent_NoRegister());
+				UProperty* NewProp_ProjectileMovement = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ProjectileMovement"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ProjectileMovement, ABasicProjectile), 0x00000000000a001d, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
+				UProperty* NewProp_StaticMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("StaticMesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(StaticMesh, ABasicProjectile), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABasicProjectile_OnHit()); // 2921220457
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("BasicProjectile.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("BasicProjectile.h"));
+				MetaData->SetValue(NewProp_CollisionComp, TEXT("Category"), TEXT("Projectile"));
+				MetaData->SetValue(NewProp_CollisionComp, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_CollisionComp, TEXT("ModuleRelativePath"), TEXT("BasicProjectile.h"));
+				MetaData->SetValue(NewProp_ProjectileMovement, TEXT("Category"), TEXT("Movement"));
+				MetaData->SetValue(NewProp_ProjectileMovement, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_ProjectileMovement, TEXT("ModuleRelativePath"), TEXT("BasicProjectile.h"));
+				MetaData->SetValue(NewProp_StaticMesh, TEXT("Category"), TEXT("BasicProjectile"));
+				MetaData->SetValue(NewProp_StaticMesh, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_StaticMesh, TEXT("ModuleRelativePath"), TEXT("BasicProjectile.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ABasicProjectile(Z_Construct_UClass_ABasicProjectile, TEXT("ABasicProjectile"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ABasicProjectile);
 	UFunction* Z_Construct_UFunction_ABOSBall_Add_Impulse()
 	{
 		UObject* Outer=Z_Construct_UClass_ABOSBall();
@@ -104,6 +193,7 @@ FName BOS_Add_Torque = FName(TEXT("Add_Torque"));
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_Add_Torque());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_ABasicProjectile_BP = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ABasicProjectile_BP"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(ABasicProjectile_BP, ABOSBall), 0x0004080000000000, Z_Construct_UClass_ABasicProjectile_NoRegister());
 				UProperty* NewProp_RollTorque = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("RollTorque"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(RollTorque, ABOSBall), 0x0000000000000001);
 				UProperty* NewProp_JumpImpulse = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("JumpImpulse"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(JumpImpulse, ABOSBall), 0x0000000000000001);
 				UProperty* NewProp_DashChargeRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("DashChargeRate"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(DashChargeRate, ABOSBall), 0x0000000000000001);
@@ -121,6 +211,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("BOSBall.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
+				MetaData->SetValue(NewProp_ABasicProjectile_BP, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
 				MetaData->SetValue(NewProp_RollTorque, TEXT("Category"), TEXT("Ball"));
 				MetaData->SetValue(NewProp_RollTorque, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
 				MetaData->SetValue(NewProp_JumpImpulse, TEXT("Category"), TEXT("Ball"));
@@ -194,8 +285,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/BOS")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xB89EBB86;
-			Guid.B = 0x8C94222C;
+			Guid.A = 0xFB95088B;
+			Guid.B = 0x0F656008;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

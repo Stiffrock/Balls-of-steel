@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\BOS.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{A7C8B659-33F1-424B-8CA8-76AB0DD8510C}</UniqueIdentifier>
+			<UniqueIdentifier>{4E17F55B-B3FF-4235-866A-0D0855D47701}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\BOS.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{F822E630-99F7-491D-AEE0-94CB9829F8E7}</UniqueIdentifier>
+			<UniqueIdentifier>{D8A44B4D-C82B-483D-B127-EF7C52ACF08A}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -31,8 +31,14 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\BOS">
-			<UniqueIdentifier>{8385B928-BA6F-4249-83FF-29BE5BBCC575}</UniqueIdentifier>
+			<UniqueIdentifier>{6C6374B4-9FAF-424B-9886-8CB5B18A0234}</UniqueIdentifier>
 		</Filter>
+		<ClCompile Include="..\..\Source\BOS\BasicProjectile.cpp">
+			<Filter>Source\BOS</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BOS\BasicProjectile.h">
+			<Filter>Source\BOS</Filter>
+		</ClInclude >
 		<None Include="..\..\Source\BOS\BOS.Build.cs">
 			<Filter>Source\BOS</Filter>
 		</None >
