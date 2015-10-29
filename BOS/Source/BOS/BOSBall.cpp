@@ -106,8 +106,7 @@ bool ABOSBall::Add_YawCamera_Validate(FRotator rotator) //Server function
 }
 
 void ABOSBall::PitchCamera(float Val)
-{
-	
+{	
 	FRotator newRotation = SpringArm->GetComponentRotation();
 	newRotation.Pitch = FMath::Clamp(newRotation.Pitch + Val, -80.0f, 80.0f);
 	SpringArm->SetRelativeRotation(newRotation);
@@ -158,8 +157,7 @@ void ABOSBall::Jump()
 	if(bCanJump)
 	{
 		const FVector Impulse = FVector(0.f, 0.f, JumpImpulse);
-		Add_Impulse(Impulse);
-	
+		Add_Impulse(Impulse);	
 		bCanJump = false;
 	}
 }
