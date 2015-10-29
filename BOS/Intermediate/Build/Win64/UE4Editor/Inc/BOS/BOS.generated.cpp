@@ -13,7 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 	{
 		FNativeFunctionRegistrar::RegisterFunction(ABasicProjectile::StaticClass(),"OnHit",(Native)&ABasicProjectile::execOnHit);
 	}
-	IMPLEMENT_CLASS(ABasicProjectile, 2956645023);
+	IMPLEMENT_CLASS(ABasicProjectile, 1086759436);
 	void ABOSBall::Add_Impulse(FVector impulse)
 	{
 		BOSBall_eventAdd_Impulse_Parms Parms;
@@ -31,11 +31,11 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Add_Impulse",(Native)&ABOSBall::execAdd_Impulse);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Add_Torque",(Native)&ABOSBall::execAdd_Torque);
 	}
-	IMPLEMENT_CLASS(ABOSBall, 224537871);
+	IMPLEMENT_CLASS(ABOSBall, 2921202907);
 	void ABOSGameMode::StaticRegisterNativesABOSGameMode()
 	{
 	}
-	IMPLEMENT_CLASS(ABOSGameMode, 1711668754);
+	IMPLEMENT_CLASS(ABOSGameMode, 4111215366);
 FName BOS_Add_Impulse = FName(TEXT("Add_Impulse"));
 FName BOS_Add_Torque = FName(TEXT("Add_Torque"));
 #if USE_COMPILED_IN_NATIVES
@@ -76,7 +76,7 @@ FName BOS_Add_Torque = FName(TEXT("Add_Torque"));
 		static UFunction* ReturnFunction = NULL;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnHit"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00C20401, 65535, sizeof(BasicProjectile_eventOnHit_Parms));
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnHit"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04C20401, 65535, sizeof(BasicProjectile_eventOnHit_Parms));
 			UProperty* NewProp_Hit = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Hit"), RF_Public|RF_Transient|RF_Native) UStructProperty(CPP_PROPERTY_BASE(Hit, BasicProjectile_eventOnHit_Parms), 0x0000008008000182, Z_Construct_UScriptStruct_FHitResult());
 			UProperty* NewProp_NormalImpulse = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("NormalImpulse"), RF_Public|RF_Transient|RF_Native) UStructProperty(CPP_PROPERTY_BASE(NormalImpulse, BasicProjectile_eventOnHit_Parms), 0x0000000000000080, Z_Construct_UScriptStruct_FVector());
 			UProperty* NewProp_OtherComp = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherComp, BasicProjectile_eventOnHit_Parms), 0x0000000000080080, Z_Construct_UClass_UPrimitiveComponent_NoRegister());
@@ -85,6 +85,7 @@ FName BOS_Add_Torque = FName(TEXT("Add_Torque"));
 			ReturnFunction->StaticLink();
 #if WITH_METADATA
 			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Projectile"));
 			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("BasicProjectile.h"));
 			MetaData->SetValue(NewProp_OtherComp, TEXT("EditInline"), TEXT("true"));
 #endif
@@ -115,7 +116,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_ProjectileMovement = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ProjectileMovement"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ProjectileMovement, ABasicProjectile), 0x00000000000a001d, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
 				UProperty* NewProp_StaticMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("StaticMesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(StaticMesh, ABasicProjectile), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABasicProjectile_OnHit()); // 2921220457
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABasicProjectile_OnHit()); // 4119231393
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
@@ -193,6 +194,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_Add_Torque());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_ABasicProjectile_BP2 = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ABasicProjectile_BP2"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(ABasicProjectile_BP2, ABOSBall), 0x0004080000000000, Z_Construct_UClass_ABasicProjectile_NoRegister());
 				UProperty* NewProp_ABasicProjectile_BP = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ABasicProjectile_BP"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(ABasicProjectile_BP, ABOSBall), 0x0004080000000000, Z_Construct_UClass_ABasicProjectile_NoRegister());
 				UProperty* NewProp_RollTorque = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("RollTorque"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(RollTorque, ABOSBall), 0x0000000000000001);
 				UProperty* NewProp_JumpImpulse = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("JumpImpulse"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(JumpImpulse, ABOSBall), 0x0000000000000001);
@@ -211,6 +213,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("BOSBall.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
+				MetaData->SetValue(NewProp_ABasicProjectile_BP2, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
 				MetaData->SetValue(NewProp_ABasicProjectile_BP, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
 				MetaData->SetValue(NewProp_RollTorque, TEXT("Category"), TEXT("Ball"));
 				MetaData->SetValue(NewProp_RollTorque, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
@@ -261,6 +264,9 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassFlags |= 0x2088028C;
 
 
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_ABOSBall_BP = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ABOSBall_BP"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(ABOSBall_BP, ABOSGameMode), 0x0004000000000000, Z_Construct_UClass_ABOSBall_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -269,6 +275,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("BOSGameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("BOSGameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+				MetaData->SetValue(NewProp_ABOSBall_BP, TEXT("ModuleRelativePath"), TEXT("BOSGameMode.h"));
 #endif
 			}
 		}
@@ -285,7 +292,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/BOS")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xFB95088B;
+			Guid.A = 0x1431F95E;
 			Guid.B = 0x0F656008;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

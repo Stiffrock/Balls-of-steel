@@ -6,6 +6,11 @@
 
 ABOSGameMode::ABOSGameMode()
 {
+	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint(TEXT("Blueprint'/Game/BOSBall_BP.BOSBall_BP'"));
+	if (ItemBlueprint.Object){
+		DefaultPawnClass = (UClass*)ItemBlueprint.Object->GeneratedClass;
+	}
+
 	// set default pawn class to our ball
-	DefaultPawnClass = ABOSBall::StaticClass();
+	// = ABOSBall::StaticClass();
 }

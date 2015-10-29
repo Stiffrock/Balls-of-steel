@@ -50,6 +50,10 @@ public:
 
 	bool bCanJump;
 	bool dashCharging;
+	bool bProjectile_1;
+	bool bProjectile_2;
+
+	
 
 protected:
 	void Fire();
@@ -61,13 +65,17 @@ protected:
 	void DashRelease();
 
 	void MoveRight(float Val);
-
 	void MoveForward(float Val);
 
 	void Jump();
+	void SetProjectile_1();
+	void SetProjectile_2();
 
 	UPROPERTY()
 	TSubclassOf<class ABasicProjectile> ABasicProjectile_BP;
+
+	UPROPERTY()
+	TSubclassOf<class ABasicProjectile> ABasicProjectile_BP2;
 
 	// AActor interface
 	virtual void NotifyHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override;

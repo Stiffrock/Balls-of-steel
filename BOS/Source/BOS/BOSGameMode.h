@@ -10,6 +10,10 @@ class ABOSGameMode : public AGameMode
 
 public:
 	ABOSGameMode();
+
+
+	UPROPERTY()
+		TSubclassOf<class ABOSBall> ABOSBall_BP;
 };
 
 

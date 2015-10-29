@@ -3,6 +3,7 @@
 #include "BOS.h"
 #include "BOSBall.h"
 #include "BasicProjectile.h"
+#include "Engine.h"
 
 ABOSBall::ABOSBall()
 {
@@ -48,6 +49,14 @@ ABOSBall::ABOSBall()
 	if (ItemBlueprint.Object){
 		ABasicProjectile_BP = (UClass*)ItemBlueprint.Object->GeneratedClass;
 	}
+
+	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint2(TEXT("Blueprint'/Game/BasicProjectile_BP2.BasicProjectile_BP2'"));
+	if (ItemBlueprint2.Object){
+		ABasicProjectile_BP2 = (UClass*)ItemBlueprint2.Object->GeneratedClass;
+	}
+
+	bProjectile_1 = true;
+	bProjectile_2 = false;
 }
 
 void ABOSBall::Tick(float DeltaTime)
@@ -73,6 +82,9 @@ void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 	InputComponent->BindAction("Dash", IE_Released, this, &ABOSBall::DashRelease);
 	InputComponent->BindAction("Jump", IE_Pressed, this, &ABOSBall::Jump);
 	InputComponent->BindAction("Fire", IE_Pressed, this, &ABOSBall::Fire);
+	InputComponent->BindAction("SwitchToProjectile_1", IE_Pressed, this, &ABOSBall::SetProjectile_1);
+	InputComponent->BindAction("SwitchToProjectile_2", IE_Pressed, this, &ABOSBall::SetProjectile_2);
+
 }
 
 void ABOSBall::YawCamera(float Val)
@@ -164,9 +176,35 @@ void ABOSBall::Fire()
 	{
 		FActorSpawnParameters SpawnParams;
 		SpawnParams.Instigator = this;
-		ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
+
+		if (bProjectile_1)
+		{
+			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
+		}
+		else if (bProjectile_2)
+		{
+			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP2, SpawnLocation, SpawnRotation, SpawnParams);
+		}
+		
 
 		//World->SpawnActor<AMyProjectile>(AMyProjectile::StaticClass(), SpawnLocation, SpawnRotation);
 	}
+
+}
+
+
+void ABOSBall::SetProjectile_1()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_1_ACTIVATED"));
+	bProjectile_2 = false;
+	bProjectile_1 = true;
+
+}
+
+void ABOSBall::SetProjectile_2()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_2_ACTIVATED"));
+	bProjectile_1 = false;
+	bProjectile_2 = true;
 
 }
