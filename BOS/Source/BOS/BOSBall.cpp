@@ -81,7 +81,7 @@ void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 	InputComponent->BindAction("Dash", IE_Pressed, this, &ABOSBall::DashCharge);
 	InputComponent->BindAction("Dash", IE_Released, this, &ABOSBall::DashRelease);
 	InputComponent->BindAction("Jump", IE_Pressed, this, &ABOSBall::Jump);
-	InputComponent->BindAction("Fire", IE_Pressed, this, &ABOSBall::Fire);
+	InputComponent->BindAction("Fire", IE_Pressed, this, &ABOSBall::Server_Fire);
 	InputComponent->BindAction("SwitchToProjectile_1", IE_Pressed, this, &ABOSBall::SetProjectile_1);
 	InputComponent->BindAction("SwitchToProjectile_2", IE_Pressed, this, &ABOSBall::SetProjectile_2);
 
@@ -92,13 +92,36 @@ void ABOSBall::YawCamera(float Val)
 	FRotator newRotation = SpringArm->GetComponentRotation();
 	newRotation.Yaw += Val;
 	SpringArm->SetRelativeRotation(newRotation);
+	Add_YawCamera(newRotation);
+}
+
+void ABOSBall::Add_YawCamera_Implementation(FRotator rotator) //Server function
+{
+	SpringArm->SetRelativeRotation(rotator);
+}
+
+bool ABOSBall::Add_YawCamera_Validate(FRotator rotator) //Server function
+{
+	return true;
 }
 
 void ABOSBall::PitchCamera(float Val)
 {
+	
 	FRotator newRotation = SpringArm->GetComponentRotation();
 	newRotation.Pitch = FMath::Clamp(newRotation.Pitch + Val, -80.0f, 80.0f);
 	SpringArm->SetRelativeRotation(newRotation);
+	Add_PitchCamera(newRotation);
+}
+
+void ABOSBall::Add_PitchCamera_Implementation(FRotator rotator) //Server function
+{
+	SpringArm->SetRelativeRotation(rotator);
+}
+
+bool ABOSBall::Add_PitchCamera_Validate(FRotator rotator) //Server function
+{
+	return true;
 }
 
 void ABOSBall::MoveRight(float Val)
@@ -148,25 +171,25 @@ void ABOSBall::NotifyHit(class UPrimitiveComponent* MyComp, class AActor* Other,
 	bCanJump = true;
 }
 
-void ABOSBall::Add_Torque_Implementation(FVector torque)
+void ABOSBall::Add_Torque_Implementation(FVector torque) //Server functionv
 {
 	Ball->AddTorque(torque);
 }
-bool ABOSBall::Add_Torque_Validate(FVector torque)
+bool ABOSBall::Add_Torque_Validate(FVector torque) //Server function
 {
 	return true;
 }
 
-void ABOSBall::Add_Impulse_Implementation(FVector impulse)
+void ABOSBall::Add_Impulse_Implementation(FVector impulse) //Server function
 {
 	Ball->AddImpulse(impulse);
 }
-bool ABOSBall::Add_Impulse_Validate(FVector torque)
+bool ABOSBall::Add_Impulse_Validate(FVector torque) //Server function
 {
 	return true;
 }
 
-void ABOSBall::Fire()
+void ABOSBall::Server_Fire_Implementation() //Server function
 {
 	const FRotator SpawnRotation = SpringArm->GetComponentRotation();
 	const FVector SpawnLocation = GetActorLocation() + FVector(0.f, 0.f, 200.0f);
@@ -185,15 +208,16 @@ void ABOSBall::Fire()
 		{
 			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP2, SpawnLocation, SpawnRotation, SpawnParams);
 		}
-		
-
-		//World->SpawnActor<AMyProjectile>(AMyProjectile::StaticClass(), SpawnLocation, SpawnRotation);
+		//World->SpawnActor<AMyProjectile>(AMyProjectile::StaticClass(), SpawnLocation, SpawnRotation); Creates the class from scratch
 	}
-
 }
 
+bool ABOSBall::Server_Fire_Validate() //Server function 
+{
+	return true;
+}
 
-void ABOSBall::SetProjectile_1()
+void ABOSBall::SetProjectile_1_Implementation() //Server function
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_1_ACTIVATED"));
 	bProjectile_2 = false;
@@ -201,10 +225,20 @@ void ABOSBall::SetProjectile_1()
 
 }
 
-void ABOSBall::SetProjectile_2()
+bool ABOSBall::SetProjectile_1_Validate() //Server function
+{
+	return true;
+}
+
+void ABOSBall::SetProjectile_2_Implementation() //Server function
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_2_ACTIVATED"));
 	bProjectile_1 = false;
 	bProjectile_2 = true;
 
+}
+
+bool ABOSBall::SetProjectile_2_Validate() //Server function
+{
+	return true;
 }

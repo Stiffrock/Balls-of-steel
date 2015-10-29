@@ -8,6 +8,7 @@
 #include "ObjectBase.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FRotator;
 struct FVector;
 #ifdef BOS_BOSBall_generated_h
 #error "BOSBall.generated.h already included, missing '#pragma once' in BOSBall.h"
@@ -15,10 +16,77 @@ struct FVector;
 #define BOS_BOSBall_generated_h
 
 #define BOS_Source_BOS_BOSBall_h_9_RPC_WRAPPERS \
+	virtual bool SetProjectile_2_Validate(); \
+	virtual void SetProjectile_2_Implementation(); \
+	virtual bool SetProjectile_1_Validate(); \
+	virtual void SetProjectile_1_Implementation(); \
+	virtual bool Server_Fire_Validate(); \
+	virtual void Server_Fire_Implementation(); \
+	virtual bool Add_PitchCamera_Validate(FRotator ); \
+	virtual void Add_PitchCamera_Implementation(FRotator rotator); \
+	virtual bool Add_YawCamera_Validate(FRotator ); \
+	virtual void Add_YawCamera_Implementation(FRotator rotator); \
 	virtual bool Add_Impulse_Validate(FVector ); \
 	virtual void Add_Impulse_Implementation(FVector impulse); \
 	virtual bool Add_Torque_Validate(FVector ); \
 	virtual void Add_Torque_Implementation(FVector torque); \
+ \
+	DECLARE_FUNCTION(execSetProjectile_2) \
+	{ \
+		P_FINISH; \
+		if (!this->SetProjectile_2_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("SetProjectile_2_Validate")); \
+			return; \
+		} \
+		this->SetProjectile_2_Implementation(); \
+	} \
+ \
+	DECLARE_FUNCTION(execSetProjectile_1) \
+	{ \
+		P_FINISH; \
+		if (!this->SetProjectile_1_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("SetProjectile_1_Validate")); \
+			return; \
+		} \
+		this->SetProjectile_1_Implementation(); \
+	} \
+ \
+	DECLARE_FUNCTION(execServer_Fire) \
+	{ \
+		P_FINISH; \
+		if (!this->Server_Fire_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("Server_Fire_Validate")); \
+			return; \
+		} \
+		this->Server_Fire_Implementation(); \
+	} \
+ \
+	DECLARE_FUNCTION(execAdd_PitchCamera) \
+	{ \
+		P_GET_STRUCT(FRotator,Z_Param_rotator); \
+		P_FINISH; \
+		if (!this->Add_PitchCamera_Validate(Z_Param_rotator)) \
+		{ \
+			RPC_ValidateFailed(TEXT("Add_PitchCamera_Validate")); \
+			return; \
+		} \
+		this->Add_PitchCamera_Implementation(Z_Param_rotator); \
+	} \
+ \
+	DECLARE_FUNCTION(execAdd_YawCamera) \
+	{ \
+		P_GET_STRUCT(FRotator,Z_Param_rotator); \
+		P_FINISH; \
+		if (!this->Add_YawCamera_Validate(Z_Param_rotator)) \
+		{ \
+			RPC_ValidateFailed(TEXT("Add_YawCamera_Validate")); \
+			return; \
+		} \
+		this->Add_YawCamera_Implementation(Z_Param_rotator); \
+	} \
  \
 	DECLARE_FUNCTION(execAdd_Impulse) \
 	{ \
@@ -46,6 +114,63 @@ struct FVector;
 
 
 #define BOS_Source_BOS_BOSBall_h_9_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSetProjectile_2) \
+	{ \
+		P_FINISH; \
+		if (!this->SetProjectile_2_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("SetProjectile_2_Validate")); \
+			return; \
+		} \
+		this->SetProjectile_2_Implementation(); \
+	} \
+ \
+	DECLARE_FUNCTION(execSetProjectile_1) \
+	{ \
+		P_FINISH; \
+		if (!this->SetProjectile_1_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("SetProjectile_1_Validate")); \
+			return; \
+		} \
+		this->SetProjectile_1_Implementation(); \
+	} \
+ \
+	DECLARE_FUNCTION(execServer_Fire) \
+	{ \
+		P_FINISH; \
+		if (!this->Server_Fire_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("Server_Fire_Validate")); \
+			return; \
+		} \
+		this->Server_Fire_Implementation(); \
+	} \
+ \
+	DECLARE_FUNCTION(execAdd_PitchCamera) \
+	{ \
+		P_GET_STRUCT(FRotator,Z_Param_rotator); \
+		P_FINISH; \
+		if (!this->Add_PitchCamera_Validate(Z_Param_rotator)) \
+		{ \
+			RPC_ValidateFailed(TEXT("Add_PitchCamera_Validate")); \
+			return; \
+		} \
+		this->Add_PitchCamera_Implementation(Z_Param_rotator); \
+	} \
+ \
+	DECLARE_FUNCTION(execAdd_YawCamera) \
+	{ \
+		P_GET_STRUCT(FRotator,Z_Param_rotator); \
+		P_FINISH; \
+		if (!this->Add_YawCamera_Validate(Z_Param_rotator)) \
+		{ \
+			RPC_ValidateFailed(TEXT("Add_YawCamera_Validate")); \
+			return; \
+		} \
+		this->Add_YawCamera_Implementation(Z_Param_rotator); \
+	} \
  \
 	DECLARE_FUNCTION(execAdd_Impulse) \
 	{ \
@@ -77,14 +202,27 @@ struct FVector;
 	{ \
 		FVector impulse; \
 	}; \
+	struct BOSBall_eventAdd_PitchCamera_Parms \
+	{ \
+		FRotator rotator; \
+	}; \
 	struct BOSBall_eventAdd_Torque_Parms \
 	{ \
 		FVector torque; \
+	}; \
+	struct BOSBall_eventAdd_YawCamera_Parms \
+	{ \
+		FRotator rotator; \
 	};
 
 
 extern BOS_API  FName BOS_Add_Impulse;
+extern BOS_API  FName BOS_Add_PitchCamera;
 extern BOS_API  FName BOS_Add_Torque;
+extern BOS_API  FName BOS_Add_YawCamera;
+extern BOS_API  FName BOS_Server_Fire;
+extern BOS_API  FName BOS_SetProjectile_1;
+extern BOS_API  FName BOS_SetProjectile_2;
 #define BOS_Source_BOS_BOSBall_h_9_CALLBACK_WRAPPERS
 #define BOS_Source_BOS_BOSBall_h_9_INCLASS_NO_PURE_DECLS \
 	private: \
