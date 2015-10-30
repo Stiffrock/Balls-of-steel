@@ -17,7 +17,7 @@ ABOSBall::ABOSBall()
 	Ball->SetAngularDamping(0.1f);
 	Ball->SetLinearDamping(0.1f);
 	Ball->BodyInstance.MassScale = 3.5f;
-	Ball->BodyInstance.MaxAngularVelocity = 800.0f;
+	Ball->BodyInstance.MaxAngularVelocity = 8000.0f;
 	Ball->SetNotifyRigidBodyCollision(true);
 	RootComponent = Ball;
 
@@ -29,7 +29,11 @@ ABOSBall::ABOSBall()
 	SpringArm->RelativeRotation = FRotator(-45.f, 0.f, 0.f);
 	SpringArm->TargetArmLength = 1200.f;
 	SpringArm->bEnableCameraLag = false;
-	SpringArm->CameraLagSpeed = 3.f;
+	SpringArm->CameraLagSpeed = 3.0f;
+	SpringArm->CameraLagMaxDistance = 50.0f;
+
+
+
 
 	// Create a camera and attach to boom
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera0"));
@@ -45,16 +49,16 @@ ABOSBall::ABOSBall()
 	bCanJump = true; // Start being able to jump
 	dashCharging = false;
 
+
 	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint(TEXT("Blueprint'/Game/BasicProjectile_BP.BasicProjectile_BP'"));
-	if (ItemBlueprint.Object){
+	if (ItemBlueprint.Object)
 		ABasicProjectile_BP = (UClass*)ItemBlueprint.Object->GeneratedClass;
-	}
+	
 
 	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint2(TEXT("Blueprint'/Game/BasicProjectile_BP2.BasicProjectile_BP2'"));
-	if (ItemBlueprint2.Object){
+	if (ItemBlueprint2.Object)
 		ABasicProjectile_BP2 = (UClass*)ItemBlueprint2.Object->GeneratedClass;
-	}
-
+	
 	bProjectile_1 = true;
 	bProjectile_2 = false;
 }
@@ -62,9 +66,15 @@ ABOSBall::ABOSBall()
 void ABOSBall::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	/*if (bCameraLag)
+		HandleCameraLag(DeltaTime);*/
+	
 	if (dashCharging)
+	{
 		DashImpulse += DashChargeRate * DeltaTime;
-	DashImpulse = FMath::Clamp(DashImpulse, 0.0f, MaxDashImpulse);
+		DashImpulse = FMath::Clamp(DashImpulse, 0.0f, MaxDashImpulse);
+	}
 }
 
 void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
@@ -85,6 +95,22 @@ void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 	InputComponent->BindAction("SwitchToProjectile_1", IE_Pressed, this, &ABOSBall::SetProjectile_1);
 	InputComponent->BindAction("SwitchToProjectile_2", IE_Pressed, this, &ABOSBall::SetProjectile_2);
 
+}
+
+void ABOSBall::HandleCameraLag(float DeltaTime)
+{	
+	if (SpringArm->CameraLagSpeed >= 0.0f)
+	{
+		SpringArm->CameraLagSpeed -= 0.25f * DeltaTime;
+	}
+	
+	else
+	{
+		bCameraLag = false;
+		SpringArm->bEnableCameraLag = false;
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("EndCameraLag"), CameraLag));
+	}
+		
 }
 
 void ABOSBall::YawCamera(float Val)

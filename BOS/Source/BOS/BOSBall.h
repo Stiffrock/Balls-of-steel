@@ -72,16 +72,22 @@ public:
 
 	UPROPERTY(EditAnywhere, Category=Ball)
 	float RollTorque;
+	float CameraLag;
+
+	FVector CurrentDirection;
 
 	bool bCanJump;
 	bool dashCharging;
 	bool bProjectile_1;
 	bool bProjectile_2;
+	bool bCameraLag;
 	
 
 protected:
 	void YawCamera(float Val);
 	void PitchCamera(float Val);
+
+	void HandleCameraLag(float DeltaTime);
 
 	void DashCharge();
 	void DashRelease();
