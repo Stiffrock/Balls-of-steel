@@ -9,11 +9,24 @@
 #include "BOS.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBOS() {}
+	void ABallController::StaticRegisterNativesABallController()
+	{
+	}
+	IMPLEMENT_CLASS(ABallController, 4077305830);
+	void ABasicProjectile::OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+	{
+		BasicProjectile_eventOnHit_Parms Parms;
+		Parms.OtherActor=OtherActor;
+		Parms.OtherComp=OtherComp;
+		Parms.NormalImpulse=NormalImpulse;
+		Parms.Hit=Hit;
+		ProcessEvent(FindFunctionChecked(BOS_OnHit),&Parms);
+	}
 	void ABasicProjectile::StaticRegisterNativesABasicProjectile()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(ABasicProjectile::StaticClass(),"OnHit",(Native)&ABasicProjectile::execOnHit);
 	}
-	IMPLEMENT_CLASS(ABasicProjectile, 1086759436);
+	IMPLEMENT_CLASS(ABasicProjectile, 3749893783);
 	void ABOSBall::Add_Impulse(FVector impulse)
 	{
 		BOSBall_eventAdd_Impulse_Parms Parms;
@@ -38,6 +51,10 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 		Parms.rotator=rotator;
 		ProcessEvent(FindFunctionChecked(BOS_Add_YawCamera),&Parms);
 	}
+	void ABOSBall::HandleDeath()
+	{
+		ProcessEvent(FindFunctionChecked(BOS_HandleDeath),NULL);
+	}
 	void ABOSBall::Server_Fire()
 	{
 		ProcessEvent(FindFunctionChecked(BOS_Server_Fire),NULL);
@@ -56,11 +73,12 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Add_PitchCamera",(Native)&ABOSBall::execAdd_PitchCamera);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Add_Torque",(Native)&ABOSBall::execAdd_Torque);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Add_YawCamera",(Native)&ABOSBall::execAdd_YawCamera);
+		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"HandleDeath",(Native)&ABOSBall::execHandleDeath);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Server_Fire",(Native)&ABOSBall::execServer_Fire);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"SetProjectile_1",(Native)&ABOSBall::execSetProjectile_1);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"SetProjectile_2",(Native)&ABOSBall::execSetProjectile_2);
 	}
-	IMPLEMENT_CLASS(ABOSBall, 1701498663);
+	IMPLEMENT_CLASS(ABOSBall, 1856925226);
 	void ABOSGameMode::StaticRegisterNativesABOSGameMode()
 	{
 	}
@@ -69,11 +87,14 @@ FName BOS_Add_Impulse = FName(TEXT("Add_Impulse"));
 FName BOS_Add_PitchCamera = FName(TEXT("Add_PitchCamera"));
 FName BOS_Add_Torque = FName(TEXT("Add_Torque"));
 FName BOS_Add_YawCamera = FName(TEXT("Add_YawCamera"));
+FName BOS_HandleDeath = FName(TEXT("HandleDeath"));
+FName BOS_OnHit = FName(TEXT("OnHit"));
 FName BOS_Server_Fire = FName(TEXT("Server_Fire"));
 FName BOS_SetProjectile_1 = FName(TEXT("SetProjectile_1"));
 FName BOS_SetProjectile_2 = FName(TEXT("SetProjectile_2"));
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
+	ENGINE_API class UClass* Z_Construct_UClass_APlayerController();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
@@ -88,6 +109,8 @@ FName BOS_SetProjectile_2 = FName(TEXT("SetProjectile_2"));
 	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
+	BOS_API class UClass* Z_Construct_UClass_ABallController_NoRegister();
+	BOS_API class UClass* Z_Construct_UClass_ABallController();
 	BOS_API class UFunction* Z_Construct_UFunction_ABasicProjectile_OnHit();
 	BOS_API class UClass* Z_Construct_UClass_ABasicProjectile_NoRegister();
 	BOS_API class UClass* Z_Construct_UClass_ABasicProjectile();
@@ -95,6 +118,7 @@ FName BOS_SetProjectile_2 = FName(TEXT("SetProjectile_2"));
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_Add_PitchCamera();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_Add_Torque();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_Add_YawCamera();
+	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_HandleDeath();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_Server_Fire();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_SetProjectile_1();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_SetProjectile_2();
@@ -103,21 +127,47 @@ FName BOS_SetProjectile_2 = FName(TEXT("SetProjectile_2"));
 	BOS_API class UClass* Z_Construct_UClass_ABOSGameMode_NoRegister();
 	BOS_API class UClass* Z_Construct_UClass_ABOSGameMode();
 	BOS_API class UPackage* Z_Construct_UPackage_BOS();
+	UClass* Z_Construct_UClass_ABallController_NoRegister()
+	{
+		return ABallController::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ABallController()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APlayerController();
+			Z_Construct_UPackage_BOS();
+			OuterClass = ABallController::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900284;
+
+
+				OuterClass->ClassConfigName = FName(TEXT("Game"));
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Rendering Utilities|Transformation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("BallController.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("BallController.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ABallController(Z_Construct_UClass_ABallController, TEXT("ABallController"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ABallController);
 	UFunction* Z_Construct_UFunction_ABasicProjectile_OnHit()
 	{
-		struct BasicProjectile_eventOnHit_Parms
-		{
-			AActor* OtherActor;
-			UPrimitiveComponent* OtherComp;
-			FVector NormalImpulse;
-			FHitResult Hit;
-		};
 		UObject* Outer=Z_Construct_UClass_ABasicProjectile();
 		static UFunction* ReturnFunction = NULL;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnHit"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04C20401, 65535, sizeof(BasicProjectile_eventOnHit_Parms));
-			UProperty* NewProp_Hit = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Hit"), RF_Public|RF_Transient|RF_Native) UStructProperty(CPP_PROPERTY_BASE(Hit, BasicProjectile_eventOnHit_Parms), 0x0000008008000182, Z_Construct_UScriptStruct_FHitResult());
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnHit"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x80A20CC0, 65535, sizeof(BasicProjectile_eventOnHit_Parms));
+			UProperty* NewProp_Hit = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Hit"), RF_Public|RF_Transient|RF_Native) UStructProperty(CPP_PROPERTY_BASE(Hit, BasicProjectile_eventOnHit_Parms), 0x0000008008000082, Z_Construct_UScriptStruct_FHitResult());
 			UProperty* NewProp_NormalImpulse = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("NormalImpulse"), RF_Public|RF_Transient|RF_Native) UStructProperty(CPP_PROPERTY_BASE(NormalImpulse, BasicProjectile_eventOnHit_Parms), 0x0000000000000080, Z_Construct_UScriptStruct_FVector());
 			UProperty* NewProp_OtherComp = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherComp, BasicProjectile_eventOnHit_Parms), 0x0000000000080080, Z_Construct_UClass_UPrimitiveComponent_NoRegister());
 			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, BasicProjectile_eventOnHit_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
@@ -125,7 +175,6 @@ FName BOS_SetProjectile_2 = FName(TEXT("SetProjectile_2"));
 			ReturnFunction->StaticLink();
 #if WITH_METADATA
 			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Projectile"));
 			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("BasicProjectile.h"));
 			MetaData->SetValue(NewProp_OtherComp, TEXT("EditInline"), TEXT("true"));
 #endif
@@ -156,7 +205,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_ProjectileMovement = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ProjectileMovement"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ProjectileMovement, ABasicProjectile), 0x00000000000a001d, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
 				UProperty* NewProp_StaticMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("StaticMesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(StaticMesh, ABasicProjectile), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABasicProjectile_OnHit()); // 4119231393
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABasicProjectile_OnHit()); // 2665871800
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
@@ -247,6 +296,22 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_ABOSBall_HandleDeath()
+	{
+		UObject* Outer=Z_Construct_UClass_ABOSBall();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("HandleDeath"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x80220CC0, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_ABOSBall_Server_Fire()
 	{
 		UObject* Outer=Z_Construct_UClass_ABOSBall();
@@ -316,6 +381,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_Add_PitchCamera());
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_Add_Torque());
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_Add_YawCamera());
+				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_HandleDeath());
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_Server_Fire());
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_SetProjectile_1());
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_SetProjectile_2());
@@ -335,6 +401,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_Add_PitchCamera()); // 2848807837
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_Add_Torque()); // 3720117706
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_Add_YawCamera()); // 1723173877
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_HandleDeath()); // 473961840
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_Server_Fire()); // 840796336
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_SetProjectile_1()); // 3734115784
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_SetProjectile_2()); // 3971958080
@@ -424,8 +491,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/BOS")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xEBBC9ACA;
-			Guid.B = 0x666986BA;
+			Guid.A = 0xE72328E3;
+			Guid.B = 0x4F0CA0B6;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

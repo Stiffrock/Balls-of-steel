@@ -4,6 +4,8 @@
 #include "BasicProjectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Engine.h"
+#include "BOSBall.h"
+
 
 
 ABasicProjectile::ABasicProjectile()
@@ -40,15 +42,32 @@ ABasicProjectile::ABasicProjectile()
 
 }
 
-void ABasicProjectile::OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+void ABasicProjectile::OnHit_Implementation(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	// Only add impulse and destroy projectile if we hit a physics
 	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && OtherComp->IsSimulatingPhysics())
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Hit detected!"));
 		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
+
+		ABOSBall* Ball = Cast<ABOSBall>(OtherActor); // Access the playerball from projectile class. Ball pointer to a cast for OtherActor to BOSBall?
+
+		if (OtherActor == Ball)
+		{
+			Ball->Health -= 10;
+			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ball Hit!" Ball->Health));
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Ball Hit! Health: %f"), Ball->Health));
+
+		}
+
+
 	//	Destroy();
 	}
+}
+
+bool ABasicProjectile::OnHit_Validate(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+{
+	return true;
 }
 
 

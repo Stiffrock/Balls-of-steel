@@ -5,6 +5,9 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
+#ifndef BOS_BallController_generated_h
+	#include "BallController.h"
+#endif
 #ifndef BOS_BasicProjectile_generated_h
 	#include "BasicProjectile.h"
 #endif

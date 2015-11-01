@@ -33,8 +33,6 @@ ABOSBall::ABOSBall()
 	SpringArm->CameraLagMaxDistance = 50.0f;
 
 
-
-
 	// Create a camera and attach to boom
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera0"));
 	Camera->AttachTo(SpringArm, USpringArmComponent::SocketName);
@@ -48,6 +46,7 @@ ABOSBall::ABOSBall()
 	DashImpulse = 0.0f;
 	bCanJump = true; // Start being able to jump
 	dashCharging = false;
+	Health = 100.0f;
 
 
 	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint(TEXT("Blueprint'/Game/BasicProjectile_BP.BasicProjectile_BP'"));
@@ -67,8 +66,8 @@ void ABOSBall::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	/*if (bCameraLag)
-		HandleCameraLag(DeltaTime);*/
+	if (Health <= 0)
+		HandleDeath();
 	
 	if (dashCharging)
 	{
@@ -95,6 +94,18 @@ void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 	InputComponent->BindAction("SwitchToProjectile_1", IE_Pressed, this, &ABOSBall::SetProjectile_1);
 	InputComponent->BindAction("SwitchToProjectile_2", IE_Pressed, this, &ABOSBall::SetProjectile_2);
 
+}
+
+void ABOSBall::HandleDeath_Implementation()
+{
+	this->Destroy();
+	//Ball->DestroyComponent();
+
+	
+}
+bool ABOSBall::HandleDeath_Validate()
+{
+	return true;
 }
 
 void ABOSBall::HandleCameraLag(float DeltaTime)
@@ -180,8 +191,10 @@ void ABOSBall::DashRelease()
 
 void ABOSBall::Jump()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Health: %f"), Health));
 	if(bCanJump)
 	{
+
 		const FVector Impulse = FVector(0.f, 0.f, JumpImpulse);
 		Add_Impulse(Impulse);	
 		bCanJump = false;
@@ -259,7 +272,6 @@ void ABOSBall::SetProjectile_2_Implementation() //Server function
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_2_ACTIVATED"));
 	bProjectile_1 = false;
 	bProjectile_2 = true;
-
 }
 
 bool ABOSBall::SetProjectile_2_Validate() //Server function

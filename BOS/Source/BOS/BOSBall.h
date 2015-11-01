@@ -60,6 +60,11 @@ public:
 	void SetProjectile_2_Implementation();
 	bool SetProjectile_2_Validate();
 
+	UFUNCTION(Server, Reliable, WithValidation)
+	void HandleDeath();
+	void HandleDeath_Implementation();
+	bool HandleDeath_Validate();
+
 	UPROPERTY(EditAnywhere, Category = Ball)
 	float MaxDashImpulse;
 
@@ -74,6 +79,9 @@ public:
 	float RollTorque;
 	float CameraLag;
 
+
+	float Health;
+
 	FVector CurrentDirection;
 
 	bool bCanJump;
@@ -84,6 +92,9 @@ public:
 	
 
 protected:
+
+	
+
 	void YawCamera(float Val);
 	void PitchCamera(float Val);
 

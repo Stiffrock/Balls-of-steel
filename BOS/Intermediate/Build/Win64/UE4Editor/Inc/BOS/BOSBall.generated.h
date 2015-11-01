@@ -16,6 +16,8 @@ struct FVector;
 #define BOS_BOSBall_generated_h
 
 #define BOS_Source_BOS_BOSBall_h_9_RPC_WRAPPERS \
+	virtual bool HandleDeath_Validate(); \
+	virtual void HandleDeath_Implementation(); \
 	virtual bool SetProjectile_2_Validate(); \
 	virtual void SetProjectile_2_Implementation(); \
 	virtual bool SetProjectile_1_Validate(); \
@@ -30,6 +32,17 @@ struct FVector;
 	virtual void Add_Impulse_Implementation(FVector impulse); \
 	virtual bool Add_Torque_Validate(FVector ); \
 	virtual void Add_Torque_Implementation(FVector torque); \
+ \
+	DECLARE_FUNCTION(execHandleDeath) \
+	{ \
+		P_FINISH; \
+		if (!this->HandleDeath_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("HandleDeath_Validate")); \
+			return; \
+		} \
+		this->HandleDeath_Implementation(); \
+	} \
  \
 	DECLARE_FUNCTION(execSetProjectile_2) \
 	{ \
@@ -114,6 +127,17 @@ struct FVector;
 
 
 #define BOS_Source_BOS_BOSBall_h_9_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleDeath) \
+	{ \
+		P_FINISH; \
+		if (!this->HandleDeath_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("HandleDeath_Validate")); \
+			return; \
+		} \
+		this->HandleDeath_Implementation(); \
+	} \
  \
 	DECLARE_FUNCTION(execSetProjectile_2) \
 	{ \
@@ -220,6 +244,7 @@ extern BOS_API  FName BOS_Add_Impulse;
 extern BOS_API  FName BOS_Add_PitchCamera;
 extern BOS_API  FName BOS_Add_Torque;
 extern BOS_API  FName BOS_Add_YawCamera;
+extern BOS_API  FName BOS_HandleDeath;
 extern BOS_API  FName BOS_Server_Fire;
 extern BOS_API  FName BOS_SetProjectile_1;
 extern BOS_API  FName BOS_SetProjectile_2;

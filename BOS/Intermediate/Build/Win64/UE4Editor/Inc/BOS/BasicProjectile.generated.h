@@ -18,15 +18,22 @@ struct FHitResult;
 #define BOS_BasicProjectile_generated_h
 
 #define BOS_Source_BOS_BasicProjectile_h_11_RPC_WRAPPERS \
+	virtual bool OnHit_Validate(AActor* , UPrimitiveComponent* , FVector , const FHitResult& ); \
+	virtual void OnHit_Implementation(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit); \
  \
 	DECLARE_FUNCTION(execOnHit) \
 	{ \
 		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
 		P_GET_STRUCT(FVector,Z_Param_NormalImpulse); \
-		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_Hit); \
+		P_GET_STRUCT(FHitResult,Z_Param_Hit); \
 		P_FINISH; \
-		this->OnHit(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_NormalImpulse,Z_Param_Out_Hit); \
+		if (!this->OnHit_Validate(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_NormalImpulse,Z_Param_Hit)) \
+		{ \
+			RPC_ValidateFailed(TEXT("OnHit_Validate")); \
+			return; \
+		} \
+		this->OnHit_Implementation(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_NormalImpulse,Z_Param_Hit); \
 	}
 
 
@@ -37,12 +44,29 @@ struct FHitResult;
 		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
 		P_GET_STRUCT(FVector,Z_Param_NormalImpulse); \
-		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_Hit); \
+		P_GET_STRUCT(FHitResult,Z_Param_Hit); \
 		P_FINISH; \
-		this->OnHit(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_NormalImpulse,Z_Param_Out_Hit); \
+		if (!this->OnHit_Validate(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_NormalImpulse,Z_Param_Hit)) \
+		{ \
+			RPC_ValidateFailed(TEXT("OnHit_Validate")); \
+			return; \
+		} \
+		this->OnHit_Implementation(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_NormalImpulse,Z_Param_Hit); \
 	}
 
 
+#define BOS_Source_BOS_BasicProjectile_h_11_EVENT_PARMS \
+	struct BasicProjectile_eventOnHit_Parms \
+	{ \
+		AActor* OtherActor; \
+		UPrimitiveComponent* OtherComp; \
+		FVector NormalImpulse; \
+		FHitResult Hit; \
+	};
+
+
+extern BOS_API  FName BOS_OnHit;
+#define BOS_Source_BOS_BasicProjectile_h_11_CALLBACK_WRAPPERS
 #define BOS_Source_BOS_BasicProjectile_h_11_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesABasicProjectile(); \
@@ -87,11 +111,15 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABasicProjectile); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABasicProjectile)
 
 
-#define BOS_Source_BOS_BasicProjectile_h_8_PROLOG
+#define BOS_Source_BOS_BasicProjectile_h_8_PROLOG \
+	BOS_Source_BOS_BasicProjectile_h_11_EVENT_PARMS
+
+
 #define BOS_Source_BOS_BasicProjectile_h_11_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	BOS_Source_BOS_BasicProjectile_h_11_RPC_WRAPPERS \
+	BOS_Source_BOS_BasicProjectile_h_11_CALLBACK_WRAPPERS \
 	BOS_Source_BOS_BasicProjectile_h_11_INCLASS \
 	BOS_Source_BOS_BasicProjectile_h_11_STANDARD_CONSTRUCTORS \
 public: \
@@ -102,6 +130,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	BOS_Source_BOS_BasicProjectile_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	BOS_Source_BOS_BasicProjectile_h_11_CALLBACK_WRAPPERS \
 	BOS_Source_BOS_BasicProjectile_h_11_INCLASS_NO_PURE_DECLS \
 	BOS_Source_BOS_BasicProjectile_h_11_ENHANCED_CONSTRUCTORS \
 private: \
