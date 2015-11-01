@@ -83,6 +83,10 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 	{
 	}
 	IMPLEMENT_CLASS(ABOSGameMode, 4111215366);
+	void ACameraDirector::StaticRegisterNativesACameraDirector()
+	{
+	}
+	IMPLEMENT_CLASS(ACameraDirector, 2979884550);
 FName BOS_Add_Impulse = FName(TEXT("Add_Impulse"));
 FName BOS_Add_PitchCamera = FName(TEXT("Add_PitchCamera"));
 FName BOS_Add_Torque = FName(TEXT("Add_Torque"));
@@ -126,6 +130,8 @@ FName BOS_SetProjectile_2 = FName(TEXT("SetProjectile_2"));
 	BOS_API class UClass* Z_Construct_UClass_ABOSBall();
 	BOS_API class UClass* Z_Construct_UClass_ABOSGameMode_NoRegister();
 	BOS_API class UClass* Z_Construct_UClass_ABOSGameMode();
+	BOS_API class UClass* Z_Construct_UClass_ACameraDirector_NoRegister();
+	BOS_API class UClass* Z_Construct_UClass_ACameraDirector();
 	BOS_API class UPackage* Z_Construct_UPackage_BOS();
 	UClass* Z_Construct_UClass_ABallController_NoRegister()
 	{
@@ -483,6 +489,45 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABOSGameMode(Z_Construct_UClass_ABOSGameMode, TEXT("ABOSGameMode"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABOSGameMode);
+	UClass* Z_Construct_UClass_ACameraDirector_NoRegister()
+	{
+		return ACameraDirector::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ACameraDirector()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_BOS();
+			OuterClass = ACameraDirector::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_CameraTwo = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraTwo"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CameraTwo, ACameraDirector), 0x0000000000000001, Z_Construct_UClass_AActor_NoRegister());
+				UProperty* NewProp_CameraOne = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraOne"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CameraOne, ACameraDirector), 0x0000000000000001, Z_Construct_UClass_AActor_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("CameraDirector.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
+				MetaData->SetValue(NewProp_CameraTwo, TEXT("Category"), TEXT("CameraDirector"));
+				MetaData->SetValue(NewProp_CameraTwo, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
+				MetaData->SetValue(NewProp_CameraOne, TEXT("Category"), TEXT("CameraDirector"));
+				MetaData->SetValue(NewProp_CameraOne, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ACameraDirector(Z_Construct_UClass_ACameraDirector, TEXT("ACameraDirector"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ACameraDirector);
 	UPackage* Z_Construct_UPackage_BOS()
 	{
 		static UPackage* ReturnPackage = NULL;
@@ -491,8 +536,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/BOS")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xE72328E3;
-			Guid.B = 0x4F0CA0B6;
+			Guid.A = 0xBDEECEA9;
+			Guid.B = 0x14FADC1D;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

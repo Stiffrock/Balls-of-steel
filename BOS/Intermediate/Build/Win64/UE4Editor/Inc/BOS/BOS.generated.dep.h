@@ -17,3 +17,6 @@
 #ifndef BOS_BOSGameMode_generated_h
 	#include "BOSGameMode.h"
 #endif
+#ifndef BOS_CameraDirector_generated_h
+	#include "CameraDirector.h"
+#endif
