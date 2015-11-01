@@ -28,8 +28,8 @@ void ACameraDirector::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	const float TimeBetweenCameraChanges = 8.0f;
-	const float SmoothBlendTime = 5.75f;
+	const float TimeBetweenCameraChanges = 15.0f;
+	const float SmoothBlendTime = 9.0f;
 	TimeToNextCameraChange -= DeltaTime;
 
 	if (TimeToNextCameraChange <= 0.0f)
