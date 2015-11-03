@@ -1,5 +1,10 @@
-﻿Build started 2015-11-01 17:08:34.
+﻿Build started 2015-11-03 19:37:21.
+     1>Project "C:\Users\Stoffe\Documents\GitHub\Balls-of-steel\BOS\Intermediate\ProjectFiles\BOS.vcxproj" on node 2 (Build target(s)).
+     1>Build:
+         "C:\Program Files\Epic Games\4.9\Engine\Build\BatchFiles\Build.bat" BOSEditor Win64 Development "C:\Users\Stoffe\Documents\GitHub\Balls-of-steel\BOS\BOS.uproject" -rocket -waitmutex
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.MakeFile.Targets(38,5): warning MSB5021: "cmd" and its child processes are being terminated in order to cancel the build.
+     1>Done Building Project "C:\Users\Stoffe\Documents\GitHub\Balls-of-steel\BOS\Intermediate\ProjectFiles\BOS.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:01.93
+Time Elapsed 00:00:01.97

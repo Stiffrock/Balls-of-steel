@@ -17,6 +17,12 @@
 #ifndef BOS_BOSGameMode_generated_h
 	#include "BOSGameMode.h"
 #endif
+#ifndef BOS_BOSPlayerStart_generated_h
+	#include "BOSPlayerStart.h"
+#endif
+#ifndef BOS_BOSPlayerState_generated_h
+	#include "BOSPlayerState.h"
+#endif
 #ifndef BOS_CameraDirector_generated_h
 	#include "CameraDirector.h"
 #endif

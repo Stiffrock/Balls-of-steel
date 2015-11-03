@@ -11,9 +11,15 @@ class ABOSGameMode : public AGameMode
 public:
 	ABOSGameMode();
 
-
 	UPROPERTY()
 		TSubclassOf<class ABOSBall> ABOSBall_BP;
+
+	void PostLogin(APlayerController* NewPlayer) override;
+
+	AActor* ChoosePlayerStart(AController* Player); //override;
+
+	bool ShouldSpawnAtStartSpot(AController* Player) override { return false; };
+
 };
 
 

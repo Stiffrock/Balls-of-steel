@@ -12,8 +12,8 @@ UCLASS()
 class BOS_API ABallController : public APlayerController
 {
 	GENERATED_BODY()
-	
-	
-	
+
+
+		void Respawn();
 	
 };

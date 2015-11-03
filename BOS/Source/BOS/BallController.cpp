@@ -5,4 +5,12 @@
 
 
 
-
+void ABallController::Respawn()
+{
+	AGameMode * GameMode = GetWorld()->GetAuthGameMode();
+	if (GameMode)
+	{
+		APawn * NewPawn = GameMode->SpawnDefaultPawnFor(this, GameMode->ChoosePlayerStart(this));
+		Possess(NewPawn);
+	}
+}
