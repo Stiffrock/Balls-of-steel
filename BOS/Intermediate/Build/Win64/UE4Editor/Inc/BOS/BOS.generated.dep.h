@@ -17,6 +17,9 @@
 #ifndef BOS_BOSGameMode_generated_h
 	#include "BOSGameMode.h"
 #endif
+#ifndef BOS_BOSGameState_generated_h
+	#include "BOSGameState.h"
+#endif
 #ifndef BOS_BOSPlayerStart_generated_h
 	#include "BOSPlayerStart.h"
 #endif

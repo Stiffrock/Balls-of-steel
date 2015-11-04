@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\BOS.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{B3A8BA18-8CBC-41CF-803E-D83A8FE985D7}</UniqueIdentifier>
+      <UniqueIdentifier>{70F81AAA-1092-460F-AD18-D2280CD14490}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\BOS.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{6EF5A9AF-CDE4-42D4-BD1F-782172E37888}</UniqueIdentifier>
+      <UniqueIdentifier>{A2147945-BF23-46EA-B6FB-B98E3B446D6B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\BOS">
-      <UniqueIdentifier>{F21AAA29-2525-4A94-AF37-19855C7150F2}</UniqueIdentifier>
+      <UniqueIdentifier>{FDE5087E-2555-42B8-9895-B5CCE54BF8AE}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\BOS\BallController.cpp">
       <Filter>Source\BOS</Filter>
@@ -65,6 +65,18 @@
     <ClInclude Include="..\..\Source\BOS\BOSGameMode.h">
       <Filter>Source\BOS</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\BOS\BOSPlayerStart.cpp">
+      <Filter>Source\BOS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BOS\BOSPlayerStart.h">
+      <Filter>Source\BOS</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BOS\BOSPlayerState.cpp">
+      <Filter>Source\BOS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BOS\BOSPlayerState.h">
+      <Filter>Source\BOS</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\BOS\CameraDirector.cpp">
       <Filter>Source\BOS</Filter>
     </ClCompile>
@@ -73,18 +85,12 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\BOS\BOSPlayerState.h">
-      <Filter>Source\BOS</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BOS\BOSPlayerStart.h">
+    <ClInclude Include="..\..\Source\BOS\BOSGameState.h">
       <Filter>Source\BOS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\BOS\BOSPlayerState.cpp">
-      <Filter>Source\BOS</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\BOS\BOSPlayerStart.cpp">
+    <ClCompile Include="..\..\Source\BOS\BOSGameState.cpp">
       <Filter>Source\BOS</Filter>
     </ClCompile>
   </ItemGroup>

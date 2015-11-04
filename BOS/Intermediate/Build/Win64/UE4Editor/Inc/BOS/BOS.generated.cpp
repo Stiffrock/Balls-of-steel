@@ -83,6 +83,10 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 	{
 	}
 	IMPLEMENT_CLASS(ABOSGameMode, 4111215366);
+	void ABOSGameState::StaticRegisterNativesABOSGameState()
+	{
+	}
+	IMPLEMENT_CLASS(ABOSGameState, 2853071998);
 	void ABOSPlayerStart::StaticRegisterNativesABOSPlayerStart()
 	{
 	}
@@ -120,6 +124,7 @@ FName BOS_SetProjectile_2 = FName(TEXT("SetProjectile_2"));
 	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
+	ENGINE_API class UClass* Z_Construct_UClass_AGameState();
 	ENGINE_API class UClass* Z_Construct_UClass_APlayerStart();
 	ENGINE_API class UClass* Z_Construct_UClass_APlayerState();
 
@@ -140,6 +145,8 @@ FName BOS_SetProjectile_2 = FName(TEXT("SetProjectile_2"));
 	BOS_API class UClass* Z_Construct_UClass_ABOSBall();
 	BOS_API class UClass* Z_Construct_UClass_ABOSGameMode_NoRegister();
 	BOS_API class UClass* Z_Construct_UClass_ABOSGameMode();
+	BOS_API class UClass* Z_Construct_UClass_ABOSGameState_NoRegister();
+	BOS_API class UClass* Z_Construct_UClass_ABOSGameState();
 	BOS_API class UClass* Z_Construct_UClass_ABOSPlayerStart_NoRegister();
 	BOS_API class UClass* Z_Construct_UClass_ABOSPlayerStart();
 	BOS_API class UClass* Z_Construct_UClass_ABOSPlayerState_NoRegister();
@@ -503,6 +510,39 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABOSGameMode(Z_Construct_UClass_ABOSGameMode, TEXT("ABOSGameMode"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABOSGameMode);
+	UClass* Z_Construct_UClass_ABOSGameState_NoRegister()
+	{
+		return ABOSGameState::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ABOSGameState()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AGameState();
+			Z_Construct_UPackage_BOS();
+			OuterClass = ABOSGameState::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900280;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Input Movement Collision Rendering Utilities|Transformation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("BOSGameState.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("BOSGameState.h"));
+				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ABOSGameState(Z_Construct_UClass_ABOSGameState, TEXT("ABOSGameState"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ABOSGameState);
 	UClass* Z_Construct_UClass_ABOSPlayerStart_NoRegister()
 	{
 		return ABOSPlayerStart::StaticClass();
@@ -626,8 +666,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/BOS")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xCE683258;
-			Guid.B = 0x4E54003D;
+			Guid.A = 0x9427A497;
+			Guid.B = 0x5D30272C;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

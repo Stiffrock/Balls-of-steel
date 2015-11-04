@@ -2,11 +2,13 @@
 
 #include "BOS.h"
 #include "BallController.h"
+#include "Engine.h"
 
 
 
 void ABallController::Respawn()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ball spawned"));
 	AGameMode * GameMode = GetWorld()->GetAuthGameMode();
 	if (GameMode)
 	{

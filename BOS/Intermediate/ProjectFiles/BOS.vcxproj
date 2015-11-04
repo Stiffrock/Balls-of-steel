@@ -43,7 +43,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4DBA9C74-81D5-4177-BA52-AB5D536B074B}</ProjectGuid>
+    <ProjectGuid>{770E6267-3CE8-4EC6-8251-81B5325EE8A9}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>BOS</RootNamespace>
   </PropertyGroup>
@@ -269,11 +269,13 @@
     <ClInclude Include="..\..\Source\BOS\BOSBall.h" />
     <ClCompile Include="..\..\Source\BOS\BOSGameMode.cpp" />
     <ClInclude Include="..\..\Source\BOS\BOSGameMode.h" />
+    <ClCompile Include="..\..\Source\BOS\BOSGameState.cpp" />
     <ClCompile Include="..\..\Source\BOS\BOSPlayerStart.cpp" />
-    <ClCompile Include="..\..\Source\BOS\BOSPlayerState.cpp" />
-    <ClCompile Include="..\..\Source\BOS\CameraDirector.cpp" />
+    <ClInclude Include="..\..\Source\BOS\BOSGameState.h" />
     <ClInclude Include="..\..\Source\BOS\BOSPlayerStart.h" />
+    <ClCompile Include="..\..\Source\BOS\BOSPlayerState.cpp" />
     <ClInclude Include="..\..\Source\BOS\BOSPlayerState.h" />
+    <ClCompile Include="..\..\Source\BOS\CameraDirector.cpp" />
     <ClInclude Include="..\..\Source\BOS\CameraDirector.h" />
   </ItemGroup>
   <PropertyGroup>

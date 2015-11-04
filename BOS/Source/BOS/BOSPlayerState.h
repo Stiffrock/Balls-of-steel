@@ -16,7 +16,4 @@ class BOS_API ABOSPlayerState : public APlayerState
 public:
 		UPROPERTY(Replicated)
 		bool bTeamB;
-	
-	
-	
 };

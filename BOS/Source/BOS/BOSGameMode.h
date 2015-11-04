@@ -16,7 +16,7 @@ public:
 
 	void PostLogin(APlayerController* NewPlayer) override;
 
-	AActor* ChoosePlayerStart(AController* Player); //override;
+	AActor* ChoosePlayerStart(APlayerController* Player);
 
 	bool ShouldSpawnAtStartSpot(AController* Player) override { return false; };
 

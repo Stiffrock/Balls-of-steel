@@ -5,6 +5,9 @@
 #include "BOSBall.h"
 #include "BOSPlayerState.h"
 #include "BOSPlayerStart.h"
+#include "BOSGameState.h"
+#include "BallController.h"
+#include "Engine.h"
 
 ABOSGameMode::ABOSGameMode()
 {
@@ -17,65 +20,76 @@ ABOSGameMode::ABOSGameMode()
 		DefaultPawnClass = (UClass*)ItemBlueprint.Object->GeneratedClass;
 	}
 
-
+	GameStateClass = ABOSGameState::StaticClass();
 	PlayerStateClass = ABOSPlayerState::StaticClass();
+	PlayerControllerClass = ABallController::StaticClass();
+
 }
 
 void ABOSGameMode::PostLogin(APlayerController *NewPlayer)
 {
+
 	Super::PostLogin(NewPlayer);
 
 	if (NewPlayer)
 	{
+	
 		ABOSPlayerState * PS = Cast<ABOSPlayerState>(NewPlayer->PlayerState);
 
 		if (PS && GameState)
 		{
 			uint8 NumTeamA = 0;
 			uint8 NumTeamB = 0;	
-
-		/*	for (APlayerState * It : GameState)
+		
+			for (APlayerState * It : GameState->PlayerArray)
 			{
+			
 				ABOSPlayerState* OtherPS = Cast<ABOSPlayerState>(It);
 
 				if (OtherPS->bTeamB)
 				{
+					
 					NumTeamB++;
 				}
 				else
 				{
+	
 					NumTeamA++;
 				}
 			}
 			if (NumTeamA > NumTeamB)
 			{
 				PS->bTeamB = true;
-			}*/
+			}
 		}
 	}
 }
 
 
-AActor* ABOSGameMode::ChoosePlayerStart(AController* Player)
+AActor* ABOSGameMode::ChoosePlayerStart(APlayerController* Player)
 {
-	/*if (Player)
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Start added"));
+	if (Player)
 	{
 		ABOSPlayerState * PS = Cast<ABOSPlayerState>(Player->PlayerState);
 
 		if (PS)
 		{
-			TArray<ABOSPlayerStart *> Starts;
-			for (TActorIterator<ABOSPlayerStart> StartItr(GetWorld()); StartItr; ++StartItr)
+			TArray<ABOSPlayerStart *> Starts;	
+
+			for (TObjectIterator<ABOSPlayerStart> StartItr; StartItr; ++StartItr)
 			{
+
 				if (StartItr->bTeamB == PS->bTeamB)
 				{
 					Starts.Add(*StartItr);
+					GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Start added"));
 				}
 			}
-
-			return Starts[FMath::RandRange(0, Starts.Num - 1)];
+			return Starts[0];
+			//return Starts[FMath::RandRange(0, Starts.Num - 1)];
 		}
-	}*/
+	}
 
 	return NULL;
 }
