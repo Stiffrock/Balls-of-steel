@@ -13,6 +13,7 @@ class BOS_API ABallController : public APlayerController
 {
 	GENERATED_BODY()
 
+		ABallController();
 
 		void Respawn();
 	

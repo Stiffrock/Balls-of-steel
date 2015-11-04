@@ -39,7 +39,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define BOS_Source_BOS_BallController_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ABallController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API ABallController(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABallController) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ABallController); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABallController); \
@@ -50,15 +50,13 @@ public:
 
 
 #define BOS_Source_BOS_BallController_h_14_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ABallController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API ABallController(const ABallController& InCopy); \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ABallController); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABallController); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABallController)
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABallController)
 
 
 #define BOS_Source_BOS_BallController_h_11_PROLOG

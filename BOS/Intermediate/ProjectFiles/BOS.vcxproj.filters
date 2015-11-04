@@ -1,97 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <None Include="..\..\BOS.uproject" />
-    <Filter Include="Source">
-      <UniqueIdentifier>{70F81AAA-1092-460F-AD18-D2280CD14490}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Source\BOS.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <None Include="..\..\Source\BOSEditor.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <Filter Include="Config">
-      <UniqueIdentifier>{A2147945-BF23-46EA-B6FB-B98E3B446D6B}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Config\DefaultEditor.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultEngine.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultGame.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultInput.ini">
-      <Filter>Config</Filter>
-    </None>
-    <Filter Include="Source\BOS">
-      <UniqueIdentifier>{FDE5087E-2555-42B8-9895-B5CCE54BF8AE}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\BOS\BallController.cpp">
-      <Filter>Source\BOS</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\BOS\BallController.h">
-      <Filter>Source\BOS</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\BOS\BasicProjectile.cpp">
-      <Filter>Source\BOS</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\BOS\BasicProjectile.h">
-      <Filter>Source\BOS</Filter>
-    </ClInclude>
-    <None Include="..\..\Source\BOS\BOS.Build.cs">
-      <Filter>Source\BOS</Filter>
-    </None>
-    <ClCompile Include="..\..\Source\BOS\BOS.cpp">
-      <Filter>Source\BOS</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\BOS\BOS.h">
-      <Filter>Source\BOS</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\BOS\BOSBall.cpp">
-      <Filter>Source\BOS</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\BOS\BOSBall.h">
-      <Filter>Source\BOS</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\BOS\BOSGameMode.cpp">
-      <Filter>Source\BOS</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\BOS\BOSGameMode.h">
-      <Filter>Source\BOS</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\BOS\BOSPlayerStart.cpp">
-      <Filter>Source\BOS</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\BOS\BOSPlayerStart.h">
-      <Filter>Source\BOS</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\BOS\BOSPlayerState.cpp">
-      <Filter>Source\BOS</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\BOS\BOSPlayerState.h">
-      <Filter>Source\BOS</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\BOS\CameraDirector.cpp">
-      <Filter>Source\BOS</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\BOS\CameraDirector.h">
-      <Filter>Source\BOS</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\BOS\BOSGameState.h">
-      <Filter>Source\BOS</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\BOS\BOSGameState.cpp">
-      <Filter>Source\BOS</Filter>
-    </ClCompile>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\BOS.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{CCDA6FFE-3650-401F-B288-5FDF064E785F}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\BOS.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\BOSEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{25D32D6D-D0B7-4DD1-9DE7-7F64EF801751}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\BOS">
+			<UniqueIdentifier>{BD1F4938-5823-40ED-93F9-3188AEB334D1}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\BOS\BallController.cpp">
+			<Filter>Source\BOS</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BOS\BallController.h">
+			<Filter>Source\BOS</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\BOS\BasicProjectile.cpp">
+			<Filter>Source\BOS</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BOS\BasicProjectile.h">
+			<Filter>Source\BOS</Filter>
+		</ClInclude >
+		<None Include="..\..\Source\BOS\BOS.Build.cs">
+			<Filter>Source\BOS</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\BOS\BOS.cpp">
+			<Filter>Source\BOS</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BOS\BOS.h">
+			<Filter>Source\BOS</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\BOS\BOSBall.cpp">
+			<Filter>Source\BOS</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BOS\BOSBall.h">
+			<Filter>Source\BOS</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\BOS\BOSGameMode.cpp">
+			<Filter>Source\BOS</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BOS\BOSGameMode.h">
+			<Filter>Source\BOS</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\BOS\BOSGameState.cpp">
+			<Filter>Source\BOS</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BOS\BOSGameState.h">
+			<Filter>Source\BOS</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\BOS\BOSPlayerStart.cpp">
+			<Filter>Source\BOS</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BOS\BOSPlayerStart.h">
+			<Filter>Source\BOS</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\BOS\BOSPlayerState.cpp">
+			<Filter>Source\BOS</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BOS\BOSPlayerState.h">
+			<Filter>Source\BOS</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\BOS\CameraDirector.cpp">
+			<Filter>Source\BOS</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BOS\CameraDirector.h">
+			<Filter>Source\BOS</Filter>
+		</ClInclude >
+	</ItemGroup>
 </Project>

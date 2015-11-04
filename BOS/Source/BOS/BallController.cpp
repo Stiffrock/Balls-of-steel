@@ -4,7 +4,10 @@
 #include "BallController.h"
 #include "Engine.h"
 
+ABallController::ABallController()
+{
 
+}
 
 void ABallController::Respawn()
 {

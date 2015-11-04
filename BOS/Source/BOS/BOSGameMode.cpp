@@ -62,13 +62,14 @@ void ABOSGameMode::PostLogin(APlayerController *NewPlayer)
 				PS->bTeamB = true;
 			}
 		}
+		ChoosePlayerStart(NewPlayer);
 	}
 }
 
 
 AActor* ABOSGameMode::ChoosePlayerStart(APlayerController* Player)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Start added"));
+
 	if (Player)
 	{
 		ABOSPlayerState * PS = Cast<ABOSPlayerState>(Player->PlayerState);
@@ -77,13 +78,14 @@ AActor* ABOSGameMode::ChoosePlayerStart(APlayerController* Player)
 		{
 			TArray<ABOSPlayerStart *> Starts;	
 
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Start added"));
 			for (TObjectIterator<ABOSPlayerStart> StartItr; StartItr; ++StartItr)
 			{
 
 				if (StartItr->bTeamB == PS->bTeamB)
 				{
 					Starts.Add(*StartItr);
-					GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Start added"));
+		
 				}
 			}
 			return Starts[0];
