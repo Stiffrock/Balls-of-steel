@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BOS.h.obj"
 "C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BallController.cpp.obj"
 "C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BasicProjectile.cpp.obj"
@@ -11,6 +12,21 @@
 "C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BOS.generated.cpp.obj"
 "C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\PCLaunch.rc.res"
 "C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\ModuleVersionResource.rc.inl.res"
+=======
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BOS.h.obj"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BallController.cpp.obj"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BasicProjectile.cpp.obj"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BOS.cpp.obj"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BOSBall.cpp.obj"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BOSGameMode.cpp.obj"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BOSGameState.cpp.obj"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BOSPlayerStart.cpp.obj"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BOSPlayerState.cpp.obj"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\CameraDirector.cpp.obj"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\BOS.generated.cpp.obj"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\PCLaunch.rc.res"
+"C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Intermediate\Build\Win64\UE4Editor\Development\BOS\ModuleVersionResource.rc.inl.res"
+>>>>>>> origin/master
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"

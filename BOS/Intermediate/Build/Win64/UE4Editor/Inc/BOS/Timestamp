@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BallController.h
 C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BasicProjectile.h
 C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BOSBall.h
@@ -6,3 +7,13 @@ C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BOSGameState.h
 C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BOSPlayerStart.h
 C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BOSPlayerState.h
 C:\Users\Henrik\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\CameraDirector.h
+=======
+C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BallController.h
+C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BasicProjectile.h
+C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BOSBall.h
+C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BOSGameMode.h
+C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BOSGameState.h
+C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BOSPlayerStart.h
+C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\BOSPlayerState.h
+C:\Users\Spellabbet\Documents\GitHub\Balls-of-steel\BOS\Source\BOS\CameraDirector.h
+>>>>>>> origin/master

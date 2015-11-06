@@ -51,6 +51,12 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 		Parms.rotator=rotator;
 		ProcessEvent(FindFunctionChecked(BOS_Add_YawCamera),&Parms);
 	}
+	void ABOSBall::Damage(uint32 damage)
+	{
+		BOSBall_eventDamage_Parms Parms;
+		Parms.damage=damage;
+		ProcessEvent(FindFunctionChecked(BOS_Damage),&Parms);
+	}
 	void ABOSBall::HandleDeath()
 	{
 		ProcessEvent(FindFunctionChecked(BOS_HandleDeath),NULL);
@@ -73,12 +79,13 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Add_PitchCamera",(Native)&ABOSBall::execAdd_PitchCamera);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Add_Torque",(Native)&ABOSBall::execAdd_Torque);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Add_YawCamera",(Native)&ABOSBall::execAdd_YawCamera);
+		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Damage",(Native)&ABOSBall::execDamage);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"HandleDeath",(Native)&ABOSBall::execHandleDeath);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"Server_Fire",(Native)&ABOSBall::execServer_Fire);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"SetProjectile_1",(Native)&ABOSBall::execSetProjectile_1);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"SetProjectile_2",(Native)&ABOSBall::execSetProjectile_2);
 	}
-	IMPLEMENT_CLASS(ABOSBall, 1856925226);
+	IMPLEMENT_CLASS(ABOSBall, 2481580374);
 	void ABOSGameMode::StaticRegisterNativesABOSGameMode()
 	{
 	}
@@ -103,6 +110,7 @@ FName BOS_Add_Impulse = FName(TEXT("Add_Impulse"));
 FName BOS_Add_PitchCamera = FName(TEXT("Add_PitchCamera"));
 FName BOS_Add_Torque = FName(TEXT("Add_Torque"));
 FName BOS_Add_YawCamera = FName(TEXT("Add_YawCamera"));
+FName BOS_Damage = FName(TEXT("Damage"));
 FName BOS_HandleDeath = FName(TEXT("HandleDeath"));
 FName BOS_OnHit = FName(TEXT("OnHit"));
 FName BOS_Server_Fire = FName(TEXT("Server_Fire"));
@@ -137,6 +145,7 @@ FName BOS_SetProjectile_2 = FName(TEXT("SetProjectile_2"));
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_Add_PitchCamera();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_Add_Torque();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_Add_YawCamera();
+	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_Damage();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_HandleDeath();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_Server_Fire();
 	BOS_API class UFunction* Z_Construct_UFunction_ABOSBall_SetProjectile_1();
@@ -323,6 +332,23 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_ABOSBall_Damage()
+	{
+		UObject* Outer=Z_Construct_UClass_ABOSBall();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Damage"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x80220CC0, 65535, sizeof(BOSBall_eventDamage_Parms));
+			UProperty* NewProp_damage = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("damage"), RF_Public|RF_Transient|RF_Native) UUInt32Property(CPP_PROPERTY_BASE(damage, BOSBall_eventDamage_Parms), 0x0000000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_ABOSBall_HandleDeath()
 	{
 		UObject* Outer=Z_Construct_UClass_ABOSBall();
@@ -408,6 +434,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_Add_PitchCamera());
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_Add_Torque());
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_Add_YawCamera());
+				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_Damage());
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_HandleDeath());
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_Server_Fire());
 				OuterClass->LinkChild(Z_Construct_UFunction_ABOSBall_SetProjectile_1());
@@ -428,6 +455,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_Add_PitchCamera()); // 2848807837
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_Add_Torque()); // 3720117706
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_Add_YawCamera()); // 1723173877
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_Damage()); // 1564517119
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_HandleDeath()); // 473961840
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_Server_Fire()); // 840796336
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABOSBall_SetProjectile_1()); // 3734115784
@@ -666,8 +694,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/BOS")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x9427A497;
-			Guid.B = 0x5D30272C;
+			Guid.A = 0xF94D3CC7;
+			Guid.B = 0x17027D36;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
