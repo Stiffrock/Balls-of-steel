@@ -44,7 +44,7 @@
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{770E6267-3CE8-4EC6-8251-81B5325EE8A9}</ProjectGuid>
+		<ProjectGuid>{D9397865-100B-4EED-AF45-3B423FD285BF}</ProjectGuid>
 		<Keyword>MakeFileProj</Keyword>
 		<RootNamespace>BOS</RootNamespace>
 	</PropertyGroup>
