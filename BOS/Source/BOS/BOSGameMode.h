@@ -16,9 +16,11 @@ public:
 
 	void PostLogin(APlayerController* NewPlayer) override;
 
-	AActor* ChoosePlayerStart(APlayerController* Player);
+	AActor* ChoosePlayerStart_Implementation(AController* Player) override;
 
 	bool ShouldSpawnAtStartSpot(AController* Player) override { return false; };
+	uint8 NumTeamA;
+	uint8 NumTeamB;
 
 };
 

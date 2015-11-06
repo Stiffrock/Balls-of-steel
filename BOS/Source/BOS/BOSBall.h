@@ -65,6 +65,11 @@ public:
 	void HandleDeath_Implementation();
 	bool HandleDeath_Validate();
 
+	UFUNCTION(Server, Reliable, WithValidation)
+	void Damage(uint32 damage);
+	void Damage_Implementation(uint32 damage);
+	bool Damage_Validate(uint32 damage);
+
 	UPROPERTY(EditAnywhere, Category = Ball)
 	float MaxDashImpulse;
 
@@ -80,7 +85,7 @@ public:
 	float CameraLag;
 
 
-	float Health;
+	uint32 Health;
 
 	FVector CurrentDirection;
 
@@ -89,6 +94,7 @@ public:
 	bool bProjectile_1;
 	bool bProjectile_2;
 	bool bCameraLag;
+	bool bIsDead;
 	
 
 protected:

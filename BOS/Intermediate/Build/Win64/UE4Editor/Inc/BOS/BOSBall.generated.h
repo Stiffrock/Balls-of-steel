@@ -16,6 +16,8 @@ struct FVector;
 #define BOS_BOSBall_generated_h
 
 #define BOS_Source_BOS_BOSBall_h_9_RPC_WRAPPERS \
+	virtual bool Damage_Validate(uint32 ); \
+	virtual void Damage_Implementation(uint32 damage); \
 	virtual bool HandleDeath_Validate(); \
 	virtual void HandleDeath_Implementation(); \
 	virtual bool SetProjectile_2_Validate(); \
@@ -32,6 +34,18 @@ struct FVector;
 	virtual void Add_Impulse_Implementation(FVector impulse); \
 	virtual bool Add_Torque_Validate(FVector ); \
 	virtual void Add_Torque_Implementation(FVector torque); \
+ \
+	DECLARE_FUNCTION(execDamage) \
+	{ \
+		P_GET_PROPERTY(UUInt32Property,Z_Param_damage); \
+		P_FINISH; \
+		if (!this->Damage_Validate(Z_Param_damage)) \
+		{ \
+			RPC_ValidateFailed(TEXT("Damage_Validate")); \
+			return; \
+		} \
+		this->Damage_Implementation(Z_Param_damage); \
+	} \
  \
 	DECLARE_FUNCTION(execHandleDeath) \
 	{ \
@@ -127,6 +141,18 @@ struct FVector;
 
 
 #define BOS_Source_BOS_BOSBall_h_9_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execDamage) \
+	{ \
+		P_GET_PROPERTY(UUInt32Property,Z_Param_damage); \
+		P_FINISH; \
+		if (!this->Damage_Validate(Z_Param_damage)) \
+		{ \
+			RPC_ValidateFailed(TEXT("Damage_Validate")); \
+			return; \
+		} \
+		this->Damage_Implementation(Z_Param_damage); \
+	} \
  \
 	DECLARE_FUNCTION(execHandleDeath) \
 	{ \
@@ -237,6 +263,10 @@ struct FVector;
 	struct BOSBall_eventAdd_YawCamera_Parms \
 	{ \
 		FRotator rotator; \
+	}; \
+	struct BOSBall_eventDamage_Parms \
+	{ \
+		uint32 damage; \
 	};
 
 
@@ -244,6 +274,7 @@ extern BOS_API  FName BOS_Add_Impulse;
 extern BOS_API  FName BOS_Add_PitchCamera;
 extern BOS_API  FName BOS_Add_Torque;
 extern BOS_API  FName BOS_Add_YawCamera;
+extern BOS_API  FName BOS_Damage;
 extern BOS_API  FName BOS_HandleDeath;
 extern BOS_API  FName BOS_Server_Fire;
 extern BOS_API  FName BOS_SetProjectile_1;

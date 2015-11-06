@@ -1,0 +1,224 @@
+﻿[2015.11.06-07.42.41:123][  0]Log file open, 11/06/15 08:42:41
+[2015.11.06-07.42.41:123][  0]LogInit:Display: Running engine for game: BOS
+[2015.11.06-07.42.41:123][  0]LogInit:Display: RandInit(-1390724780) SRandInit(-1390724780).
+[2015.11.06-07.42.41:123][  0]LogTaskGraph: Started task graph with 4 named threads and 7 total threads.
+[2015.11.06-07.42.41:123][  0]LogStats: Stats thread started at 0.069895
+[2015.11.06-07.42.41:123][  0]LogInit: Version: 4.9.2-2707645+++depot+UE4-Releases+4.9
+[2015.11.06-07.42.41:123][  0]LogInit: API Version: 2672455
+[2015.11.06-07.42.41:123][  0]LogInit: Compiled (64-bit): Sep 28 2015 10:25:44
+[2015.11.06-07.42.41:123][  0]LogInit: Compiled with Visual C++: 18.00.21005.01
+[2015.11.06-07.42.41:123][  0]LogInit: Build Configuration: Development
+[2015.11.06-07.42.41:123][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.9
+[2015.11.06-07.42.41:123][  0]LogInit: Command line:  
+[2015.11.06-07.42.41:123][  0]LogInit: Base directory: C:/Program Files/Epic Games/4.9/Engine/Binaries/Win64/
+[2015.11.06-07.42.41:123][  0]LogInit: Rocket: 1
+[2015.11.06-07.42.41:130][  0]LogInit: Using libcurl 7.41.0
+[2015.11.06-07.42.41:130][  0]LogInit:  - built for x86_64-pc-win32
+[2015.11.06-07.42.41:130][  0]LogInit:  - supports SSL with WinSSL
+[2015.11.06-07.42.41:130][  0]LogInit:  - other features:
+[2015.11.06-07.42.41:130][  0]LogInit:      CURL_VERSION_SSL
+[2015.11.06-07.42.41:130][  0]LogInit:      CURL_VERSION_IPV6
+[2015.11.06-07.42.41:130][  0]LogInit:      CURL_VERSION_ASYNCHDNS
+[2015.11.06-07.42.41:130][  0]LogInit:      CURL_VERSION_LARGEFILE
+[2015.11.06-07.42.41:130][  0]LogInit:      CURL_VERSION_IDN
+[2015.11.06-07.42.41:130][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
+[2015.11.06-07.42.41:130][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+[2015.11.06-07.42.41:130][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+[2015.11.06-07.42.41:130][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+[2015.11.06-07.42.41:130][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+[2015.11.06-07.42.41:135][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2015.11.06-07.42.41:141][  0]LogInit: Object subsystem initialized
+[2015.11.06-07.42.41:142][  0]LogInit: Selected Device Profile: [Windows]
+[2015.11.06-07.42.41:142][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2015.11.06-07.42.41:151][  0]LogInit: Computer: SpellabbA332-06
+[2015.11.06-07.42.41:151][  0]LogInit: User: Spellabbet
+[2015.11.06-07.42.41:151][  0]LogInit: CPU Page size=4096, Cores=4
+[2015.11.06-07.42.41:151][  0]LogInit: High frequency timer resolution =3.507517 MHz
+[2015.11.06-07.42.41:151][  0]LogMemory: Memory total: Physical=15.9GB (16GB approx)
+[2015.11.06-07.42.41:151][  0]LogMemory: Platform Memory Stats for Windows
+[2015.11.06-07.42.41:151][  0]LogMemory: Process Physical Memory: 52.47 MB used, 52.47 MB peak
+[2015.11.06-07.42.41:151][  0]LogMemory: Process Virtual Memory: 55.96 MB used, 55.96 MB peak
+[2015.11.06-07.42.41:151][  0]LogMemory: Physical Memory: 4387.55 MB used, 16318.82 MB total
+[2015.11.06-07.42.41:151][  0]LogMemory: Virtual Memory: 348.31 MB used, 134217728.00 MB total
+[2015.11.06-07.42.41:181][  0]LogTextLocalizationManager: No translations for ('sv-SE') exist, falling back to 'en' for localization and internationalization data.
+[2015.11.06-07.42.41:790][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA GeForce GTX 960 (Feature Level 11_0)
+[2015.11.06-07.42.41:790][  0]LogD3D11RHI: Adapter has 1965MB of dedicated video memory, 0MB of dedicated system memory, and 2048MB of shared system memory, 1 output[s]
+[2015.11.06-07.42.41:791][  0]LogD3D11RHI: Found D3D11 adapter 1: Microsoft Basic Render Driver (Feature Level 11_0)
+[2015.11.06-07.42.41:791][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 256MB of shared system memory, 0 output[s]
+[2015.11.06-07.42.41:791][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2015.11.06-07.42.41:794][  0]LogD3D11RHI: !Direct3DDevice
+[2015.11.06-07.42.41:794][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
+[2015.11.06-07.42.41:802][  0]LogD3D11RHI: Async texture creation enabled
+[2015.11.06-07.42.41:817][  0]LogShaderCompilers: Guid format shader working directory is 15 characters bigger than the processId version (../../../../../../Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Intermediate/Shaders/WorkingDirectory/4308/).
+[2015.11.06-07.42.41:817][  0]LogShaderCompilers: Cleaned the shader compiler working directory '../../../../../../Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Intermediate/Shaders/tmp/A683A3044D2FB98AF40E1882E312DF5B/'.
+[2015.11.06-07.42.41:817][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2015.11.06-07.42.42:739][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
+[2015.11.06-07.42.42:743][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2015.11.06-07.42.42:747][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2015.11.06-07.42.42:751][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2015.11.06-07.42.42:755][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2015.11.06-07.42.42:757][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2015.11.06-07.42.42:760][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2015.11.06-07.42.42:762][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2015.11.06-07.42.42:765][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2015.11.06-07.42.42:767][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2015.11.06-07.42.42:770][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2015.11.06-07.42.42:773][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2015.11.06-07.42.42:773][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
+[2015.11.06-07.42.42:789][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2015.11.06-07.42.42:791][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2015.11.06-07.42.42:794][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2015.11.06-07.42.42:797][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2015.11.06-07.42.42:797][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.11.06-07.42.42:857][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2015.11.06-07.42.42:895][  0]LogDerivedDataCache: Loaded boot cache 0.04s 46MB C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.11.06-07.42.42:895][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc
+[2015.11.06-07.42.42:895][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2015.11.06-07.42.42:895][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2015.11.06-07.42.42:895][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2015.11.06-07.42.42:895][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2015.11.06-07.42.43:013][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2015.11.06-07.42.43:025][  0]LogDerivedDataCache: Using Local data cache path C:/Users/Spellabbet/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2015.11.06-07.42.43:176][  0]LogInit: Selected Device Profile: [Windows]
+[2015.11.06-07.42.43:178][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2015.11.06-07.42.43:276][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2015.11.06-07.42.43:276][  0]LogMeshUtilities: No automatic mesh merging module available
+[2015.11.06-07.42.43:464][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2015.11.06-07.42.44:003][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2015.11.06-07.42.44:066][  0]LogLinker:Warning: Asset '../../../../../../Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Content/Rolling/Meshes/BallMesh.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.11.06-07.42.44:067][  0]LogLinker:Warning: Asset '../../../../../../Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Content/Rolling/Materials/M_Blue_Checker.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.11.06-07.42.44:067][  0]LogLinker:Warning: Asset '../../../../../../Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Content/Rolling/Materials/PM_Ball.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.11.06-07.42.44:183][  0]LogAssetRegistry: FAssetRegistry took 0.0109 seconds to start up
+[2015.11.06-07.42.44:332][  0]SourceControl: Info Source control is disabled
+[2015.11.06-07.42.44:340][  0]SourceControl: Info Source control is disabled
+[2015.11.06-07.42.44:349][  0]SourceControl: Info Source control is disabled
+[2015.11.06-07.42.44:357][  0]SourceControl: Info Source control is disabled
+[2015.11.06-07.42.44:461][  0]LogLinker:Warning: Asset '../../../Engine/Plugins/Runtime/LeapMotionController/Content/LM_PassthroughMaterial.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.11.06-07.42.44:516][  0]LogObj: 29662 objects as part of root set at end of initial load.
+[2015.11.06-07.42.44:516][  0]LogUObjectAllocator: 6510536 out of 0 bytes used by permanent object pool.
+[2015.11.06-07.42.44:562][  0]LogEngine: Initializing Engine...
+[2015.11.06-07.42.44:564][  0]LogHMD: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.7.0.0
+[2015.11.06-07.42.44:564][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2015.11.06-07.42.44:660][  0]LogAIModule: Creating AISystem for world NewWorld
+[2015.11.06-07.42.44:664][  0]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.06-07.42.44:674][  0]LogInit: FAudioDevice initialized.
+[2015.11.06-07.42.44:693][  0]LogDerivedDataCache: Saved boot cache 0.02s 46MB C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.11.06-07.42.44:698][  0]LogInit: Texture streaming: Enabled
+[2015.11.06-07.42.44:702][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
+[2015.11.06-07.42.44:702][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.9.2-2707645+++depot+UE4-Releases+4.9
+[2015.11.06-07.42.44:702][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId 45933c9447afbf6f1ab999917f6accd0|8471e16762be488588a110ad13c08bd6|060e5e79-a789-49c4-8abd-5d8b330400a7
+[2015.11.06-07.42.44:702][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
+[2015.11.06-07.42.44:719][  0]LogInit: Transaction tracking system initialized
+[2015.11.06-07.42.44:741][  0]BlueprintLog: New page: Editor Load
+[2015.11.06-07.42.44:804][  0]LocalizationService: Info Localization service is disabled
+[2015.11.06-07.42.44:869][  0]LogConsoleResponse:Display: 
+[2015.11.06-07.42.44:958][  0]LogCook:Display: Done creating registry. It took  0.00s.
+[2015.11.06-07.42.45:001][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Content/' took 0.01s
+[2015.11.06-07.42.45:001][  0]SourceControl: Info Source control is disabled
+[2015.11.06-07.42.45:001][  0]Cmd: MAP LOAD FILE="../../../../../../Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Content/RollingCPP/Maps/MainMenu.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.11.06-07.42.45:001][  0]LightingResults: New page: Lighting Build
+[2015.11.06-07.42.45:004][  0]MapCheck: New page: Map Check
+[2015.11.06-07.42.45:004][  0]LightingResults: New page: Lighting Build
+[2015.11.06-07.42.45:015][  0]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000004A271EC400
+[2015.11.06-07.42.45:127][  0]LogAIModule: Creating AISystem for world MainMenu
+[2015.11.06-07.42.45:134][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2015.11.06-07.42.45:134][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2015.11.06-07.42.45:170][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 35.665ms to complete.
+[2015.11.06-07.42.45:170][  0]LogFileHelpers: Loading map 'MainMenu' took 0.169
+[2015.11.06-07.42.45:271][  0]LogCollectionManager: Loaded 0 collections in 0.002046 seconds
+[2015.11.06-07.42.45:315][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Saved/Collections/' took 0.01s
+[2015.11.06-07.42.45:315][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Content/Developers/Spellabbet/Collections/' took 0.01s
+[2015.11.06-07.42.45:315][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Content/Collections/' took 0.01s
+[2015.11.06-07.42.45:315][  0]LogContentBrowser: Native class hierarchy populated in 0.0095 seconds. Added 1875 classes and 335 folders.
+[2015.11.06-07.42.45:319][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000005 seconds
+[2015.11.06-07.42.45:327][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0010 seconds. Added 0 classes and 0 folders.
+[2015.11.06-07.42.45:363][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0009 seconds. Added 0 classes and 0 folders.
+[2015.11.06-07.42.45:370][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0009 seconds. Added 1 classes and 2 folders.
+[2015.11.06-07.42.45:412][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2015.11.06-07.42.45:416][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
+[2015.11.06-07.42.45:439][  0]LogLoad: Full Startup: 4.97 seconds (BP compile: 0.04 seconds)
+[2015.11.06-07.42.45:480][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2015.11.06-07.42.45:585][  0]LogRenderer: Reallocating scene render targets to support 1208x556 (Frame:2).
+[2015.11.06-07.42.45:717][  2]LogAssetRegistry: Asset discovery search completed in 1.5441 seconds
+[2015.11.06-07.42.45:717][  2]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2015.11.06-07.42.45:717][  2]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000038 seconds (updated 0 objects)
+[2015.11.06-07.42.55:073][ 42]LogAIModule: Creating AISystem for world Map2
+[2015.11.06-07.42.55:133][ 42]Cmd: MAP LOAD FILE="../../../../../../Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Content/RollingCPP/Maps/Map2.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.11.06-07.42.55:133][ 42]LightingResults: New page: Lighting Build
+[2015.11.06-07.42.55:147][ 42]LoadErrors: New page: Loading map: Map2.umap
+[2015.11.06-07.42.55:148][ 42]MapCheck: New page: Map Check
+[2015.11.06-07.42.55:148][ 42]LightingResults: New page: Lighting Build
+[2015.11.06-07.42.55:160][ 42]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000004A179BFB00
+[2015.11.06-07.42.55:253][ 42]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2015.11.06-07.42.55:293][ 42]Cmd: MAP CHECKDEP NOCLEARLOG
+[2015.11.06-07.42.55:330][ 42]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 36.483ms to complete.
+[2015.11.06-07.42.55:331][ 42]LogFileHelpers: Loading map 'Map2' took 0.199
+[2015.11.06-07.42.58:053][341]LogLinker:Warning: Asset '../../../Engine/Content/ArtTools/RenderToTexture/Macros/RenderToTextureMacros.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.11.06-07.42.58:615][341]LogContentBrowser: Native class hierarchy updated for 'BlueprintGraph' in 0.0012 seconds. Added 107 classes and 0 folders.
+[2015.11.06-07.43.02:800][731]LogAIModule: Creating AISystem for world Map1
+[2015.11.06-07.43.02:809][731]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileComp) Not registered. Aborting.
+[2015.11.06-07.43.02:809][731]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileMovementComponent_0) Not registered. Aborting.
+[2015.11.06-07.43.02:833][731]Cmd: MAP LOAD FILE="../../../../../../Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Content/RollingCPP/Maps/Map1.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.11.06-07.43.02:833][731]LightingResults: New page: Lighting Build
+[2015.11.06-07.43.02:846][731]LoadErrors: New page: Loading map: Map1.umap
+[2015.11.06-07.43.02:945][731]MapCheck: New page: Map Check
+[2015.11.06-07.43.02:945][731]LightingResults: New page: Lighting Build
+[2015.11.06-07.43.02:967][731]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000004A4B99F2E0
+[2015.11.06-07.43.02:968][731]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000004A1A9B1580
+[2015.11.06-07.43.03:038][731]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2015.11.06-07.43.03:111][731]Cmd: MAP CHECKDEP NOCLEARLOG
+[2015.11.06-07.43.03:154][731]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 42.817ms to complete.
+[2015.11.06-07.43.03:154][731]LogFileHelpers: Loading map 'Map1' took 0.322
+[2015.11.06-07.43.26:003][306]LogAIModule: Creating AISystem for world Map2
+[2015.11.06-07.43.26:034][306]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileComp) Not registered. Aborting.
+[2015.11.06-07.43.26:034][306]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileMovementComponent_1) Not registered. Aborting.
+[2015.11.06-07.43.26:053][306]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000004A4B99E980
+[2015.11.06-07.43.26:058][306]Cmd: MAP LOAD FILE="../../../../../../Users/Spellabbet/Documents/GitHub/Balls-of-steel/BOS/Content/RollingCPP/Maps/Map2.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.11.06-07.43.26:058][306]LightingResults: New page: Lighting Build
+[2015.11.06-07.43.26:072][306]LoadErrors: New page: Loading map: Map2.umap
+[2015.11.06-07.43.26:073][306]MapCheck: New page: Map Check
+[2015.11.06-07.43.26:073][306]LightingResults: New page: Lighting Build
+[2015.11.06-07.43.26:092][306]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000004A15601580
+[2015.11.06-07.43.26:202][306]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2015.11.06-07.43.26:243][306]Cmd: MAP CHECKDEP NOCLEARLOG
+[2015.11.06-07.43.26:283][306]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 39.683ms to complete.
+[2015.11.06-07.43.26:283][306]LogFileHelpers: Loading map 'Map2' took 0.226
+[2015.11.06-07.43.38:228][712]LogEditor: Attempting to add actor of class 'BOSPlayerStart' to level at -12509.77,-9808.99,4611.95
+[2015.11.06-07.43.38:228][712]LogNavigationPoint: PostEditMove Clear paths rebuilt
+[2015.11.06-07.43.38:390][728]LogEditor: Attempting to add actor of class 'BOSPlayerStart' to level at -5777.76,-1133.43,2927.50
+[2015.11.06-07.43.38:394][728]LogNavigationPoint: PostEditMove Clear paths rebuilt
+[2015.11.06-07.43.39:445][847]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.06-07.43.39:446][847]PIE: New page: PIE session: Map2 (Nov 6, 2015, 9:43:39 AM)
+[2015.11.06-07.43.39:446][847]LogPlayLevel: Creating play world package: /Game/RollingCPP/Maps/UEDPIE_1_Map2
+[2015.11.06-07.43.39:995][847]LogPlayLevel: PIE: StaticDuplicateObject took: (0.549442s)
+[2015.11.06-07.43.39:996][847]LogAIModule: Creating AISystem for world Map2
+[2015.11.06-07.43.39:996][847]LogPlayLevel: PIE: World Init took: (0.000602s)
+[2015.11.06-07.43.39:996][847]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/RollingCPP/Maps/Map2.Map2 to /Game/RollingCPP/Maps/UEDPIE_1_Map2.Map2 (0.550243s)
+[2015.11.06-07.43.40:020][847]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.06-07.43.40:024][847]LogInit: FAudioDevice initialized.
+[2015.11.06-07.43.40:068][847]LogWorld: Game class is 'BOSGameMode'
+[2015.11.06-07.43.40:094][847]LogWorld: Bringing World /Game/RollingCPP/Maps/UEDPIE_1_Map2.Map2 up for play (max tick rate 0) at 2015.11.06-08.43.40
+[2015.11.06-07.43.40:094][847]LogActor:Warning: GameSession /Game/RollingCPP/Maps/UEDPIE_1_Map2.Map2:PersistentLevel.GameSession_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.06-07.43.40:095][847]LogActor:Warning: GameNetworkManager /Game/RollingCPP/Maps/UEDPIE_1_Map2.Map2:PersistentLevel.GameNetworkManager_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.06-07.43.40:130][847]LogWorld: Bringing up level for play took: 0.060059
+[2015.11.06-07.43.40:132][847]LogWindows:Error: Windows GetLastError: The operation completed successfully. (0)
+[2015.11.06-07.43.40:264][847]LogCrashTracker: 
+
+
+[2015.11.06-07.43.40:264][847]LogCrashTracker: 
+
+
+[2015.11.06-07.43.40:264][847]LogWindows: === Critical error: ===
+Assertion failed: (Index >= 0) & (Index < ArrayNum) [File:C:\Program Files\Epic Games\4.9\Engine\Source\Runtime\Core\Public\Containers\Array.h] [Line: 678] 
+Array index out of bounds: 0 from an array of size 0
+
+
+
+
+[2015.11.06-07.43.40:359][847]LogExit: Executing StaticShutdownAfterError
+[2015.11.06-07.43.40:368][847]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.06-07.43.40:368][847]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.06-07.43.40:368][847]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.06-07.43.40:369][847]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.06-07.43.40:369][847]LogWindows: FPlatformMisc::RequestExit(1)
+[2015.11.06-07.43.40:369][847]Log file closed, 11/06/15 08:43:40

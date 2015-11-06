@@ -4,6 +4,7 @@
 #include "BOSBall.h"
 #include "BasicProjectile.h"
 #include "Engine.h"
+#include "BallController.h"
 
 ABOSBall::ABOSBall()
 {
@@ -46,7 +47,9 @@ ABOSBall::ABOSBall()
 	DashImpulse = 0.0f;
 	bCanJump = true; // Start being able to jump
 	dashCharging = false;
-	Health = 100.0f;
+	bIsDead = false;
+	Health = 100;
+
 
 
 	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint(TEXT("Blueprint'/Game/BasicProjectile_BP.BasicProjectile_BP'"));
@@ -65,9 +68,6 @@ ABOSBall::ABOSBall()
 void ABOSBall::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	if (Health <= 0)
-		HandleDeath();
 	
 	if (dashCharging)
 	{
@@ -98,10 +98,10 @@ void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 
 void ABOSBall::HandleDeath_Implementation()
 {
+	bIsDead = true;
+	ABallController* BC = Cast<ABallController>(GetController());
+	BC->Respawn();
 	this->Destroy();
-	//Ball->DestroyComponent();
-
-	
 }
 bool ABOSBall::HandleDeath_Validate()
 {
@@ -275,6 +275,18 @@ void ABOSBall::SetProjectile_2_Implementation() //Server function
 }
 
 bool ABOSBall::SetProjectile_2_Validate() //Server function
+{
+	return true;
+}
+
+void ABOSBall::Damage_Implementation(uint32 damage)
+{
+	Health -= damage;
+	if (Health <= 0)
+		HandleDeath();
+}
+
+bool ABOSBall::Damage_Validate(uint32 damage)
 {
 	return true;
 }

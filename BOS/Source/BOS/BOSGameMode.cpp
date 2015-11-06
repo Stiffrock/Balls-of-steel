@@ -24,6 +24,8 @@ ABOSGameMode::ABOSGameMode()
 	PlayerStateClass = ABOSPlayerState::StaticClass();
 	PlayerControllerClass = ABallController::StaticClass();
 
+	NumTeamA = 0;
+	NumTeamB = 0;
 }
 
 void ABOSGameMode::PostLogin(APlayerController *NewPlayer)
@@ -33,41 +35,48 @@ void ABOSGameMode::PostLogin(APlayerController *NewPlayer)
 
 	if (NewPlayer)
 	{
-	
+		ABallController* BC = Cast<ABallController>(NewPlayer);
 		ABOSPlayerState * PS = Cast<ABOSPlayerState>(NewPlayer->PlayerState);
 
 		if (PS && GameState)
 		{
-			uint8 NumTeamA = 0;
-			uint8 NumTeamB = 0;	
-		
 			for (APlayerState * It : GameState->PlayerArray)
-			{
-			
+			{			
 				ABOSPlayerState* OtherPS = Cast<ABOSPlayerState>(It);
 
 				if (OtherPS->bTeamB)
-				{
-					
+				{			
 					NumTeamB++;
 				}
 				else
 				{
-	
 					NumTeamA++;
 				}
 			}
 			if (NumTeamA > NumTeamB)
 			{
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Added to TeamB"));
 				PS->bTeamB = true;
 			}
+		/*	if (NumTeamA < NumTeamB)
+			{
+				PS->bTeamB = false;
+			}*/
 		}
-		ChoosePlayerStart(NewPlayer);
+
+
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Respawn"));
+
+	//	BC->Respawn();
+		
+
+	//	ChoosePlayerStart(NewPlayer);
+
 	}
 }
 
 
-AActor* ABOSGameMode::ChoosePlayerStart(APlayerController* Player)
+AActor* ABOSGameMode::ChoosePlayerStart_Implementation(AController* Player)
 {
 
 	if (Player)
@@ -78,7 +87,8 @@ AActor* ABOSGameMode::ChoosePlayerStart(APlayerController* Player)
 		{
 			TArray<ABOSPlayerStart *> Starts;	
 
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Start added"));
+		//	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Start added"));
+
 			for (TObjectIterator<ABOSPlayerStart> StartItr; StartItr; ++StartItr)
 			{
 
@@ -88,8 +98,8 @@ AActor* ABOSGameMode::ChoosePlayerStart(APlayerController* Player)
 		
 				}
 			}
-			return Starts[0];
-			//return Starts[FMath::RandRange(0, Starts.Num - 1)];
+			//return Starts[0];
+			return Starts[FMath::RandRange(0, Starts.Num() - 1)];
 		}
 	}
 

@@ -15,6 +15,8 @@ class BOS_API ABallController : public APlayerController
 
 		ABallController();
 
-		void Respawn();
-	
+public:
+	void Respawn();
+	void Tick(float DeltaTime) override;
+
 };
