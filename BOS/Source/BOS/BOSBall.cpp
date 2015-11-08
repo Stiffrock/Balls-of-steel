@@ -54,15 +54,24 @@ ABOSBall::ABOSBall()
 
 	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint(TEXT("Blueprint'/Game/BasicProjectile_BP.BasicProjectile_BP'"));
 	if (ItemBlueprint.Object)
-		ABasicProjectile_BP = (UClass*)ItemBlueprint.Object->GeneratedClass;
-	
+		ABasicProjectile_BP = (UClass*)ItemBlueprint.Object->GeneratedClass;	
 
 	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint2(TEXT("Blueprint'/Game/BasicProjectile_BP2.BasicProjectile_BP2'"));
 	if (ItemBlueprint2.Object)
 		ABasicProjectile_BP2 = (UClass*)ItemBlueprint2.Object->GeneratedClass;
+
+	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint3(TEXT("Blueprint'/Game/BasicProjectile_BP3.BasicProjectile_BP3'"));
+	if (ItemBlueprint3.Object)
+		ABasicProjectile_BP3 = (UClass*)ItemBlueprint3.Object->GeneratedClass;
+
+	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint4(TEXT("Blueprint'/Game/BasicProjectile_BP4.BasicProjectile_BP4'"));
+	if (ItemBlueprint4.Object)
+		ABasicProjectile_BP4 = (UClass*)ItemBlueprint4.Object->GeneratedClass;
 	
 	bProjectile_1 = true;
 	bProjectile_2 = false;
+	bProjectile_3 = false;
+	bProjectile_4 = false;
 }
 
 void ABOSBall::Tick(float DeltaTime)
@@ -93,6 +102,8 @@ void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 	InputComponent->BindAction("Fire", IE_Pressed, this, &ABOSBall::Server_Fire);
 	InputComponent->BindAction("SwitchToProjectile_1", IE_Pressed, this, &ABOSBall::SetProjectile_1);
 	InputComponent->BindAction("SwitchToProjectile_2", IE_Pressed, this, &ABOSBall::SetProjectile_2);
+	InputComponent->BindAction("SwitchToProjectile_3", IE_Pressed, this, &ABOSBall::SetProjectile_3);
+	InputComponent->BindAction("SwitchToProjectile_4", IE_Pressed, this, &ABOSBall::SetProjectile_4);
 
 }
 
@@ -245,6 +256,15 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 		{
 			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP2, SpawnLocation, SpawnRotation, SpawnParams);
 		}
+		else if (bProjectile_3)
+		{
+			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP3, SpawnLocation, SpawnRotation, SpawnParams);
+		}
+		else if (bProjectile_4)
+		{
+			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP4, SpawnLocation, SpawnRotation, SpawnParams);
+		}
+
 		//World->SpawnActor<AMyProjectile>(AMyProjectile::StaticClass(), SpawnLocation, SpawnRotation); Creates the class from scratch
 	}
 }
@@ -257,8 +277,10 @@ bool ABOSBall::Server_Fire_Validate() //Server function
 void ABOSBall::SetProjectile_1_Implementation() //Server function
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_1_ACTIVATED"));
-	bProjectile_2 = false;
 	bProjectile_1 = true;
+	bProjectile_2 = false;
+	bProjectile_3 = false;
+	bProjectile_4 = false;
 
 }
 
@@ -272,9 +294,39 @@ void ABOSBall::SetProjectile_2_Implementation() //Server function
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_2_ACTIVATED"));
 	bProjectile_1 = false;
 	bProjectile_2 = true;
+	bProjectile_3 = false;
+	bProjectile_4 = false;
 }
 
 bool ABOSBall::SetProjectile_2_Validate() //Server function
+{
+	return true;
+}
+
+void ABOSBall::SetProjectile_3_Implementation() //Server function
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_3_ACTIVATED"));
+	bProjectile_1 = false;
+	bProjectile_2 = false;
+	bProjectile_3 = true;
+	bProjectile_4 = false;
+}
+
+bool ABOSBall::SetProjectile_3_Validate() //Server function
+{
+	return true;
+}
+
+void ABOSBall::SetProjectile_4_Implementation() //Server function
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_4_ACTIVATED"));
+	bProjectile_1 = false;
+	bProjectile_2 = false;
+	bProjectile_3 = false;
+	bProjectile_4 = true;
+}
+
+bool ABOSBall::SetProjectile_4_Validate() //Server function
 {
 	return true;
 }

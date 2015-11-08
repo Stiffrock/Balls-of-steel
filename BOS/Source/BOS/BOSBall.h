@@ -61,6 +61,16 @@ public:
 	bool SetProjectile_2_Validate();
 
 	UFUNCTION(Server, Reliable, WithValidation)
+	void SetProjectile_3();
+	void SetProjectile_3_Implementation();
+	bool SetProjectile_3_Validate();
+
+	UFUNCTION(Server, Reliable, WithValidation)
+	void SetProjectile_4();
+	void SetProjectile_4_Implementation();
+	bool SetProjectile_4_Validate();
+
+	UFUNCTION(Server, Reliable, WithValidation)
 	void HandleDeath();
 	void HandleDeath_Implementation();
 	bool HandleDeath_Validate();
@@ -93,6 +103,8 @@ public:
 	bool dashCharging;
 	bool bProjectile_1;
 	bool bProjectile_2;
+	bool bProjectile_3;
+	bool bProjectile_4;
 	bool bCameraLag;
 	bool bIsDead;
 	
@@ -120,6 +132,12 @@ protected:
 
 	UPROPERTY()
 	TSubclassOf<class ABasicProjectile> ABasicProjectile_BP2;
+
+	UPROPERTY()
+	TSubclassOf<class ABasicProjectile> ABasicProjectile_BP3;
+
+	UPROPERTY()
+	TSubclassOf<class ABasicProjectile> ABasicProjectile_BP4;
 
 	// AActor interface
 	virtual void NotifyHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override;

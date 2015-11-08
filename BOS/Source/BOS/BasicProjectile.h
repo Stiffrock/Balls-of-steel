@@ -15,10 +15,16 @@ public:
 	virtual void BeginPlay() override;	
 	virtual void Tick( float DeltaSeconds ) override;
 
+	UPROPERTY(EditAnywhere, Category = Projectile)
+	float LifeTime;
+
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* StaticMesh;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)
+/*	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)
+	class UProjectileMovementComponent* ProjectileMovement;*/
+
+	UPROPERTY(EditAnywhere, Category = Movement)
 	class UProjectileMovementComponent* ProjectileMovement;
 
 	UPROPERTY(VisibleDefaultsOnly, Category = Projectile)

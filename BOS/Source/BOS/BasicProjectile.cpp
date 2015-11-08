@@ -35,9 +35,10 @@ ABasicProjectile::ABasicProjectile()
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = true;
 	ProjectileMovement->Bounciness = 1.0f;
-
 	// Die after 3 seconds by default
-	InitialLifeSpan = 5.0f;
+	//InitialLifeSpan = 5.0f;
+	LifeTime = 5.0f;
+	InitialLifeSpan = LifeTime;
 
 
 }

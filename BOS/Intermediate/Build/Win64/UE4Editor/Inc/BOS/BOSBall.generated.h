@@ -20,6 +20,10 @@ struct FVector;
 	virtual void Damage_Implementation(uint32 damage); \
 	virtual bool HandleDeath_Validate(); \
 	virtual void HandleDeath_Implementation(); \
+	virtual bool SetProjectile_4_Validate(); \
+	virtual void SetProjectile_4_Implementation(); \
+	virtual bool SetProjectile_3_Validate(); \
+	virtual void SetProjectile_3_Implementation(); \
 	virtual bool SetProjectile_2_Validate(); \
 	virtual void SetProjectile_2_Implementation(); \
 	virtual bool SetProjectile_1_Validate(); \
@@ -56,6 +60,28 @@ struct FVector;
 			return; \
 		} \
 		this->HandleDeath_Implementation(); \
+	} \
+ \
+	DECLARE_FUNCTION(execSetProjectile_4) \
+	{ \
+		P_FINISH; \
+		if (!this->SetProjectile_4_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("SetProjectile_4_Validate")); \
+			return; \
+		} \
+		this->SetProjectile_4_Implementation(); \
+	} \
+ \
+	DECLARE_FUNCTION(execSetProjectile_3) \
+	{ \
+		P_FINISH; \
+		if (!this->SetProjectile_3_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("SetProjectile_3_Validate")); \
+			return; \
+		} \
+		this->SetProjectile_3_Implementation(); \
 	} \
  \
 	DECLARE_FUNCTION(execSetProjectile_2) \
@@ -163,6 +189,28 @@ struct FVector;
 			return; \
 		} \
 		this->HandleDeath_Implementation(); \
+	} \
+ \
+	DECLARE_FUNCTION(execSetProjectile_4) \
+	{ \
+		P_FINISH; \
+		if (!this->SetProjectile_4_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("SetProjectile_4_Validate")); \
+			return; \
+		} \
+		this->SetProjectile_4_Implementation(); \
+	} \
+ \
+	DECLARE_FUNCTION(execSetProjectile_3) \
+	{ \
+		P_FINISH; \
+		if (!this->SetProjectile_3_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("SetProjectile_3_Validate")); \
+			return; \
+		} \
+		this->SetProjectile_3_Implementation(); \
 	} \
  \
 	DECLARE_FUNCTION(execSetProjectile_2) \
@@ -279,6 +327,8 @@ extern BOS_API  FName BOS_HandleDeath;
 extern BOS_API  FName BOS_Server_Fire;
 extern BOS_API  FName BOS_SetProjectile_1;
 extern BOS_API  FName BOS_SetProjectile_2;
+extern BOS_API  FName BOS_SetProjectile_3;
+extern BOS_API  FName BOS_SetProjectile_4;
 #define BOS_Source_BOS_BOSBall_h_9_CALLBACK_WRAPPERS
 #define BOS_Source_BOS_BOSBall_h_9_INCLASS_NO_PURE_DECLS \
 	private: \
