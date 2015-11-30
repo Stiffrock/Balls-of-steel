@@ -16,6 +16,9 @@ class ABOSBall : public APawn
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Ball, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* SpringArm;
 
+	UPROPERTY(EditAnywhere)
+	USpotLightComponent *TeamColour;
+
 	/** Camera to view the ball */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Ball, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* Camera;

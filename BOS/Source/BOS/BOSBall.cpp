@@ -39,6 +39,14 @@ ABOSBall::ABOSBall()
 	Camera->AttachTo(SpringArm, USpringArmComponent::SocketName);
 	Camera->bUsePawnControlRotation = false; // We don't want the controller rotating the camera
 
+
+	//Create a light above the ball
+	TeamColour = CreateDefaultSubobject<USpotLightComponent>(TEXT("SpotLight"));
+	TeamColour->AttachTo(RootComponent);	
+	TeamColour->SetRelativeLocationAndRotation(Ball->GetComponentLocation(), FRotator(-90.f, 0.f, 0.0f));
+	TeamColour->SetLightColor(FLinearColor(255.f, 0.f, 0.f, 100.f), true);
+	TeamColour->bAbsoluteRotation = true;
+
 	// Set up forces
 	RollTorque = 50000000.0f;
 	JumpImpulse = 350000.0f;

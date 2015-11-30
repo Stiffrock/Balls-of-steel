@@ -95,7 +95,7 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"SetProjectile_3",(Native)&ABOSBall::execSetProjectile_3);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"SetProjectile_4",(Native)&ABOSBall::execSetProjectile_4);
 	}
-	IMPLEMENT_CLASS(ABOSBall, 2295327267);
+	IMPLEMENT_CLASS(ABOSBall, 518032414);
 	void ABOSGameMode::StaticRegisterNativesABOSGameMode()
 	{
 	}
@@ -142,6 +142,7 @@ FName BOS_SetProjectile_4 = FName(TEXT("SetProjectile_4"));
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_USpotLightComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameState();
@@ -502,6 +503,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_DashChargeRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("DashChargeRate"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(DashChargeRate, ABOSBall), 0x0000000000000001);
 				UProperty* NewProp_MaxDashImpulse = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxDashImpulse"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(MaxDashImpulse, ABOSBall), 0x0000000000000001);
 				UProperty* NewProp_Camera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Camera"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Camera, ABOSBall), 0x00000000000a001d, Z_Construct_UClass_UCameraComponent_NoRegister());
+				UProperty* NewProp_TeamColour = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TeamColour"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(TeamColour, ABOSBall), 0x0000000000080009, Z_Construct_UClass_USpotLightComponent_NoRegister());
 				UProperty* NewProp_SpringArm = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("SpringArm"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(SpringArm, ABOSBall), 0x00000000000a001d, Z_Construct_UClass_USpringArmComponent_NoRegister());
 				UProperty* NewProp_Ball = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Ball"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Ball, ABOSBall), 0x00000000000a001d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
@@ -540,6 +542,9 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_Camera, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_Camera, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
 				MetaData->SetValue(NewProp_Camera, TEXT("ToolTip"), TEXT("Camera to view the ball"));
+				MetaData->SetValue(NewProp_TeamColour, TEXT("Category"), TEXT("BOSBall"));
+				MetaData->SetValue(NewProp_TeamColour, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_TeamColour, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
 				MetaData->SetValue(NewProp_SpringArm, TEXT("AllowPrivateAccess"), TEXT("true"));
 				MetaData->SetValue(NewProp_SpringArm, TEXT("Category"), TEXT("Ball"));
 				MetaData->SetValue(NewProp_SpringArm, TEXT("EditInline"), TEXT("true"));
@@ -752,7 +757,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/BOS")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x6F4389DC;
+			Guid.A = 0xC4105A75;
 			Guid.B = 0x83532272;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
