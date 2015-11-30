@@ -43,9 +43,9 @@ ABOSBall::ABOSBall()
 	//Create a light above the ball
 	TeamColour = CreateDefaultSubobject<USpotLightComponent>(TEXT("SpotLight"));
 	TeamColour->AttachTo(RootComponent);	
-	TeamColour->SetRelativeLocationAndRotation(Ball->GetComponentLocation(), FRotator(-90.f, 0.f, 0.0f));
-	TeamColour->SetLightColor(FLinearColor(255.f, 0.f, 0.f, 100.f), true);
 	TeamColour->bAbsoluteRotation = true;
+	TeamColour->SetRelativeLocationAndRotation(Ball->GetComponentLocation(), FRotator(-90.f, 0.f, 0.0f));
+	TeamColour->SetLightColor(FLinearColor(255.f, 20.f, 147.f, 100.f), true);
 
 	// Set up forces
 	RollTorque = 50000000.0f;
