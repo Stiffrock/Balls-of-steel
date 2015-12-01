@@ -44,8 +44,12 @@ ABOSBall::ABOSBall()
 	TeamColour = CreateDefaultSubobject<USpotLightComponent>(TEXT("SpotLight"));
 	TeamColour->AttachTo(RootComponent);	
 	TeamColour->bAbsoluteRotation = true;
-	TeamColour->SetRelativeLocationAndRotation(Ball->GetComponentLocation(), FRotator(-90.f, 0.f, 0.0f));
-	TeamColour->SetLightColor(FLinearColor(255.f, 20.f, 147.f, 100.f), true);
+	//TeamColour->bAbsoluteLocation = true;
+	TeamColour->SetRelativeLocationAndRotation(FVector(Ball->GetComponentLocation().X, Ball->GetComponentLocation().Y, Ball->GetComponentLocation().Z + 10.f), FRotator(-90.f, 0.f, 0.0f));
+	TeamColour->SetLightColor(FLinearColor(0.f, 255.f, 0.f, 100.f));
+	TeamColour->SetIntensity(15000.f);
+	TeamColour->SetAttenuationRadius(1400.f);
+	TeamColour->SetOuterConeAngle(60.f);
 
 	// Set up forces
 	RollTorque = 50000000.0f;

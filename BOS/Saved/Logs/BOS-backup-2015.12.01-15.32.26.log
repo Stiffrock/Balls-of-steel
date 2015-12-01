@@ -1,0 +1,275 @@
+﻿[2015.12.01-14.29.03:208][  0]Log file open, 12/01/15 15:29:03
+[2015.12.01-14.29.03:208][  0]LogInit:Display: Running engine for game: BOS
+[2015.12.01-14.29.03:208][  0]LogInit:Display: RandInit(-388140688) SRandInit(-388140688).
+[2015.12.01-14.29.03:208][  0]LogTaskGraph: Started task graph with 4 named threads and 7 total threads.
+[2015.12.01-14.29.03:208][  0]LogStats: Stats thread started at 0.153049
+[2015.12.01-14.29.03:208][  0]LogInit: Version: 4.9.1-2689999+++depot+UE4-Releases+4.9
+[2015.12.01-14.29.03:208][  0]LogInit: API Version: 2672455
+[2015.12.01-14.29.03:208][  0]LogInit: Compiled (64-bit): Sep 14 2015 04:12:03
+[2015.12.01-14.29.03:208][  0]LogInit: Compiled with Visual C++: 18.00.21005.01
+[2015.12.01-14.29.03:208][  0]LogInit: Build Configuration: Development
+[2015.12.01-14.29.03:208][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.9
+[2015.12.01-14.29.03:208][  0]LogInit: Command line: 
+[2015.12.01-14.29.03:208][  0]LogInit: Base directory: C:/Program Files/Epic Games/4.9/Engine/Binaries/Win64/
+[2015.12.01-14.29.03:208][  0]LogInit: Rocket: 1
+[2015.12.01-14.29.03:223][  0]LogInit: Using libcurl 7.41.0
+[2015.12.01-14.29.03:223][  0]LogInit:  - built for x86_64-pc-win32
+[2015.12.01-14.29.03:223][  0]LogInit:  - supports SSL with WinSSL
+[2015.12.01-14.29.03:223][  0]LogInit:  - other features:
+[2015.12.01-14.29.03:223][  0]LogInit:      CURL_VERSION_SSL
+[2015.12.01-14.29.03:223][  0]LogInit:      CURL_VERSION_IPV6
+[2015.12.01-14.29.03:223][  0]LogInit:      CURL_VERSION_ASYNCHDNS
+[2015.12.01-14.29.03:223][  0]LogInit:      CURL_VERSION_LARGEFILE
+[2015.12.01-14.29.03:223][  0]LogInit:      CURL_VERSION_IDN
+[2015.12.01-14.29.03:223][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
+[2015.12.01-14.29.03:223][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+[2015.12.01-14.29.03:223][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+[2015.12.01-14.29.03:223][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+[2015.12.01-14.29.03:223][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+[2015.12.01-14.29.03:239][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2015.12.01-14.29.03:255][  0]LogInit: Object subsystem initialized
+[2015.12.01-14.29.03:255][  0]LogInit: Selected Device Profile: [Windows]
+[2015.12.01-14.29.03:255][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2015.12.01-14.29.03:270][  0]LogInit: Computer: SpellabbA332-13
+[2015.12.01-14.29.03:270][  0]LogInit: User: Spellabbet
+[2015.12.01-14.29.03:270][  0]LogInit: CPU Page size=4096, Cores=4
+[2015.12.01-14.29.03:270][  0]LogInit: High frequency timer resolution =3.507501 MHz
+[2015.12.01-14.29.03:271][  0]LogMemory: Memory total: Physical=15.9GB (16GB approx)
+[2015.12.01-14.29.03:271][  0]LogMemory: Platform Memory Stats for Windows
+[2015.12.01-14.29.03:271][  0]LogMemory: Process Physical Memory: 52.95 MB used, 52.95 MB peak
+[2015.12.01-14.29.03:271][  0]LogMemory: Process Virtual Memory: 55.26 MB used, 55.26 MB peak
+[2015.12.01-14.29.03:271][  0]LogMemory: Physical Memory: 4158.48 MB used, 16318.82 MB total
+[2015.12.01-14.29.03:272][  0]LogMemory: Virtual Memory: 346.38 MB used, 134217728.00 MB total
+[2015.12.01-14.29.03:323][  0]LogTextLocalizationManager: No translations for ('sv-SE') exist, falling back to 'en' for localization and internationalization data.
+[2015.12.01-14.29.03:847][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA GeForce GTX 960 (Feature Level 11_0)
+[2015.12.01-14.29.03:847][  0]LogD3D11RHI: Adapter has 1965MB of dedicated video memory, 0MB of dedicated system memory, and 2048MB of shared system memory, 1 output[s]
+[2015.12.01-14.29.03:851][  0]LogD3D11RHI: Found D3D11 adapter 1: Microsoft Basic Render Driver (Feature Level 11_0)
+[2015.12.01-14.29.03:851][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 256MB of shared system memory, 0 output[s]
+[2015.12.01-14.29.03:852][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2015.12.01-14.29.03:855][  0]LogD3D11RHI: !Direct3DDevice
+[2015.12.01-14.29.03:855][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
+[2015.12.01-14.29.03:914][  0]LogD3D11RHI: Async texture creation enabled
+[2015.12.01-14.29.03:930][  0]LogShaderCompilers: Guid format shader working directory is 15 characters bigger than the processId version (../../../../../../Users/Spellabbet/Documents/Unreal Projects/Balls-of-steel/BOS/Intermediate/Shaders/WorkingDirectory/5392/).
+[2015.12.01-14.29.03:930][  0]LogShaderCompilers: Cleaned the shader compiler working directory '../../../../../../Users/Spellabbet/Documents/Unreal Projects/Balls-of-steel/BOS/Intermediate/Shaders/tmp/0FE890DD47667B93B7393BA8AD71F756/'.
+[2015.12.01-14.29.03:931][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2015.12.01-14.29.04:817][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
+[2015.12.01-14.29.04:829][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2015.12.01-14.29.04:840][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2015.12.01-14.29.04:852][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2015.12.01-14.29.04:863][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2015.12.01-14.29.04:869][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2015.12.01-14.29.04:874][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2015.12.01-14.29.04:880][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2015.12.01-14.29.04:885][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2015.12.01-14.29.04:890][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2015.12.01-14.29.04:896][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2015.12.01-14.29.04:902][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2015.12.01-14.29.04:905][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
+[2015.12.01-14.29.04:932][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2015.12.01-14.29.04:937][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2015.12.01-14.29.04:943][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2015.12.01-14.29.04:948][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2015.12.01-14.29.04:949][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.12.01-14.29.05:139][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2015.12.01-14.29.05:176][  0]LogDerivedDataCache: Loaded boot cache 0.04s 47MB C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.12.01-14.29.05:177][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc
+[2015.12.01-14.29.05:177][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/Spellabbet/Documents/Unreal Projects/Balls-of-steel/BOS/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2015.12.01-14.29.05:177][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2015.12.01-14.29.05:178][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/Spellabbet/Documents/Unreal Projects/Balls-of-steel/BOS/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2015.12.01-14.29.05:178][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2015.12.01-14.29.05:289][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2015.12.01-14.29.05:301][  0]LogDerivedDataCache: Using Local data cache path C:/Users/Spellabbet/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2015.12.01-14.29.05:438][  0]LogInit: Selected Device Profile: [Windows]
+[2015.12.01-14.29.05:441][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2015.12.01-14.29.05:545][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2015.12.01-14.29.05:545][  0]LogMeshUtilities: No automatic mesh merging module available
+[2015.12.01-14.29.05:754][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2015.12.01-14.29.06:503][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2015.12.01-14.29.06:612][  0]LogLinker:Warning: Asset '../../../../../../Users/Spellabbet/Documents/Unreal Projects/Balls-of-steel/BOS/Content/Rolling/Materials/M_Blue_Checker.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.12.01-14.29.06:805][  0]LogAssetRegistry: FAssetRegistry took 0.0110 seconds to start up
+[2015.12.01-14.29.07:051][  0]SourceControl: Info Source control is disabled
+[2015.12.01-14.29.07:059][  0]SourceControl: Info Source control is disabled
+[2015.12.01-14.29.07:072][  0]SourceControl: Info Source control is disabled
+[2015.12.01-14.29.07:088][  0]SourceControl: Info Source control is disabled
+[2015.12.01-14.29.07:255][  0]LogLinker:Warning: Asset '../../../Engine/Plugins/Runtime/LeapMotionController/Content/LM_PassthroughMaterial.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.12.01-14.29.07:348][  0]LogObj: 30613 objects as part of root set at end of initial load.
+[2015.12.01-14.29.07:349][  0]LogUObjectAllocator: 6840968 out of 0 bytes used by permanent object pool.
+[2015.12.01-14.29.07:417][  0]LogEngine: Initializing Engine...
+[2015.12.01-14.29.07:420][  0]LogHMD: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.7.0.0
+[2015.12.01-14.29.07:422][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2015.12.01-14.29.07:527][  0]LogAIModule: Creating AISystem for world NewWorld
+[2015.12.01-14.29.07:535][  0]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.12.01-14.29.07:549][  0]LogInit: FAudioDevice initialized.
+[2015.12.01-14.29.07:569][  0]LogDerivedDataCache: Saved boot cache 0.02s 47MB C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.12.01-14.29.07:573][  0]LogInit: Texture streaming: Enabled
+[2015.12.01-14.29.07:587][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
+[2015.12.01-14.29.07:587][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.9.1-2689999+++depot+UE4-Releases+4.9
+[2015.12.01-14.29.07:587][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId fc50aaa14c34ed003df04597b34f483e|4341a5fd2eb34d5fac8b0ca63d21fc83|060e5e79-a789-49c4-8abd-5d8b330400a7
+[2015.12.01-14.29.07:588][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
+[2015.12.01-14.29.07:603][  0]LogInit: Transaction tracking system initialized
+[2015.12.01-14.29.07:669][  0]BlueprintLog: New page: Editor Load
+[2015.12.01-14.29.07:920][  0]LocalizationService: Info Localization service is disabled
+[2015.12.01-14.29.08:068][  0]LogConsoleResponse:Display: 
+[2015.12.01-14.29.08:161][  0]LogCook:Display: Done creating registry. It took  0.00s.
+[2015.12.01-14.29.08:285][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/Unreal Projects/Balls-of-steel/BOS/Content/' took 0.01s
+[2015.12.01-14.29.08:286][  0]SourceControl: Info Source control is disabled
+[2015.12.01-14.29.08:286][  0]Cmd: MAP LOAD FILE="../../../../../../Users/Spellabbet/Documents/Unreal Projects/Balls-of-steel/BOS/Content/Maps/MainMenu.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.12.01-14.29.08:287][  0]LightingResults: New page: Lighting Build
+[2015.12.01-14.29.08:289][  0]MapCheck: New page: Map Check
+[2015.12.01-14.29.08:289][  0]LightingResults: New page: Lighting Build
+[2015.12.01-14.29.08:299][  0]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000001A9B57B6A0
+[2015.12.01-14.29.08:399][  0]LogAIModule: Creating AISystem for world MainMenu
+[2015.12.01-14.29.08:410][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2015.12.01-14.29.08:411][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2015.12.01-14.29.08:453][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 41.918ms to complete.
+[2015.12.01-14.29.08:454][  0]LogFileHelpers: Loading map 'MainMenu' took 0.168
+[2015.12.01-14.29.08:565][  0]LogCollectionManager: Loaded 0 collections in 0.002596 seconds
+[2015.12.01-14.29.08:618][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/Unreal Projects/Balls-of-steel/BOS/Saved/Collections/' took 0.01s
+[2015.12.01-14.29.08:618][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/Unreal Projects/Balls-of-steel/BOS/Content/Developers/Spellabbet/Collections/' took 0.01s
+[2015.12.01-14.29.08:619][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/Unreal Projects/Balls-of-steel/BOS/Content/Collections/' took 0.01s
+[2015.12.01-14.29.08:619][  0]LogContentBrowser: Native class hierarchy populated in 0.0096 seconds. Added 1875 classes and 335 folders.
+[2015.12.01-14.29.08:625][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000002 seconds
+[2015.12.01-14.29.08:637][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0051 seconds. Added 0 classes and 0 folders.
+[2015.12.01-14.29.08:741][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0023 seconds. Added 0 classes and 0 folders.
+[2015.12.01-14.29.08:762][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0024 seconds. Added 1 classes and 2 folders.
+[2015.12.01-14.29.08:789][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2015.12.01-14.29.08:794][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
+[2015.12.01-14.29.08:819][  0]LogLoad: Full Startup: 6.51 seconds (BP compile: 0.04 seconds)
+[2015.12.01-14.29.08:866][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2015.12.01-14.29.08:959][  0]LogRenderer: Reallocating scene render targets to support 1048x556 (Frame:2).
+[2015.12.01-14.29.09:210][  2]LogAssetRegistry: Asset discovery search completed in 2.4162 seconds
+[2015.12.01-14.29.09:211][  2]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2015.12.01-14.29.09:211][  2]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000331 seconds (updated 0 objects)
+[2015.12.01-14.29.22:614][549]LogAIModule: Creating AISystem for world Map1
+[2015.12.01-14.29.22:641][549]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileComp) Not registered. Aborting.
+[2015.12.01-14.29.22:641][549]LogActorComponent: UnregisterComponent: (/Engine/Transient.ProjectileMovementComponent_0) Not registered. Aborting.
+[2015.12.01-14.29.22:660][549]Cmd: MAP LOAD FILE="../../../../../../Users/Spellabbet/Documents/Unreal Projects/Balls-of-steel/BOS/Content/Maps/Map1.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.12.01-14.29.22:660][549]LightingResults: New page: Lighting Build
+[2015.12.01-14.29.22:675][549]LoadErrors: New page: Loading map: Map1.umap
+[2015.12.01-14.29.22:676][549]MapCheck: New page: Map Check
+[2015.12.01-14.29.22:676][549]LightingResults: New page: Lighting Build
+[2015.12.01-14.29.22:685][549]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000001A870BAE80
+[2015.12.01-14.29.22:693][549]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2015.12.01-14.29.22:738][549]Cmd: MAP CHECKDEP NOCLEARLOG
+[2015.12.01-14.29.22:778][549]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 38.861ms to complete.
+[2015.12.01-14.29.22:779][549]LogFileHelpers: Loading map 'Map1' took 0.119
+[2015.12.01-14.29.26:356][957]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.12.01-14.29.26:357][957]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.12.01-14.29.26:358][957]PIE: New page: PIE session: Map1 (Dec 1, 2015, 4:29:26 PM)
+[2015.12.01-14.29.26:358][957]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_Map1
+[2015.12.01-14.29.26:389][957]LogPlayLevel: PIE: StaticDuplicateObject took: (0.030934s)
+[2015.12.01-14.29.26:391][957]LogAIModule: Creating AISystem for world Map1
+[2015.12.01-14.29.26:392][957]LogPlayLevel: PIE: World Init took: (0.001813s)
+[2015.12.01-14.29.26:393][957]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/Map1.Map1 to /Game/Maps/UEDPIE_0_Map1.Map1 (0.034663s)
+[2015.12.01-14.29.26:410][957]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.12.01-14.29.26:416][957]LogInit: FAudioDevice initialized.
+[2015.12.01-14.29.26:464][957]LogWorld: Game class is 'BOSGameMode'
+[2015.12.01-14.29.26:470][957]LogWorld: Bringing World /Game/Maps/UEDPIE_0_Map1.Map1 up for play (max tick rate 0) at 2015.12.01-15.29.26
+[2015.12.01-14.29.26:470][957]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_Map1.Map1:PersistentLevel.GameSession_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.12.01-14.29.26:471][957]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_Map1.Map1:PersistentLevel.GameNetworkManager_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.12.01-14.29.26:471][957]LogWorld: Bringing up level for play took: 0.005998
+[2015.12.01-14.29.26:473][957]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_Map1 0.506
+[2015.12.01-14.29.26:474][957]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.12.01-14.29.41:457][736]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.12.01-14.29.41:492][736]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.12.01-14.29.41:505][736]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000001A92FB82C0
+[2015.12.01-14.29.50:531][807]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.12.01-14.29.50:532][807]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.12.01-14.29.50:532][807]PIE: New page: SIE session: Map1 (Dec 1, 2015, 4:29:50 PM)
+[2015.12.01-14.29.50:533][807]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_Map1
+[2015.12.01-14.29.50:556][807]LogPlayLevel: PIE: StaticDuplicateObject took: (0.023179s)
+[2015.12.01-14.29.50:557][807]LogAIModule: Creating AISystem for world Map1
+[2015.12.01-14.29.50:558][807]LogPlayLevel: PIE: World Init took: (0.001225s)
+[2015.12.01-14.29.50:558][807]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/Map1.Map1 to /Game/Maps/UEDPIE_0_Map1.Map1 (0.025761s)
+[2015.12.01-14.29.50:577][807]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.12.01-14.29.50:583][807]LogInit: FAudioDevice initialized.
+[2015.12.01-14.29.50:618][807]LogWorld: Game class is 'BOSGameMode'
+[2015.12.01-14.29.50:624][807]LogWorld: Bringing World /Game/Maps/UEDPIE_0_Map1.Map1 up for play (max tick rate 0) at 2015.12.01-15.29.50
+[2015.12.01-14.29.50:624][807]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_Map1.Map1:PersistentLevel.GameSession_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.12.01-14.29.50:625][807]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_Map1.Map1:PersistentLevel.GameNetworkManager_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.12.01-14.29.50:626][807]LogWorld: Bringing up level for play took: 0.006141
+[2015.12.01-14.29.50:627][807]LogInit: WinSock: Socket queue 131072 / 131072
+[2015.12.01-14.29.50:630][807]LogInit: WinSock: I am SpellabbA332-13 (192.168.20.24:0)
+[2015.12.01-14.29.50:630][807]LogNet: GameNetDriver IpNetDriver_0 IpNetDriver listening on port 7777
+[2015.12.01-14.29.50:631][807]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_Map1 0.663
+[2015.12.01-14.29.50:654][807]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.12.01-14.29.52:015][947]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.12.01-14.29.52:049][947]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.12.01-14.29.52:060][947]LogExit: GameNetDriver None shut down
+[2015.12.01-14.29.52:071][948]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000001A92FB9DA0
+[2015.12.01-14.29.55:851][394]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.12.01-14.29.55:851][394]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.12.01-14.29.55:852][394]PIE: New page: PIE session: Map1 (Dec 1, 2015, 4:29:55 PM)
+[2015.12.01-14.29.55:853][394]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_1_Map1
+[2015.12.01-14.29.55:875][394]LogPlayLevel: PIE: StaticDuplicateObject took: (0.021819s)
+[2015.12.01-14.29.55:877][394]LogAIModule: Creating AISystem for world Map1
+[2015.12.01-14.29.55:877][394]LogPlayLevel: PIE: World Init took: (0.001893s)
+[2015.12.01-14.29.55:878][394]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/Map1.Map1 to /Game/Maps/UEDPIE_1_Map1.Map1 (0.025040s)
+[2015.12.01-14.29.55:897][394]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.12.01-14.29.55:902][394]LogInit: FAudioDevice initialized.
+[2015.12.01-14.29.55:936][394]LogWorld: Game class is 'BOSGameMode'
+[2015.12.01-14.29.55:942][394]LogWorld: Bringing World /Game/Maps/UEDPIE_1_Map1.Map1 up for play (max tick rate 0) at 2015.12.01-15.29.55
+[2015.12.01-14.29.55:942][394]LogActor:Warning: GameSession /Game/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameSession_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.12.01-14.29.55:942][394]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_1_Map1.Map1:PersistentLevel.GameNetworkManager_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.12.01-14.29.55:943][394]LogWorld: Bringing up level for play took: 0.006049
+[2015.12.01-14.29.55:944][394]LogInit: WinSock: Socket queue 131072 / 131072
+[2015.12.01-14.29.55:945][394]LogNet: GameNetDriver IpNetDriver_1 IpNetDriver listening on port 7777
+[2015.12.01-14.29.55:957][394]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_1_Map1 -0.011
+[2015.12.01-14.29.55:959][394]PIE: New page: PIE session: Map1 (Dec 1, 2015, 4:29:55 PM)
+[2015.12.01-14.29.55:994][394]LogNet: Browse: 127.0.0.1//Game/Maps/MainMenu
+[2015.12.01-14.29.55:994][394]LogInit: WinSock: Socket queue 32768 / 32768
+[2015.12.01-14.29.55:995][394]LogNet: Game client on port 7777, rate 10000
+[2015.12.01-14.29.55:995][394]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2689999, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 4173909862
+[2015.12.01-14.29.56:007][394]PIE: Info Play in editor start time for /Game/Maps/MainMenu 0.04
+[2015.12.01-14.29.56:009][394]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/Map1.Map1:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/Map1.Map1:PersistentLevel.Map1' with GeneratedClass '/Game/Maps/Map1.Map1_C' with ClassGeneratedBy '/Game/Maps/Map1.Map1:PersistentLevel.Map1'
+[2015.12.01-14.29.56:010][394]LogNet: NotifyAcceptingConnection: Server Map1 accept
+[2015.12.01-14.29.56:010][394]LogNet: Open Map1 12/01/15 15:29:56 127.0.0.1
+[2015.12.01-14.29.56:010][394]LogNet: Added client connection.  Remote address = 127.0.0.1:57590
+[2015.12.01-14.29.56:011][394]LogNet: NotifyAcceptingChannel Control 0 server World /Game/Maps/UEDPIE_1_Map1.Map1: Accepted
+[2015.12.01-14.29.56:011][394]LogNet: Remote platform little endian=1
+[2015.12.01-14.29.56:011][394]LogNet: This platform little endian=1
+[2015.12.01-14.29.56:011][394]LogNet: GetLocalNetworkVersion: GEngineNetVersion: 2689999, ProjectName: bos, ProjectVersion: 1.0.0.0, InternalProtocolVersion: 9, LocalNetworkVersion: 4173909862
+[2015.12.01-14.29.56:056][395]LogNet: Login request: /Game/Maps/MainMenu userId: Invalid
+[2015.12.01-14.29.56:058][395]LogNet: Welcomed by server (Level: /Game/Maps/UEDPIE_1_Map1, Game: /Script/BOS.BOSGameMode)
+[2015.12.01-14.29.56:083][395]LogLoad: LoadMap: 127.0.0.1//Game/Maps/UEDPIE_1_Map1?game=/Script/BOS.BOSGameMode
+[2015.12.01-14.29.56:093][395]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000001A92FBBE20
+[2015.12.01-14.29.56:094][395]Cmd: MEM
+[2015.12.01-14.29.56:103][395]LogMemory: Platform Memory Stats for Windows
+[2015.12.01-14.29.56:104][395]LogMemory: Process Physical Memory: 672.11 MB used, 681.73 MB peak
+[2015.12.01-14.29.56:104][395]LogMemory: Process Virtual Memory: 1399.75 MB used, 1422.36 MB peak
+[2015.12.01-14.29.56:104][395]LogMemory: Physical Memory: 5314.33 MB used, 16318.82 MB total
+[2015.12.01-14.29.56:105][395]LogMemory: Virtual Memory: 2046.60 MB used, 134217728.00 MB total
+[2015.12.01-14.29.56:105][395]LogMemory: 
+[2015.12.01-14.29.56:105][395]Allocator Stats for TBB: (not implemented)
+[2015.12.01-14.29.56:105][395]LogLinker: Can't find file for asset '/Game/Maps/UEDPIE_1_Map1' while loading NULL.
+[2015.12.01-14.29.56:130][395]LogWorld: PIE: Copying PIE streaming level from /Game/Maps/Map1.Map1 to /Game/Maps/UEDPIE_2_Map1.Map1. OwningWorld: None
+[2015.12.01-14.29.56:131][395]LogAIModule: Creating AISystem for world Map1
+[2015.12.01-14.29.56:138][395]LogWorld: Bringing World /Game/Maps/UEDPIE_2_Map1.Map1 up for play (max tick rate 0) at 2015.12.01-15.29.56
+[2015.12.01-14.29.56:140][395]LogWorld: Bringing up level for play took: 0.006909
+[2015.12.01-14.29.56:151][396]LogNet: Client netspeed is 10000
+[2015.12.01-14.29.56:152][396]LogNet: Join request: /Game/Maps/MainMenu?SplitscreenCount=1
+[2015.12.01-14.29.56:154][396]LogNet: Join succeeded: 259
+[2015.12.01-14.30.11:005][143]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_1. Function OnHit will not be processed.
+[2015.12.01-14.30.11:612][213]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_3. Function OnHit will not be processed.
+[2015.12.01-14.30.12:088][270]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_5. Function OnHit will not be processed.
+[2015.12.01-14.30.13:380][425]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_7. Function OnHit will not be processed.
+[2015.12.01-14.30.13:722][466]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_9. Function OnHit will not be processed.
+[2015.12.01-14.30.13:723][466]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_9. Function OnHit will not be processed.
+[2015.12.01-14.30.13:939][492]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_11. Function OnHit will not be processed.
+[2015.12.01-14.30.14:149][517]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_13. Function OnHit will not be processed.
+[2015.12.01-14.30.14:775][592]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_15. Function OnHit will not be processed.
+[2015.12.01-14.30.14:962][614]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_17. Function OnHit will not be processed.
+[2015.12.01-14.30.15:121][633]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_19. Function OnHit will not be processed.
+[2015.12.01-14.30.15:321][657]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_21. Function OnHit will not be processed.
+[2015.12.01-14.30.15:322][657]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_21. Function OnHit will not be processed.
+[2015.12.01-14.30.18:808][ 74]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_23. Function OnHit will not be processed.
+[2015.12.01-14.30.44:331][136]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_25. Function OnHit will not be processed.
+[2015.12.01-14.30.44:818][194]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_27. Function OnHit will not be processed.
+[2015.12.01-14.30.44:951][210]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP_C_29. Function OnHit will not be processed.
+[2015.12.01-14.30.45:313][253]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP2_C_1. Function OnHit will not be processed.
+[2015.12.01-14.30.45:515][277]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP2_C_3. Function OnHit will not be processed.
+[2015.12.01-14.30.45:664][295]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP2_C_5. Function OnHit will not be processed.
+[2015.12.01-14.30.47:415][505]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP2_C_1. Function OnHit will not be processed.
+[2015.12.01-14.30.47:757][546]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP2_C_3. Function OnHit will not be processed.
+[2015.12.01-14.30.48:067][583]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP2_C_5. Function OnHit will not be processed.
+[2015.12.01-14.30.48:864][678]LogNet:Warning: UIpNetDriver::ProcesRemoteFunction: No owning connection for actor BasicProjectile_BP2_C_7. Function OnHit will not be proce
