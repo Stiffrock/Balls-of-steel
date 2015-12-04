@@ -16,8 +16,8 @@ struct FVector;
 #define BOS_BOSBall_generated_h
 
 #define BOS_Source_BOS_BOSBall_h_9_RPC_WRAPPERS \
-	virtual bool Damage_Validate(uint32 ); \
-	virtual void Damage_Implementation(uint32 damage); \
+	virtual bool Damage_Validate(float ); \
+	virtual void Damage_Implementation(float damage); \
 	virtual bool HandleDeath_Validate(); \
 	virtual void HandleDeath_Implementation(); \
 	virtual bool SetProjectile_4_Validate(); \
@@ -41,7 +41,7 @@ struct FVector;
  \
 	DECLARE_FUNCTION(execDamage) \
 	{ \
-		P_GET_PROPERTY(UUInt32Property,Z_Param_damage); \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_damage); \
 		P_FINISH; \
 		if (!this->Damage_Validate(Z_Param_damage)) \
 		{ \
@@ -170,7 +170,7 @@ struct FVector;
  \
 	DECLARE_FUNCTION(execDamage) \
 	{ \
-		P_GET_PROPERTY(UUInt32Property,Z_Param_damage); \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_damage); \
 		P_FINISH; \
 		if (!this->Damage_Validate(Z_Param_damage)) \
 		{ \
@@ -314,7 +314,7 @@ struct FVector;
 	}; \
 	struct BOSBall_eventDamage_Parms \
 	{ \
-		uint32 damage; \
+		float damage; \
 	};
 
 

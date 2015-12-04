@@ -34,7 +34,7 @@ ABOSBall::ABOSBall()
 	SpringArm->CameraLagMaxDistance = 50.0f;
 
 
-	// Create a camera and attach to boom
+	//Create a camera and attach to boom
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera0"));
 	Camera->AttachTo(SpringArm, USpringArmComponent::SocketName);
 	Camera->bUsePawnControlRotation = false; // We don't want the controller rotating the camera
@@ -45,9 +45,9 @@ ABOSBall::ABOSBall()
 	TeamColour->AttachTo(RootComponent);	
 	TeamColour->bAbsoluteRotation = true;
 	//TeamColour->bAbsoluteLocation = true;
-	TeamColour->SetRelativeLocationAndRotation(FVector(Ball->GetComponentLocation().X, Ball->GetComponentLocation().Y, Ball->GetComponentLocation().Z + 10.f), FRotator(-90.f, 0.f, 0.0f));
-	TeamColour->SetLightColor(FLinearColor(0.f, 255.f, 0.f, 100.f));
-	TeamColour->SetIntensity(15000.f);
+	TeamColour->SetRelativeLocationAndRotation(FVector(Ball->GetComponentLocation().X, Ball->GetComponentLocation().Y, Ball->GetComponentLocation().Z), FRotator(-90.f, 0.f, 0.0f));
+	TeamColour->SetLightColor(FLinearColor(255.f, 0.f, 0.f, 100.f));
+	TeamColour->SetIntensity(10000.f);
 	TeamColour->SetAttenuationRadius(1400.f);
 	TeamColour->SetOuterConeAngle(60.f);
 
@@ -60,7 +60,8 @@ ABOSBall::ABOSBall()
 	bCanJump = true; // Start being able to jump
 	dashCharging = false;
 	bIsDead = false;
-	Health = 100;
+	Health = 100.f;
+	intensity = 100.f;
 
 
 
@@ -89,7 +90,7 @@ ABOSBall::ABOSBall()
 void ABOSBall::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	
+
 	if (dashCharging)
 	{
 		DashImpulse += DashChargeRate * DeltaTime;
@@ -343,14 +344,16 @@ bool ABOSBall::SetProjectile_4_Validate() //Server function
 	return true;
 }
 
-void ABOSBall::Damage_Implementation(uint32 damage)
+void ABOSBall::Damage_Implementation(float damage)
 {
 	Health -= damage;
-	if (Health <= 0)
+	intensity = Health * 100.f;
+	TeamColour->SetIntensity(intensity);
+	if (Health <= 0.f)
 		HandleDeath();
 }
 
-bool ABOSBall::Damage_Validate(uint32 damage)
+bool ABOSBall::Damage_Validate(float damage)
 {
 	return true;
 }
