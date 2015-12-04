@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\BOS.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{826BD69E-1E73-42CF-A1D7-C1B0797ED739}</UniqueIdentifier>
+			<UniqueIdentifier>{8ABBD1AE-C38C-48F9-A21C-B7634FD24CCC}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\BOS.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{DCA00116-0D86-4FF8-8BB9-1E7D75D56097}</UniqueIdentifier>
+			<UniqueIdentifier>{AAFE18EB-9371-43D0-A4C1-BD089E6C4E8B}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -31,7 +31,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\BOS">
-			<UniqueIdentifier>{F540C4EA-966F-440A-92D7-603A4A13E8A4}</UniqueIdentifier>
+			<UniqueIdentifier>{7FD1F75B-CCAD-4858-9713-59775F9DBEA9}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\BOS\BallController.cpp">
 			<Filter>Source\BOS</Filter>

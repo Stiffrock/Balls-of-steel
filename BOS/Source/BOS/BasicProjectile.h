@@ -18,16 +18,13 @@ public:
 	UPROPERTY(EditAnywhere, Category = Projectile)
 	float LifeTime;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* StaticMesh;
-
-/*	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)
-	class UProjectileMovementComponent* ProjectileMovement;*/
 
 	UPROPERTY(EditAnywhere, Category = Movement)
 	class UProjectileMovementComponent* ProjectileMovement;
 
-	UPROPERTY(VisibleDefaultsOnly, Category = Projectile)
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Projectile)
 	class USphereComponent* CollisionComp;
 
 	UFUNCTION(Server, Reliable, WithValidation)
@@ -35,8 +32,6 @@ public:
 	void OnHit_Implementation(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 	bool OnHit_Validate(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
-	//UFUNCTION(BlueprintCallable, Category = Projectile)
-	//void OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
 	/** Returns CollisionComp subobject **/
 	FORCEINLINE class USphereComponent* GetCollisionComp() const { return CollisionComp; }

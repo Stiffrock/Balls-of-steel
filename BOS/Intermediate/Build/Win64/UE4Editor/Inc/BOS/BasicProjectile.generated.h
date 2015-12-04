@@ -10,16 +10,34 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
 class UPrimitiveComponent;
-struct FVector;
 struct FHitResult;
+struct FVector;
 #ifdef BOS_BasicProjectile_generated_h
 #error "BasicProjectile.generated.h already included, missing '#pragma once' in BasicProjectile.h"
 #endif
 #define BOS_BasicProjectile_generated_h
 
 #define BOS_Source_BOS_BasicProjectile_h_11_RPC_WRAPPERS \
+	virtual bool OnBeginOverlap_Validate(AActor* , UPrimitiveComponent* , int32 , bool , const FHitResult& ); \
+	virtual void OnBeginOverlap_Implementation(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult); \
 	virtual bool OnHit_Validate(AActor* , UPrimitiveComponent* , FVector , const FHitResult& ); \
 	virtual void OnHit_Implementation(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit); \
+ \
+	DECLARE_FUNCTION(execOnBeginOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT(FHitResult,Z_Param_SweepResult); \
+		P_FINISH; \
+		if (!this->OnBeginOverlap_Validate(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_SweepResult)) \
+		{ \
+			RPC_ValidateFailed(TEXT("OnBeginOverlap_Validate")); \
+			return; \
+		} \
+		this->OnBeginOverlap_Implementation(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_SweepResult); \
+	} \
  \
 	DECLARE_FUNCTION(execOnHit) \
 	{ \
@@ -39,6 +57,22 @@ struct FHitResult;
 
 #define BOS_Source_BOS_BasicProjectile_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnBeginOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT(FHitResult,Z_Param_SweepResult); \
+		P_FINISH; \
+		if (!this->OnBeginOverlap_Validate(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_SweepResult)) \
+		{ \
+			RPC_ValidateFailed(TEXT("OnBeginOverlap_Validate")); \
+			return; \
+		} \
+		this->OnBeginOverlap_Implementation(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_SweepResult); \
+	} \
+ \
 	DECLARE_FUNCTION(execOnHit) \
 	{ \
 		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
@@ -56,6 +90,14 @@ struct FHitResult;
 
 
 #define BOS_Source_BOS_BasicProjectile_h_11_EVENT_PARMS \
+	struct BasicProjectile_eventOnBeginOverlap_Parms \
+	{ \
+		AActor* OtherActor; \
+		UPrimitiveComponent* OtherComp; \
+		int32 OtherBodyIndex; \
+		bool bFromSweep; \
+		FHitResult SweepResult; \
+	}; \
 	struct BasicProjectile_eventOnHit_Parms \
 	{ \
 		AActor* OtherActor; \
@@ -65,6 +107,7 @@ struct FHitResult;
 	};
 
 
+extern BOS_API  FName BOS_OnBeginOverlap;
 extern BOS_API  FName BOS_OnHit;
 #define BOS_Source_BOS_BasicProjectile_h_11_CALLBACK_WRAPPERS
 #define BOS_Source_BOS_BasicProjectile_h_11_INCLASS_NO_PURE_DECLS \

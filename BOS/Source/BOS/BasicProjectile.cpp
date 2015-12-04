@@ -11,7 +11,6 @@
 ABasicProjectile::ABasicProjectile()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
 
 	// Use a sphere as a simple collision representation
 	CollisionComp = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComp"));
@@ -25,6 +24,7 @@ ABasicProjectile::ABasicProjectile()
 
 	// Set as root component
 	RootComponent = CollisionComp;
+	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
 	StaticMesh->AttachTo(RootComponent);
 
 	// Use a ProjectileMovementComponent to govern this projectile's movement
@@ -39,7 +39,6 @@ ABasicProjectile::ABasicProjectile()
 	//InitialLifeSpan = 5.0f;
 	LifeTime = 5.0f;
 	InitialLifeSpan = LifeTime;
-
 
 }
 
@@ -58,7 +57,6 @@ void ABasicProjectile::OnHit_Implementation(AActor* OtherActor, UPrimitiveCompon
 			Ball->Damage(10);
 			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ball Hit!" Ball->Health));
 			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Ball Hit! Health: %i"), Ball->Health));
-
 		}
 
 

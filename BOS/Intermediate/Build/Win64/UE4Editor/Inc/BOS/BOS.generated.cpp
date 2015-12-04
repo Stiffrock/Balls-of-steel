@@ -13,6 +13,16 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 	{
 	}
 	IMPLEMENT_CLASS(ABallController, 4077305830);
+	void ABasicProjectile::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+	{
+		BasicProjectile_eventOnBeginOverlap_Parms Parms;
+		Parms.OtherActor=OtherActor;
+		Parms.OtherComp=OtherComp;
+		Parms.OtherBodyIndex=OtherBodyIndex;
+		Parms.bFromSweep=bFromSweep ? true : false;
+		Parms.SweepResult=SweepResult;
+		ProcessEvent(FindFunctionChecked(BOS_OnBeginOverlap),&Parms);
+	}
 	void ABasicProjectile::OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 	{
 		BasicProjectile_eventOnHit_Parms Parms;
@@ -24,9 +34,10 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 	}
 	void ABasicProjectile::StaticRegisterNativesABasicProjectile()
 	{
+		FNativeFunctionRegistrar::RegisterFunction(ABasicProjectile::StaticClass(),"OnBeginOverlap",(Native)&ABasicProjectile::execOnBeginOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(ABasicProjectile::StaticClass(),"OnHit",(Native)&ABasicProjectile::execOnHit);
 	}
-	IMPLEMENT_CLASS(ABasicProjectile, 3944251866);
+	IMPLEMENT_CLASS(ABasicProjectile, 2633907515);
 	void ABOSBall::Add_Impulse(FVector impulse)
 	{
 		BOSBall_eventAdd_Impulse_Parms Parms;
@@ -95,7 +106,7 @@ void EmptyLinkFunctionForGeneratedCodeBOS() {}
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"SetProjectile_3",(Native)&ABOSBall::execSetProjectile_3);
 		FNativeFunctionRegistrar::RegisterFunction(ABOSBall::StaticClass(),"SetProjectile_4",(Native)&ABOSBall::execSetProjectile_4);
 	}
-	IMPLEMENT_CLASS(ABOSBall, 518032414);
+	IMPLEMENT_CLASS(ABOSBall, 3774946638);
 	void ABOSGameMode::StaticRegisterNativesABOSGameMode()
 	{
 	}
@@ -122,6 +133,7 @@ FName BOS_Add_Torque = FName(TEXT("Add_Torque"));
 FName BOS_Add_YawCamera = FName(TEXT("Add_YawCamera"));
 FName BOS_Damage = FName(TEXT("Damage"));
 FName BOS_HandleDeath = FName(TEXT("HandleDeath"));
+FName BOS_OnBeginOverlap = FName(TEXT("OnBeginOverlap"));
 FName BOS_OnHit = FName(TEXT("OnHit"));
 FName BOS_Server_Fire = FName(TEXT("Server_Fire"));
 FName BOS_SetProjectile_1 = FName(TEXT("SetProjectile_1"));
@@ -132,9 +144,9 @@ FName BOS_SetProjectile_4 = FName(TEXT("SetProjectile_4"));
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_APlayerController();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
-	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
+	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
@@ -151,6 +163,7 @@ FName BOS_SetProjectile_4 = FName(TEXT("SetProjectile_4"));
 
 	BOS_API class UClass* Z_Construct_UClass_ABallController_NoRegister();
 	BOS_API class UClass* Z_Construct_UClass_ABallController();
+	BOS_API class UFunction* Z_Construct_UFunction_ABasicProjectile_OnBeginOverlap();
 	BOS_API class UFunction* Z_Construct_UFunction_ABasicProjectile_OnHit();
 	BOS_API class UClass* Z_Construct_UClass_ABasicProjectile_NoRegister();
 	BOS_API class UClass* Z_Construct_UClass_ABasicProjectile();
@@ -211,6 +224,29 @@ FName BOS_SetProjectile_4 = FName(TEXT("SetProjectile_4"));
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABallController(Z_Construct_UClass_ABallController, TEXT("ABallController"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABallController);
+	UFunction* Z_Construct_UFunction_ABasicProjectile_OnBeginOverlap()
+	{
+		UObject* Outer=Z_Construct_UClass_ABasicProjectile();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnBeginOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x80220CC0, 65535, sizeof(BasicProjectile_eventOnBeginOverlap_Parms));
+			UProperty* NewProp_SweepResult = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("SweepResult"), RF_Public|RF_Transient|RF_Native) UStructProperty(CPP_PROPERTY_BASE(SweepResult, BasicProjectile_eventOnBeginOverlap_Parms), 0x0000008008000082, Z_Construct_UScriptStruct_FHitResult());
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(bFromSweep, BasicProjectile_eventOnBeginOverlap_Parms, bool);
+			UProperty* NewProp_bFromSweep = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("bFromSweep"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bFromSweep, BasicProjectile_eventOnBeginOverlap_Parms), 0x0000000000000080, CPP_BOOL_PROPERTY_BITMASK(bFromSweep, BasicProjectile_eventOnBeginOverlap_Parms), sizeof(bool), true);
+			UProperty* NewProp_OtherBodyIndex = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherBodyIndex"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(OtherBodyIndex, BasicProjectile_eventOnBeginOverlap_Parms), 0x0000000000000080);
+			UProperty* NewProp_OtherComp = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherComp, BasicProjectile_eventOnBeginOverlap_Parms), 0x0000000000080080, Z_Construct_UClass_UPrimitiveComponent_NoRegister());
+			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, BasicProjectile_eventOnBeginOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("BasicProjectile.h"));
+			MetaData->SetValue(NewProp_OtherComp, TEXT("EditInline"), TEXT("true"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_ABasicProjectile_OnHit()
 	{
 		UObject* Outer=Z_Construct_UClass_ABasicProjectile();
@@ -249,14 +285,16 @@ FName BOS_SetProjectile_4 = FName(TEXT("SetProjectile_4"));
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20900080;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_ABasicProjectile_OnBeginOverlap());
 				OuterClass->LinkChild(Z_Construct_UFunction_ABasicProjectile_OnHit());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-				UProperty* NewProp_CollisionComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollisionComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CollisionComp, ABasicProjectile), 0x00000000000b0009, Z_Construct_UClass_USphereComponent_NoRegister());
+				UProperty* NewProp_CollisionComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollisionComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CollisionComp, ABasicProjectile), 0x00000000000b000d, Z_Construct_UClass_USphereComponent_NoRegister());
 				UProperty* NewProp_ProjectileMovement = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ProjectileMovement"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ProjectileMovement, ABasicProjectile), 0x0000000000080009, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
-				UProperty* NewProp_StaticMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("StaticMesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(StaticMesh, ABasicProjectile), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+				UProperty* NewProp_StaticMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("StaticMesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(StaticMesh, ABasicProjectile), 0x000000000008000d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_LifeTime = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LifeTime"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(LifeTime, ABasicProjectile), 0x0000000000000001);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABasicProjectile_OnBeginOverlap()); // 53040183
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ABasicProjectile_OnHit()); // 2665871800
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -503,7 +541,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_DashChargeRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("DashChargeRate"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(DashChargeRate, ABOSBall), 0x0000000000000001);
 				UProperty* NewProp_MaxDashImpulse = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxDashImpulse"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(MaxDashImpulse, ABOSBall), 0x0000000000000001);
 				UProperty* NewProp_Camera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Camera"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Camera, ABOSBall), 0x00000000000a001d, Z_Construct_UClass_UCameraComponent_NoRegister());
-				UProperty* NewProp_TeamColour = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TeamColour"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(TeamColour, ABOSBall), 0x0000000000080009, Z_Construct_UClass_USpotLightComponent_NoRegister());
+				UProperty* NewProp_TeamColour = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TeamColour"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(TeamColour, ABOSBall), 0x00000000000a001d, Z_Construct_UClass_USpotLightComponent_NoRegister());
 				UProperty* NewProp_SpringArm = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("SpringArm"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(SpringArm, ABOSBall), 0x00000000000a001d, Z_Construct_UClass_USpringArmComponent_NoRegister());
 				UProperty* NewProp_Ball = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Ball"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Ball, ABOSBall), 0x00000000000a001d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
@@ -542,7 +580,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_Camera, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_Camera, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
 				MetaData->SetValue(NewProp_Camera, TEXT("ToolTip"), TEXT("Camera to view the ball"));
-				MetaData->SetValue(NewProp_TeamColour, TEXT("Category"), TEXT("BOSBall"));
+				MetaData->SetValue(NewProp_TeamColour, TEXT("AllowPrivateAccess"), TEXT("true"));
+				MetaData->SetValue(NewProp_TeamColour, TEXT("Category"), TEXT("Ball"));
 				MetaData->SetValue(NewProp_TeamColour, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_TeamColour, TEXT("ModuleRelativePath"), TEXT("BOSBall.h"));
 				MetaData->SetValue(NewProp_SpringArm, TEXT("AllowPrivateAccess"), TEXT("true"));
@@ -757,8 +796,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/BOS")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xC4105A75;
-			Guid.B = 0x83532272;
+			Guid.A = 0xDB691379;
+			Guid.B = 0x2100F6CC;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

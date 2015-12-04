@@ -16,7 +16,7 @@ class ABOSBall : public APawn
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Ball, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* SpringArm;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Ball, meta = (AllowPrivateAccess = "true"))
 	USpotLightComponent *TeamColour;
 
 	/** Camera to view the ball */
@@ -97,10 +97,7 @@ public:
 	float RollTorque;
 	float CameraLag;
 
-
 	uint32 Health;
-
-	FVector CurrentDirection;
 
 	bool bCanJump;
 	bool dashCharging;
@@ -113,9 +110,6 @@ public:
 	
 
 protected:
-
-	
-
 	void YawCamera(float Val);
 	void PitchCamera(float Val);
 

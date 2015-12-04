@@ -6,6 +6,9 @@
 #include "Engine.h"
 #include "BallController.h"
 
+// debug
+#include "BOSPlayerstate.h"
+
 ABOSBall::ABOSBall()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> BallMesh(TEXT("/Game/Rolling/Meshes/BallMesh.BallMesh"));
@@ -32,7 +35,6 @@ ABOSBall::ABOSBall()
 	SpringArm->bEnableCameraLag = false;
 	SpringArm->CameraLagSpeed = 3.0f;
 	SpringArm->CameraLagMaxDistance = 50.0f;
-
 
 	// Create a camera and attach to boom
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera0"));
@@ -62,11 +64,9 @@ ABOSBall::ABOSBall()
 	bIsDead = false;
 	Health = 100;
 
-
-
 	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint(TEXT("Blueprint'/Game/BasicProjectile_BP.BasicProjectile_BP'"));
 	if (ItemBlueprint.Object)
-		ABasicProjectile_BP = (UClass*)ItemBlueprint.Object->GeneratedClass;	
+		ABasicProjectile_BP = (UClass*)ItemBlueprint.Object->GeneratedClass;
 
 	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint2(TEXT("Blueprint'/Game/BasicProjectile_BP2.BasicProjectile_BP2'"));
 	if (ItemBlueprint2.Object)
@@ -206,7 +206,7 @@ void ABOSBall::DashCharge()
 
 void ABOSBall::DashRelease()
 {
-	const FVector Impulse = SpringArm->GetForwardVector() * DashImpulse;
+	const FVector Impulse = Camera->GetForwardVector() * DashImpulse;
 	Add_Impulse(Impulse);
 	DashImpulse = 0.0f;
 	dashCharging = false;
@@ -215,6 +215,12 @@ void ABOSBall::DashRelease()
 void ABOSBall::Jump()
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Health: %f"), Health));
+	ABallController* BC = Cast<ABallController>(GetController());
+	ABOSPlayerState * PS = Cast<ABOSPlayerState>(BC->PlayerState);
+	if (PS->bTeamB)
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Is team B"), Health));
+	else
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Is team A"), Health));
 	if(bCanJump)
 	{
 
@@ -251,7 +257,7 @@ bool ABOSBall::Add_Impulse_Validate(FVector torque) //Server function
 
 void ABOSBall::Server_Fire_Implementation() //Server function
 {
-	const FRotator SpawnRotation = SpringArm->GetComponentRotation();
+	const FRotator SpawnRotation = Camera->GetComponentRotation();
 	const FVector SpawnLocation = GetActorLocation() + FVector(0.f, 0.f, 200.0f);
 
 	UWorld* const World = GetWorld();
