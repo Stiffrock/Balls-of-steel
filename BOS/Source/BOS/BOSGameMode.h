@@ -19,8 +19,15 @@ public:
 	AActor* ChoosePlayerStart_Implementation(AController* Player) override;
 
 	bool ShouldSpawnAtStartSpot(AController* Player) override { return false; };
-	uint8 NumTeamA;
-	uint8 NumTeamB;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay")
+		uint8 NumTeamA;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay")
+		uint8 NumTeamB;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay")
+		uint8 TeamACount;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay")
+		uint8 TeamBCount;
 
 };
 

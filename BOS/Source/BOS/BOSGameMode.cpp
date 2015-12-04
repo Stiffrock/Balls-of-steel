@@ -24,8 +24,8 @@ ABOSGameMode::ABOSGameMode()
 	PlayerStateClass = ABOSPlayerState::StaticClass();
 	PlayerControllerClass = ABallController::StaticClass();
 
-	NumTeamA = 0;
-	NumTeamB = 0;
+	TeamACount = 0;
+	TeamBCount = 0;
 }
 
 void ABOSGameMode::PostLogin(APlayerController *NewPlayer)
@@ -46,18 +46,19 @@ void ABOSGameMode::PostLogin(APlayerController *NewPlayer)
 
 				if (OtherPS->bTeamB)
 				{			
-					NumTeamB++;
+					//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("+1 to TeamB"));
+					TeamACount++;
 				}
 				else
 				{
-					NumTeamA++;
+					//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("+1 to TeamA"));
+					TeamBCount++;
 				}
 			}
-			if (NumTeamA > NumTeamB)
+			if (TeamACount > TeamBCount)
 			{
 				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Added to TeamB"));
 				PS->bTeamB = true;
-				
 			}
 		/*	if (NumTeamA < NumTeamB)
 			{

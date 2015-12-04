@@ -15,5 +15,9 @@ class BOS_API ABOSGameState : public AGameState
 
 		ABOSGameState();
 	
-	
+public:
+	UPROPERTY(Replicated, BlueprintReadWrite, Category = Defaults)
+		uint8 TeamALives;
+	UPROPERTY(Replicated, BlueprintReadWrite, Category = Defaults)
+		uint8 TeamBLives;
 };

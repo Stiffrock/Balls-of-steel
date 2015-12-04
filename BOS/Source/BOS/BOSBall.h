@@ -19,7 +19,6 @@ class ABOSBall : public APawn
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Ball, meta = (AllowPrivateAccess = "true"))
 	USpotLightComponent *TeamColour;
 
-
 	/** Camera to view the ball */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Ball, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* Camera;
@@ -84,12 +83,14 @@ public:
 	void Damage_Implementation(float damage);
 	bool Damage_Validate(float damage);
 
-	UPROPERTY(EditAnywhere, Category = Ball)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Ball)
 	float MaxDashImpulse;
+
+	UPROPERTY(BlueprintReadOnly, Category = Ball)
+	float DashImpulse;
 
 	UPROPERTY(EditAnywhere, Category = Ball)
 	float DashChargeRate;
-	float DashImpulse;
 
 	UPROPERTY(EditAnywhere, Category=Ball)
 	float JumpImpulse;
@@ -108,8 +109,9 @@ public:
 	bool bProjectile_3;
 	bool bProjectile_4;
 	bool bCameraLag;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Ball)
 	bool bIsDead;
-	
 
 protected:
 	void YawCamera(float Val);

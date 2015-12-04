@@ -14,6 +14,6 @@ class BOS_API ABOSPlayerState : public APlayerState
 	GENERATED_BODY()
 
 public:
-		UPROPERTY(Replicated)
+		UPROPERTY(Replicated, BlueprintReadOnly, Category = "Defaults")
 		bool bTeamB;
 };

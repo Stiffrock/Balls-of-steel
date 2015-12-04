@@ -13,7 +13,6 @@ ABallController::ABallController()
 
 void ABallController::Respawn()
 {
-
 	AGameMode * GameMode = GetWorld()->GetAuthGameMode();
 	if (GameMode)
 	{
@@ -25,8 +24,6 @@ void ABallController::Respawn()
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TeamB"));
 		}
-
-		
 	}
 }
 

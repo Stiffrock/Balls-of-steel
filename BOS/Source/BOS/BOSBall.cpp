@@ -123,8 +123,8 @@ void ABOSBall::HandleDeath_Implementation()
 {
 	bIsDead = true;
 	ABallController* BC = Cast<ABallController>(GetController());
-	BC->Respawn();
-	this->Destroy();
+	//BC->Respawn();
+	//this->Destroy();
 }
 bool ABOSBall::HandleDeath_Validate()
 {
@@ -258,7 +258,7 @@ bool ABOSBall::Add_Impulse_Validate(FVector torque) //Server function
 void ABOSBall::Server_Fire_Implementation() //Server function
 {
 	const FRotator SpawnRotation = Camera->GetComponentRotation();
-	const FVector SpawnLocation = GetActorLocation() + FVector(0.f, 0.f, 200.0f);
+	const FVector SpawnLocation = GetActorLocation() + FVector(0.f, 0.f, 500.0f);
 
 	UWorld* const World = GetWorld();
 	if (World != NULL)

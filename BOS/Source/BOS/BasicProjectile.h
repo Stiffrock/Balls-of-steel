@@ -18,6 +18,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = Projectile)
 	float LifeTime;
 
+	UPROPERTY(EditAnywhere, Category = Projectile)
+		float KnockbackImpulse;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* StaticMesh;
 
