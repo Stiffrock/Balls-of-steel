@@ -16,8 +16,13 @@ class ABOSBall : public APawn
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Ball, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* SpringArm;
 
+<<<<<<< HEAD
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Ball, meta = (AllowPrivateAccess = "true"))
+=======
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Ball, meta = (AllowPrivateAccess = "true"))
+>>>>>>> origin/master
 	USpotLightComponent *TeamColour;
+
 
 	/** Camera to view the ball */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Ball, meta = (AllowPrivateAccess = "true"))
@@ -79,9 +84,9 @@ public:
 	bool HandleDeath_Validate();
 
 	UFUNCTION(Server, Reliable, WithValidation)
-	void Damage(uint32 damage);
-	void Damage_Implementation(uint32 damage);
-	bool Damage_Validate(uint32 damage);
+	void Damage(float damage);
+	void Damage_Implementation(float damage);
+	bool Damage_Validate(float damage);
 
 	UPROPERTY(EditAnywhere, Category = Ball)
 	float MaxDashImpulse;
@@ -97,7 +102,12 @@ public:
 	float RollTorque;
 	float CameraLag;
 
+<<<<<<< HEAD
 	uint32 Health;
+=======
+	float intensity;
+	float Health;
+>>>>>>> origin/master
 
 	bool bCanJump;
 	bool dashCharging;

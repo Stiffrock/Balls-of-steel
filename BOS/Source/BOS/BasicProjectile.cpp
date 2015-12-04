@@ -54,9 +54,14 @@ void ABasicProjectile::OnHit_Implementation(AActor* OtherActor, UPrimitiveCompon
 
 		if (OtherActor == Ball)
 		{
-			Ball->Damage(10);
+			Ball->Damage(10.f);
 			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ball Hit!" Ball->Health));
+<<<<<<< HEAD
 			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Ball Hit! Health: %i"), Ball->Health));
+=======
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Ball Hit! Health: %f"), Ball->Health));
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Ball Hit! intensity: %f"), Ball->intensity));
+>>>>>>> origin/master
 		}
 
 

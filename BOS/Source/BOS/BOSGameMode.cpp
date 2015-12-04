@@ -57,6 +57,7 @@ void ABOSGameMode::PostLogin(APlayerController *NewPlayer)
 			{
 				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Added to TeamB"));
 				PS->bTeamB = true;
+				
 			}
 		/*	if (NumTeamA < NumTeamB)
 			{
