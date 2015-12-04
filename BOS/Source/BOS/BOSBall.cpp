@@ -36,12 +36,6 @@ ABOSBall::ABOSBall()
 	SpringArm->CameraLagSpeed = 3.0f;
 	SpringArm->CameraLagMaxDistance = 50.0f;
 
-<<<<<<< HEAD
-	// Create a camera and attach to boom
-=======
-
-	//Create a camera and attach to boom
->>>>>>> origin/master
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera0"));
 	Camera->AttachTo(SpringArm, USpringArmComponent::SocketName);
 	Camera->bUsePawnControlRotation = false; // We don't want the controller rotating the camera
