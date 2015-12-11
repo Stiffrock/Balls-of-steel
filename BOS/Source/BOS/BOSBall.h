@@ -86,7 +86,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Ball)
 	float MaxDashImpulse;
 
-	UPROPERTY(BlueprintReadOnly, Category = Ball)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Ball)
 	float DashImpulse;
 
 	UPROPERTY(EditAnywhere, Category = Ball)
