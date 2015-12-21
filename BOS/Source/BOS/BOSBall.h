@@ -100,6 +100,8 @@ public:
 	float CameraLag;
 
 	float intensity;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Ball)
 	float Health;
 
 	bool bCanJump;
