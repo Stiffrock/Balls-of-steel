@@ -11,14 +11,33 @@ class ABOSGameMode : public AGameMode
 public:
 	ABOSGameMode();
 
+
+
 	UPROPERTY()
 		TSubclassOf<class ABOSBall> ABOSBall_BP;
 
-	void PostLogin(APlayerController* NewPlayer) override;
-
 	AActor* ChoosePlayerStart_Implementation(AController* Player) override;
 
+	void PostLogin(APlayerController* NewPlayer) override;
+
+	virtual void BeginPlay() override;
+
+	virtual void Tick(float DeltaTime) override;
+
+
+
+	void CalculateTeams();
+
 	bool ShouldSpawnAtStartSpot(AController* Player) override { return false; };
+
+	bool binitGame;
+
+
+	UFUNCTION(BlueprintCallable, Category = "Defaults")
+	void RespawnAll();
+
+	float delay;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay")
 		uint8 NumTeamA;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay")

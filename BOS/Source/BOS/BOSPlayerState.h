@@ -16,4 +16,6 @@ class BOS_API ABOSPlayerState : public APlayerState
 public:
 		UPROPERTY(Replicated, BlueprintReadOnly, Category = "Defaults")
 		bool bTeamB;
+
+
 };

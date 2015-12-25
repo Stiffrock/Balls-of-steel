@@ -26,7 +26,10 @@ class ABOSBall : public APawn
 public:
 	ABOSBall();
 
+	virtual void FellOutOfWorld(const class UDamageType& dmgType) override;
+
 	void Tick(float DeltaTime) override;
+	virtual void BeginPlay() override;
 
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Add_Torque(FVector torque);	

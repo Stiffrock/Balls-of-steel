@@ -86,6 +86,12 @@ ABOSBall::ABOSBall()
 	bProjectile_4 = false;
 }
 
+void ABOSBall::BeginPlay()
+{
+	Super::BeginPlay();
+
+
+}
 void ABOSBall::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -95,6 +101,14 @@ void ABOSBall::Tick(float DeltaTime)
 		DashImpulse += DashChargeRate * DeltaTime;
 		DashImpulse = FMath::Clamp(DashImpulse, 0.0f, MaxDashImpulse);
 	}
+
+}
+
+void ABOSBall::FellOutOfWorld(const class UDamageType& dmgType)
+{
+	Super::FellOutOfWorld(dmgType);
+	GEngine->AddOnScreenDebugMessage(-1, 50.f, FColor::Red, TEXT("FellOutOfWorld"));
+	HandleDeath();
 }
 
 void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
@@ -121,10 +135,8 @@ void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 
 void ABOSBall::HandleDeath_Implementation()
 {
-	bIsDead = true;
 	ABallController* BC = Cast<ABallController>(GetController());
-	//BC->Respawn();
-	//this->Destroy();
+	BC->Respawn();
 }
 bool ABOSBall::HandleDeath_Validate()
 {

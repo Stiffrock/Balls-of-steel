@@ -18,6 +18,7 @@ class BOS_API ABallController : public APlayerController
 public:
 	UFUNCTION(BlueprintCallable, Category = "Defaults")
 	void Respawn();
+
 	void Tick(float DeltaTime) override;
 
 };

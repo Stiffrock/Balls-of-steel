@@ -3,6 +3,7 @@
 #include "BOS.h"
 #include "BOSPlayerState.h"
 #include "UnrealNetwork.h"
+#include "BallController.h"
 
 
 void ABOSPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty> & OutLifetimeProps) const
@@ -13,3 +14,4 @@ void ABOSPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty> & Out
 	DOREPLIFETIME(ABOSPlayerState, bTeamB);
 	
 }
+
