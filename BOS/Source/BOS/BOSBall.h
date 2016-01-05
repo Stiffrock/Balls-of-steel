@@ -109,14 +109,26 @@ public:
 
 	bool bCanJump;
 	bool dashCharging;
+	UPROPERTY(BlueprintReadOnly)
 	bool bProjectile_1;
+	UPROPERTY(BlueprintReadOnly)
 	bool bProjectile_2;
+	UPROPERTY(BlueprintReadOnly)
 	bool bProjectile_3;
+	UPROPERTY(BlueprintReadOnly)
 	bool bProjectile_4;
 	bool bCameraLag;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Ball)
 	bool bIsDead;
+
+	UPROPERTY(BlueprintReadOnly)
+	int32 projectile4Count;
+
+	UPROPERTY(BlueprintReadOnly)
+	FTimerHandle projectileCooldown;
+	bool projectileAvailable;
+	void projectileCooldownReset();
 
 protected:
 	void YawCamera(float Val);

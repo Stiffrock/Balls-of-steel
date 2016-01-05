@@ -43,7 +43,7 @@ ABOSBall::ABOSBall()
 
 	//Create a light above the ball
 	TeamColour = CreateDefaultSubobject<USpotLightComponent>(TEXT("SpotLight"));
-	TeamColour->AttachTo(RootComponent);	
+	TeamColour->AttachTo(RootComponent);
 	TeamColour->bAbsoluteRotation = true;
 	//TeamColour->bAbsoluteLocation = true;
 	TeamColour->SetRelativeLocationAndRotation(FVector(Ball->GetComponentLocation().X, Ball->GetComponentLocation().Y, Ball->GetComponentLocation().Z), FRotator(-90.f, 0.f, 0.0f));
@@ -79,11 +79,14 @@ ABOSBall::ABOSBall()
 	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint4(TEXT("Blueprint'/Game/BasicProjectile_BP4.BasicProjectile_BP4'"));
 	if (ItemBlueprint4.Object)
 		ABasicProjectile_BP4 = (UClass*)ItemBlueprint4.Object->GeneratedClass;
-	
+
 	bProjectile_1 = true;
 	bProjectile_2 = false;
 	bProjectile_3 = false;
 	bProjectile_4 = false;
+
+	projectileAvailable = true;
+	projectile4Count = 3;
 }
 
 void ABOSBall::BeginPlay()
@@ -144,19 +147,19 @@ bool ABOSBall::HandleDeath_Validate()
 }
 
 void ABOSBall::HandleCameraLag(float DeltaTime)
-{	
+{
 	if (SpringArm->CameraLagSpeed >= 0.0f)
 	{
 		SpringArm->CameraLagSpeed -= 0.25f * DeltaTime;
 	}
-	
+
 	else
 	{
 		bCameraLag = false;
 		SpringArm->bEnableCameraLag = false;
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("EndCameraLag"), CameraLag));
 	}
-		
+
 }
 
 void ABOSBall::YawCamera(float Val)
@@ -178,7 +181,7 @@ bool ABOSBall::Add_YawCamera_Validate(FRotator rotator) //Server function
 }
 
 void ABOSBall::PitchCamera(float Val)
-{	
+{
 	FRotator newRotation = SpringArm->GetComponentRotation();
 	newRotation.Pitch = FMath::Clamp(newRotation.Pitch + Val, -80.0f, 80.0f);
 	SpringArm->SetRelativeRotation(newRotation);
@@ -208,14 +211,14 @@ void ABOSBall::MoveRight(float Val)
 
 void ABOSBall::MoveForward(float Val)
 {
-	
+
 	FVector Direction = SpringArm->GetRightVector();
 	FVector Direction2 = SpringArm->GetForwardVector();
 	Direction.Z = 0;
 	const FVector Torque = Direction * 	FMath::Clamp(Val, -1.0f, 1.0f) * RollTorque;
 	const FVector Impulse = Direction2 * FMath::Clamp(Val, -1.0f, 1.0f) * 150000.f;
 	Add_Impulse(Impulse);
-	Add_Torque(Torque);	
+	Add_Torque(Torque);
 }
 
 void ABOSBall::DashCharge()
@@ -240,11 +243,11 @@ void ABOSBall::Jump()
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Is team B"), Health));
 	else
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Is team A"), Health));
-	if(bCanJump)
+	if (bCanJump)
 	{
 
 		const FVector Impulse = FVector(0.f, 0.f, JumpImpulse);
-		Add_Impulse(Impulse);	
+		Add_Impulse(Impulse);
 		bCanJump = false;
 	}
 }
@@ -285,25 +288,37 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 		FActorSpawnParameters SpawnParams;
 		SpawnParams.Instigator = this;
 
-		if (bProjectile_1)
+		if (bProjectile_1 && projectileAvailable)
 		{
 			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
+			projectileAvailable = false;
+			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 2.0f, false);
 		}
-		else if (bProjectile_2)
+		else if (bProjectile_2 && projectileAvailable)
 		{
 			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP2, SpawnLocation, SpawnRotation, SpawnParams);
+			projectileAvailable = false;
+			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 1.0f, false);
 		}
-		else if (bProjectile_3)
+		else if (bProjectile_3 && projectileAvailable)
 		{
 			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP3, SpawnLocation, SpawnRotation, SpawnParams);
+			projectileAvailable = false;
+			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.2f, false);
 		}
-		else if (bProjectile_4)
+		else if (bProjectile_4 && projectileAvailable && projectile4Count > 0)
 		{
 			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP4, SpawnLocation, SpawnRotation, SpawnParams);
+			projectileAvailable = false;
+			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.4f, false);
+			projectile4Count--;
 		}
-
-		//World->SpawnActor<AMyProjectile>(AMyProjectile::StaticClass(), SpawnLocation, SpawnRotation); Creates the class from scratch
 	}
+}
+
+void ABOSBall::projectileCooldownReset()
+{
+	projectileAvailable = true;
 }
 
 bool ABOSBall::Server_Fire_Validate() //Server function 
