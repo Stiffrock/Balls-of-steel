@@ -21,8 +21,11 @@ public:
 	UPROPERTY(EditAnywhere, Category = Projectile)
 	float KnockbackImpulse;
 
-	UPROPERTY(EditAnywhere, Category = Movement)
+	UPROPERTY(EditAnywhere, Category = Projectile)
 	float Damage;
+
+	UPROPERTY(EditAnywhere, Category = Movement)
+		float Speed;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* StaticMesh;

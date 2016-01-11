@@ -28,13 +28,15 @@ ABasicProjectile::ABasicProjectile()
 	StaticMesh->AttachTo(RootComponent);
 
 	// Use a ProjectileMovementComponent to govern this projectile's movement
+	Speed = 3000.f;
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileComp"));
 	ProjectileMovement->UpdatedComponent = CollisionComp;
-	ProjectileMovement->InitialSpeed = 3000.f;
-	ProjectileMovement->MaxSpeed = 3000.f;
+	ProjectileMovement->InitialSpeed = Speed;
+	ProjectileMovement->MaxSpeed = Speed;
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = true;
 	ProjectileMovement->Bounciness = 1.0f;
+
 	// Die after 3 seconds by default
 	//InitialLifeSpan = 5.0f;
 	LifeTime = 5.0f;

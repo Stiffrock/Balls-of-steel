@@ -6,6 +6,9 @@
 #include "Engine.h"
 #include "BallController.h"
 
+//debug
+#include "BOSPlayerState.h"
+
 ABOSBall::ABOSBall()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> BallMesh(TEXT("/Game/Rolling/Meshes/BallMesh.BallMesh"));
