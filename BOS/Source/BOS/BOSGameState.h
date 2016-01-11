@@ -16,6 +16,9 @@ class BOS_API ABOSGameState : public AGameState
 		ABOSGameState();
 	
 public:
+
+	virtual void Tick(float DeltaTime) override;
+
 	UPROPERTY(Replicated, BlueprintReadWrite, Category = Defaults)
 		uint8 TeamALives;
 	UPROPERTY(Replicated, BlueprintReadWrite, Category = Defaults)

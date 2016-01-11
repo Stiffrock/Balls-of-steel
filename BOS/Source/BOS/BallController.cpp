@@ -41,6 +41,20 @@ void ABallController::Respawn()
 		{
 			gameState->TeamBLives += 1;
 		}
+
+		if (gameState->TeamBLives >= 5)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 50.f, FColor::Red, TEXT("TEAM A WINS"));
+		//	gameState->TeamALives = 0;
+		//	gameState->TeamBLives = 0;
+			
+		}
+		if (gameState->TeamALives >= 5)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 50.f, FColor::Red, TEXT("TEAM B WINS"));
+		//	gameState->TeamALives = 0;
+		//	gameState->TeamBLives = 0;
+		}
 	
 	}
 }
