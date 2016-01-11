@@ -148,18 +148,17 @@ protected:
 
 	void Jump();
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Projectiles)
+	UClass* ABasicProjectile_BP;
 
-	UPROPERTY()
-	TSubclassOf<class ABasicProjectile> ABasicProjectile_BP;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Projectiles)
+	UClass* ABasicProjectile_BP2;
 
-	UPROPERTY()
-	TSubclassOf<class ABasicProjectile> ABasicProjectile_BP2;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Projectiles)
+	UClass* ABasicProjectile_BP3;
 
-	UPROPERTY()
-	TSubclassOf<class ABasicProjectile> ABasicProjectile_BP3;
-
-	UPROPERTY()
-	TSubclassOf<class ABasicProjectile> ABasicProjectile_BP4;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Projectiles)
+	UClass* ABasicProjectile_BP4;
 
 	// AActor interface
 	virtual void NotifyHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override;

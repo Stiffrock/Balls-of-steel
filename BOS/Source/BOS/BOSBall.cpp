@@ -65,22 +65,6 @@ ABOSBall::ABOSBall()
 	Health = 100.f;
 	intensity = 100.f;
 
-	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint(TEXT("Blueprint'/Game/BasicProjectile_BP.BasicProjectile_BP'"));
-	if (ItemBlueprint.Object)
-		ABasicProjectile_BP = (UClass*)ItemBlueprint.Object->GeneratedClass;
-
-	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint2(TEXT("Blueprint'/Game/BasicProjectile_BP2.BasicProjectile_BP2'"));
-	if (ItemBlueprint2.Object)
-		ABasicProjectile_BP2 = (UClass*)ItemBlueprint2.Object->GeneratedClass;
-
-	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint3(TEXT("Blueprint'/Game/BasicProjectile_BP3.BasicProjectile_BP3'"));
-	if (ItemBlueprint3.Object)
-		ABasicProjectile_BP3 = (UClass*)ItemBlueprint3.Object->GeneratedClass;
-
-	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint4(TEXT("Blueprint'/Game/BasicProjectile_BP4.BasicProjectile_BP4'"));
-	if (ItemBlueprint4.Object)
-		ABasicProjectile_BP4 = (UClass*)ItemBlueprint4.Object->GeneratedClass;
-
 	bProjectile_1 = true;
 	bProjectile_2 = false;
 	bProjectile_3 = false;
@@ -299,21 +283,21 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 		{
 			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
 			projectileAvailable = false;
-			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 2.0f, false);
+			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.8f, false);
 			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
 		else if (bProjectile_2 && projectileAvailable)
 		{
 			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP2, SpawnLocation, SpawnRotation, SpawnParams);
 			projectileAvailable = false;
-			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 1.0f, false);
+			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 2.0f, false);
 			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
 		else if (bProjectile_3 && projectileAvailable)
 		{
 			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP3, SpawnLocation, SpawnRotation, SpawnParams);
 			projectileAvailable = false;
-			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.2f, false);
+			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 4.0f, false);
 			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
 		else if (bProjectile_4 && projectileAvailable && projectile4Count > 0)
