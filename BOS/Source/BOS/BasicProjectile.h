@@ -19,13 +19,21 @@ public:
 	float LifeTime;
 
 	UPROPERTY(EditAnywhere, Category = Projectile)
-		float KnockbackImpulse;
+	float KnockbackImpulse;
+
+	UPROPERTY(EditAnywhere, Category = Projectile)
+	float Damage;
+
+	UPROPERTY(EditAnywhere, Category = Movement)
+		float Speed;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* StaticMesh;
 
 	UPROPERTY(EditAnywhere, Category = Movement)
 	class UProjectileMovementComponent* ProjectileMovement;
+
+
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Projectile)
 	class USphereComponent* CollisionComp;

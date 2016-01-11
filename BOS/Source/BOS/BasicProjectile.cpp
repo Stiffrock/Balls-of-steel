@@ -28,24 +28,25 @@ ABasicProjectile::ABasicProjectile()
 	StaticMesh->AttachTo(RootComponent);
 
 	// Use a ProjectileMovementComponent to govern this projectile's movement
+	Speed = 3000.f;
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileComp"));
 	ProjectileMovement->UpdatedComponent = CollisionComp;
-	ProjectileMovement->InitialSpeed = 3000.f;
-	ProjectileMovement->MaxSpeed = 3000.f;
+	ProjectileMovement->InitialSpeed = Speed;
+	ProjectileMovement->MaxSpeed = Speed;
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = true;
 	ProjectileMovement->Bounciness = 1.0f;
+
 	// Die after 3 seconds by default
 	//InitialLifeSpan = 5.0f;
 	LifeTime = 5.0f;
 	InitialLifeSpan = LifeTime;
-
+	Damage = 10.f;
 }
 
 void ABasicProjectile::OnHit_Implementation(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	// Only add impulse and destroy projectile if we hit a physics
-	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && OtherComp->IsSimulatingPhysics())
+	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && (OtherActor != Instigator) && (OtherComp->IsSimulatingPhysics()))
 	{
 		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Hit detected!"));
 		OtherComp->AddImpulseAtLocation(GetVelocity() * KnockbackImpulse, GetActorLocation());
@@ -54,7 +55,7 @@ void ABasicProjectile::OnHit_Implementation(AActor* OtherActor, UPrimitiveCompon
 
 		if (OtherActor == Ball)
 		{
-			Ball->Damage(10.f);
+			Ball->Damage(Damage);
 			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ball Hit!" Ball->Health));
 			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Ball Hit! Health: %f"), Ball->Health));
 		}
@@ -73,7 +74,8 @@ bool ABasicProjectile::OnHit_Validate(AActor* OtherActor, UPrimitiveComponent* O
 
 void ABasicProjectile::BeginPlay()
 {
-	Super::BeginPlay();	
+	Super::BeginPlay();
+	CollisionComp->IgnoreActorWhenMoving(this->Instigator, true);
 }
 
 void ABasicProjectile::Tick( float DeltaTime )

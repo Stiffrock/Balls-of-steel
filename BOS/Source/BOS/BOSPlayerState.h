@@ -1,7 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-
 #include "GameFramework/PlayerState.h"
 #include "BOSPlayerState.generated.h"
 
@@ -16,6 +15,5 @@ class BOS_API ABOSPlayerState : public APlayerState
 public:
 		UPROPERTY(Replicated, BlueprintReadOnly, Category = "Defaults")
 		bool bTeamB;
-
 
 };
