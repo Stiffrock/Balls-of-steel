@@ -50,8 +50,9 @@ ABOSBall::ABOSBall()
 	TeamColour->SetOuterConeAngle(60.f);
 
 	// Set up forces
-	RollTorque = 50000000.0f;
-	JumpImpulse = 350000.0f;
+	RollTorque = 30000000.0f;
+	ImpulseSpeed = 100000.f;
+	JumpImpulse = 900000000.0f;
 	MaxDashImpulse = 3000000.0f;
 	DashChargeRate = 500000.0f;
 	DashImpulse = 0.0f;
@@ -243,7 +244,7 @@ void ABOSBall::Jump()
 	if (bCanJump)
 	{
 
-		const FVector Impulse = FVector(0.f, 0.f, JumpImpulse);
+		const FVector Impulse = FVector(0.f, 0.f, 5*JumpImpulse);
 		Add_Impulse(Impulse);
 		bCanJump = false;
 	}
