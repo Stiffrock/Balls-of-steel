@@ -108,7 +108,7 @@ public:
 
 	float intensity;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Ball)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Ball)
 	float Health;
 
 	bool bCanJump;
