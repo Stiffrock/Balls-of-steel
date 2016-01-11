@@ -298,29 +298,29 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 		if (bProjectile_1 && projectileAvailable)
 		{
 			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
-			projectileAvailable = false;
+			projectileAvailable = true;
 			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 2.0f, false);
 			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
 		else if (bProjectile_2 && projectileAvailable)
 		{
 			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP2, SpawnLocation, SpawnRotation, SpawnParams);
-			projectileAvailable = false;
+			projectileAvailable = true;
 			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 1.0f, false);
 			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
 		else if (bProjectile_3 && projectileAvailable)
 		{
 			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP3, SpawnLocation, SpawnRotation, SpawnParams);
-			projectileAvailable = false;
+			projectileAvailable = true;
 			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.2f, false);
 			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
-		else if (bProjectile_4 && projectileAvailable && projectile4Count > 0)
+		else if (bProjectile_4 && projectileAvailable )//&& projectile4Count > 0)
 		{
 			SpawnRotation.Pitch -= 15;
 			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP4, SpawnLocation, SpawnRotation, SpawnParams);
-			projectileAvailable = false;
+			projectileAvailable = true;
 			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.4f, false);
 			projectile4Count--;
 			Ball->IgnoreActorWhenMoving(Projectile, true);
