@@ -203,8 +203,9 @@ void ABOSBall::MoveRight(float Val)
 	FVector Direction = SpringArm->GetForwardVector();
 	FVector Direction2 = SpringArm->GetRightVector();
 	Direction.Z = 0;
+	Direction2.Z = 0;
 	const FVector Torque = Direction * -FMath::Clamp(Val, -1.0f, 1.0f) * RollTorque;
-	const FVector Impulse = Direction2 * FMath::Clamp(Val, -1.0f, 1.0f) * 700000.f;
+	const FVector Impulse = Direction2 * FMath::Clamp(Val, -1.0f, 1.0f) * ImpulseSpeed;
 	Add_Impulse(Impulse);
 	Add_Torque(Torque);
 }
@@ -215,8 +216,9 @@ void ABOSBall::MoveForward(float Val)
 	FVector Direction = SpringArm->GetRightVector();
 	FVector Direction2 = SpringArm->GetForwardVector();
 	Direction.Z = 0;
+	Direction2.Z = 0;
 	const FVector Torque = Direction * 	FMath::Clamp(Val, -1.0f, 1.0f) * RollTorque;
-	const FVector Impulse = Direction2 * FMath::Clamp(Val, -1.0f, 1.0f) * 150000.f;
+	const FVector Impulse = Direction2 * FMath::Clamp(Val, -1.0f, 1.0f) * ImpulseSpeed;
 	Add_Impulse(Impulse);
 	Add_Torque(Torque);
 }

@@ -95,11 +95,15 @@ public:
 	UPROPERTY(EditAnywhere, Category = Ball)
 	float DashChargeRate;
 
-	UPROPERTY(EditAnywhere, Category=Ball)
+	UPROPERTY(EditAnywhere, Category = Ball)
 	float JumpImpulse;
 
-	UPROPERTY(EditAnywhere, Category=Ball)
+	UPROPERTY(EditAnywhere, Category = Ball)
 	float RollTorque;
+
+	UPROPERTY(EditAnywhere, Category = Ball)
+	float ImpulseSpeed;
+
 	float CameraLag;
 
 	float intensity;
