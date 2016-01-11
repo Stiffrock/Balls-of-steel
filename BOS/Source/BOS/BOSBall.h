@@ -76,12 +76,12 @@ public:
 	void SetProjectile_4_Implementation();
 	bool SetProjectile_4_Validate();
 
-	UFUNCTION(Server, Reliable, WithValidation)
+	UFUNCTION(Server, Reliable, BlueprintCallable, WithValidation, Category = Death)
 	void HandleDeath();
 	void HandleDeath_Implementation();
 	bool HandleDeath_Validate();
 
-	UFUNCTION(Server, Reliable, WithValidation)
+	UFUNCTION(Server, Reliable, WithValidation, BlueprintCallable, Category = Death)
 	void Damage(float damage);
 	void Damage_Implementation(float damage);
 	bool Damage_Validate(float damage);
@@ -108,7 +108,7 @@ public:
 
 	float intensity;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Ball)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Ball)
 	float Health;
 
 	bool bCanJump;

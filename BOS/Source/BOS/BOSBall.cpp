@@ -285,7 +285,7 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 	FRotator SpawnRotation = SpringArm->GetComponentRotation();
 	SpawnRotation.Pitch += 40;
 
-	const FVector SpawnLocation = GetActorLocation() + SpawnRotation.Vector() * 200;
+	const FVector SpawnLocation = GetActorLocation() + SpawnRotation.Vector() * 150;
 
 	UWorld* const World = GetWorld();
 	if (World != NULL)
