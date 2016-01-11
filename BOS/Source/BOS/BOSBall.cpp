@@ -104,6 +104,7 @@ void ABOSBall::Tick(float DeltaTime)
 		DashImpulse = FMath::Clamp(DashImpulse, 0.0f, MaxDashImpulse);
 	}
 
+
 }
 
 void ABOSBall::FellOutOfWorld(const class UDamageType& dmgType)
@@ -298,21 +299,21 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 		if (bProjectile_1 && projectileAvailable)
 		{
 			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
-			projectileAvailable = true;
-			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 2.0f, false);
+			projectileAvailable = false;
+			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.8f, false);
 			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
 		else if (bProjectile_2 && projectileAvailable)
 		{
 			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP2, SpawnLocation, SpawnRotation, SpawnParams);
-			projectileAvailable = true;
-			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 1.0f, false);
+			projectileAvailable = false;
+			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.8f, false);
 			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
 		else if (bProjectile_3 && projectileAvailable)
 		{
 			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP3, SpawnLocation, SpawnRotation, SpawnParams);
-			projectileAvailable = true;
+			projectileAvailable = false;
 			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.2f, false);
 			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
