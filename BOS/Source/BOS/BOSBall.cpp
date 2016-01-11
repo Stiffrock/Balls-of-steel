@@ -110,6 +110,7 @@ void ABOSBall::Tick(float DeltaTime)
 
 void ABOSBall::FellOutOfWorld(const class UDamageType& dmgType)
 {
+
 	Super::FellOutOfWorld(dmgType);
 	GEngine->AddOnScreenDebugMessage(-1, 50.f, FColor::Red, TEXT("FellOutOfWorld"));
 	HandleDeath();
@@ -139,6 +140,7 @@ void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 
 void ABOSBall::HandleDeath_Implementation()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 50.f, FColor::Red, TEXT("HandleDeath"));
 	ABallController* BC = Cast<ABallController>(GetController());
 	BC->Respawn();
 }
