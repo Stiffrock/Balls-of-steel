@@ -39,13 +39,12 @@ ABasicProjectile::ABasicProjectile()
 	//InitialLifeSpan = 5.0f;
 	LifeTime = 5.0f;
 	InitialLifeSpan = LifeTime;
-
+	Damage = 10.f;
 }
 
 void ABasicProjectile::OnHit_Implementation(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	// Only add impulse and destroy projectile if we hit a physics
-	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && OtherComp->IsSimulatingPhysics())
+	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && (OtherActor != Instigator) && (OtherComp->IsSimulatingPhysics()))
 	{
 		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Hit detected!"));
 		OtherComp->AddImpulseAtLocation(GetVelocity() * KnockbackImpulse, GetActorLocation());
@@ -54,7 +53,7 @@ void ABasicProjectile::OnHit_Implementation(AActor* OtherActor, UPrimitiveCompon
 
 		if (OtherActor == Ball)
 		{
-			Ball->Damage(10.f);
+			Ball->Damage(Damage);
 			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ball Hit!" Ball->Health));
 			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Ball Hit! Health: %f"), Ball->Health));
 		}
@@ -73,7 +72,8 @@ bool ABasicProjectile::OnHit_Validate(AActor* OtherActor, UPrimitiveComponent* O
 
 void ABasicProjectile::BeginPlay()
 {
-	Super::BeginPlay();	
+	Super::BeginPlay();
+	CollisionComp->IgnoreActorWhenMoving(this->Instigator, true);
 }
 
 void ABasicProjectile::Tick( float DeltaTime )
