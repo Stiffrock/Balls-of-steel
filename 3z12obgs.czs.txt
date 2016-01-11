@@ -1,0 +1,49 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+# Conflicts:
+#	BOS/Content/boosterspeed.uasset
+#	BOS/Content/settransparent.uasset
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 10 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   BOS/Config/DefaultEngine.ini
+#	modified:   BOS/Content/BOSBall_BP.uasset
+#	modified:   BOS/Content/BasicProjectile_BP.uasset
+#	modified:   BOS/Content/BasicProjectile_BP2.uasset
+#	modified:   BOS/Content/BasicProjectile_BP3.uasset
+#	modified:   BOS/Content/BasicProjectile_BP4.uasset
+#	new file:   BOS/Content/MInstance_Burnished_Steel.uasset
+#	modified:   BOS/Content/Maps/MainMenuLevel.umap
+#	modified:   BOS/Content/Maps/Map1.umap
+#	modified:   BOS/Content/Maps/Map2.umap
+#	new file:   BOS/Content/Maps/racingmap.umap
+#	modified:   BOS/Content/StarterContent/Materials/M_Metal_Burnished_Steel.uasset
+#	modified:   BOS/Content/StarterContent/Particles/Materials/M_smoke_subUV.uasset
+#	modified:   BOS/Content/UI.uasset
+#	modified:   BOS/Content/boosterjump.uasset
+#	new file:   BOS/Content/map.umap
+#	new file:   BOS/Content/pickup.uasset
+#	modified:   BOS/Source/BOS/BOSBall.cpp
+#	modified:   BOS/Source/BOS/BOSBall.h
+#	modified:   BOS/Source/BOS/BOSGameState.cpp
+#	modified:   BOS/Source/BOS/BOSGameState.h
+#	modified:   BOS/Source/BOS/BOSPlayerState.h
+#	modified:   BOS/Source/BOS/BallController.cpp
+#	modified:   BOS/Source/BOS/BasicProjectile.cpp
+#	modified:   BOS/Source/BOS/BasicProjectile.h
+#
+

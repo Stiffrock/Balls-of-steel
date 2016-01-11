@@ -6,9 +6,6 @@
 #include "Engine.h"
 #include "BallController.h"
 
-// debug
-#include "BOSPlayerstate.h"
-
 ABOSBall::ABOSBall()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> BallMesh(TEXT("/Game/Rolling/Meshes/BallMesh.BallMesh"));
@@ -53,8 +50,9 @@ ABOSBall::ABOSBall()
 	TeamColour->SetOuterConeAngle(60.f);
 
 	// Set up forces
-	RollTorque = 50000000.0f;
-	JumpImpulse = 350000.0f;
+	RollTorque = 30000000.0f;
+	ImpulseSpeed = 100000.f;
+	JumpImpulse = 900000000.0f;
 	MaxDashImpulse = 3000000.0f;
 	DashChargeRate = 500000.0f;
 	DashImpulse = 0.0f;
@@ -92,8 +90,6 @@ ABOSBall::ABOSBall()
 void ABOSBall::BeginPlay()
 {
 	Super::BeginPlay();
-
-
 }
 void ABOSBall::Tick(float DeltaTime)
 {
@@ -109,6 +105,7 @@ void ABOSBall::Tick(float DeltaTime)
 
 void ABOSBall::FellOutOfWorld(const class UDamageType& dmgType)
 {
+
 	Super::FellOutOfWorld(dmgType);
 	GEngine->AddOnScreenDebugMessage(-1, 50.f, FColor::Red, TEXT("FellOutOfWorld"));
 	HandleDeath();
@@ -138,6 +135,7 @@ void ABOSBall::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 
 void ABOSBall::HandleDeath_Implementation()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 50.f, FColor::Red, TEXT("HandleDeath"));
 	ABallController* BC = Cast<ABallController>(GetController());
 	BC->Respawn();
 }
@@ -183,7 +181,7 @@ bool ABOSBall::Add_YawCamera_Validate(FRotator rotator) //Server function
 void ABOSBall::PitchCamera(float Val)
 {
 	FRotator newRotation = SpringArm->GetComponentRotation();
-	newRotation.Pitch = FMath::Clamp(newRotation.Pitch + Val, -80.0f, 80.0f);
+	newRotation.Pitch = FMath::Clamp(newRotation.Pitch + Val, -88.0f, 88.0f);
 	SpringArm->SetRelativeRotation(newRotation);
 	Add_PitchCamera(newRotation);
 }
@@ -203,8 +201,9 @@ void ABOSBall::MoveRight(float Val)
 	FVector Direction = SpringArm->GetForwardVector();
 	FVector Direction2 = SpringArm->GetRightVector();
 	Direction.Z = 0;
+	Direction2.Z = 0;
 	const FVector Torque = Direction * -FMath::Clamp(Val, -1.0f, 1.0f) * RollTorque;
-	const FVector Impulse = Direction2 * FMath::Clamp(Val, -1.0f, 1.0f) * 700000.f;
+	const FVector Impulse = Direction2 * FMath::Clamp(Val, -1.0f, 1.0f) * ImpulseSpeed;
 	Add_Impulse(Impulse);
 	Add_Torque(Torque);
 }
@@ -215,8 +214,9 @@ void ABOSBall::MoveForward(float Val)
 	FVector Direction = SpringArm->GetRightVector();
 	FVector Direction2 = SpringArm->GetForwardVector();
 	Direction.Z = 0;
+	Direction2.Z = 0;
 	const FVector Torque = Direction * 	FMath::Clamp(Val, -1.0f, 1.0f) * RollTorque;
-	const FVector Impulse = Direction2 * FMath::Clamp(Val, -1.0f, 1.0f) * 150000.f;
+	const FVector Impulse = Direction2 * FMath::Clamp(Val, -1.0f, 1.0f) * ImpulseSpeed;
 	Add_Impulse(Impulse);
 	Add_Torque(Torque);
 }
@@ -246,7 +246,7 @@ void ABOSBall::Jump()
 	if (bCanJump)
 	{
 
-		const FVector Impulse = FVector(0.f, 0.f, JumpImpulse);
+		const FVector Impulse = FVector(0.f, 0.f, 5*JumpImpulse);
 		Add_Impulse(Impulse);
 		bCanJump = false;
 	}
@@ -279,8 +279,10 @@ bool ABOSBall::Add_Impulse_Validate(FVector torque) //Server function
 
 void ABOSBall::Server_Fire_Implementation() //Server function
 {
-	const FRotator SpawnRotation = Camera->GetComponentRotation();
-	const FVector SpawnLocation = GetActorLocation() + FVector(0.f, 0.f, 500.0f);
+	FRotator SpawnRotation = SpringArm->GetComponentRotation();
+	SpawnRotation.Pitch += 40;
+
+	const FVector SpawnLocation = GetActorLocation() + SpawnRotation.Vector() * 200;
 
 	UWorld* const World = GetWorld();
 	if (World != NULL)
@@ -288,30 +290,37 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 		FActorSpawnParameters SpawnParams;
 		SpawnParams.Instigator = this;
 
+		ABasicProjectile* Projectile;
+
 		if (bProjectile_1 && projectileAvailable)
 		{
-			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
+			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
 			projectileAvailable = false;
 			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 2.0f, false);
+			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
 		else if (bProjectile_2 && projectileAvailable)
 		{
-			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP2, SpawnLocation, SpawnRotation, SpawnParams);
+			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP2, SpawnLocation, SpawnRotation, SpawnParams);
 			projectileAvailable = false;
 			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 1.0f, false);
+			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
 		else if (bProjectile_3 && projectileAvailable)
 		{
-			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP3, SpawnLocation, SpawnRotation, SpawnParams);
+			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP3, SpawnLocation, SpawnRotation, SpawnParams);
 			projectileAvailable = false;
 			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.2f, false);
+			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
 		else if (bProjectile_4 && projectileAvailable && projectile4Count > 0)
 		{
-			ABasicProjectile* Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP4, SpawnLocation, SpawnRotation, SpawnParams);
+			SpawnRotation.Pitch -= 15;
+			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP4, SpawnLocation, SpawnRotation, SpawnParams);
 			projectileAvailable = false;
 			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.4f, false);
 			projectile4Count--;
+			Ball->IgnoreActorWhenMoving(Projectile, true);
 		}
 	}
 }
