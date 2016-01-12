@@ -55,6 +55,9 @@ void ABOSGameMode::RespawnAll()
 		GEngine->AddOnScreenDebugMessage(-1, 50.f, FColor::Red, TEXT("Respawn all"));
 		StartItr->Respawn();
 	}
+	ABOSGameState* gameState = Cast<ABOSGameState>(GetWorld()->GameState);
+	gameState->TeamALives = 0;
+	gameState->TeamBLives = 0;
 
 		/*for (FConstPlayerControllerIterator Iterator = GetWorld()->GetPlayerControllerIterator(); Iterator; ++Iterator)
 		{
