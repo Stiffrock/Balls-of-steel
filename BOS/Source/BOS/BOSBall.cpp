@@ -1,5 +1,6 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 
+#include "UnrealNetwork.h"
 #include "BOS.h"
 #include "BOSBall.h"
 #include "BasicProjectile.h"
@@ -65,10 +66,7 @@ ABOSBall::ABOSBall()
 	Health = 100.f;
 	intensity = 100.f;
 
-	bProjectile_1 = true;
-	bProjectile_2 = false;
-	bProjectile_3 = false;
-	bProjectile_4 = false;
+	projType = 1;
 
 	projectileAvailable = true;
 	projectile4Count = 3;
@@ -277,38 +275,50 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 		FActorSpawnParameters SpawnParams;
 		SpawnParams.Instigator = this;
 
-		ABasicProjectile* Projectile;
+		ABasicProjectile* Projectile = NULL;
+		if (projectileAvailable)
+		{
+			switch (projType)
+			{
+			case 1:
+				Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
+				GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.8f, false);
+				break;
+			case 2:
+				Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP2, SpawnLocation, SpawnRotation, SpawnParams);
+				GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 2.0f, false);
+				break;
+			case 3:
+				Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP3, SpawnLocation, SpawnRotation, SpawnParams);
+				GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 4.0f, false);
+				break;
+			case 4:
+				//if (projectile4Count > 0)
+				{
+					/*FHitResult hit;
+					World->LineTraceSingle(
+						hit, 
+						Camera->GetComponentLocation(), 
+						Camera->GetComponentLocation() + Camera->GetForwardVector * 10000,
+						)*/
+					SpawnRotation.Pitch -= 15;
+					Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP4, SpawnLocation, SpawnRotation, SpawnParams);
+					GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.4f, false);
+					//projectile4Count--;
+				}
+				break;
+			default:
+				Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
+				GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.8f, false);
+				break;
+			}
+			if (Projectile)
+			{
+				Ball->IgnoreActorWhenMoving(Projectile, true);
+				projectileAvailable = false;
+			}
+		}
 
-		if (bProjectile_1 && projectileAvailable)
-		{
-			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP, SpawnLocation, SpawnRotation, SpawnParams);
-			projectileAvailable = false;
-			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.8f, false);
-			Ball->IgnoreActorWhenMoving(Projectile, true);
-		}
-		else if (bProjectile_2 && projectileAvailable)
-		{
-			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP2, SpawnLocation, SpawnRotation, SpawnParams);
-			projectileAvailable = false;
-			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 2.0f, false);
-			Ball->IgnoreActorWhenMoving(Projectile, true);
-		}
-		else if (bProjectile_3 && projectileAvailable)
-		{
-			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP3, SpawnLocation, SpawnRotation, SpawnParams);
-			projectileAvailable = false;
-			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 4.0f, false);
-			Ball->IgnoreActorWhenMoving(Projectile, true);
-		}
-		else if (bProjectile_4 && projectileAvailable && projectile4Count > 0)
-		{
-			SpawnRotation.Pitch -= 15;
-			Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP4, SpawnLocation, SpawnRotation, SpawnParams);
-			projectileAvailable = false;
-			GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.4f, false);
-			projectile4Count--;
-			Ball->IgnoreActorWhenMoving(Projectile, true);
-		}
 	}
 }
 
@@ -325,11 +335,7 @@ bool ABOSBall::Server_Fire_Validate() //Server function
 void ABOSBall::SetProjectile_1_Implementation() //Server function
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_1_ACTIVATED"));
-	bProjectile_1 = true;
-	bProjectile_2 = false;
-	bProjectile_3 = false;
-	bProjectile_4 = false;
-
+	projType = 1;
 }
 
 bool ABOSBall::SetProjectile_1_Validate() //Server function
@@ -340,10 +346,7 @@ bool ABOSBall::SetProjectile_1_Validate() //Server function
 void ABOSBall::SetProjectile_2_Implementation() //Server function
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_2_ACTIVATED"));
-	bProjectile_1 = false;
-	bProjectile_2 = true;
-	bProjectile_3 = false;
-	bProjectile_4 = false;
+	projType = 2;
 }
 
 bool ABOSBall::SetProjectile_2_Validate() //Server function
@@ -354,10 +357,7 @@ bool ABOSBall::SetProjectile_2_Validate() //Server function
 void ABOSBall::SetProjectile_3_Implementation() //Server function
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_3_ACTIVATED"));
-	bProjectile_1 = false;
-	bProjectile_2 = false;
-	bProjectile_3 = true;
-	bProjectile_4 = false;
+	projType = 3;
 }
 
 bool ABOSBall::SetProjectile_3_Validate() //Server function
@@ -368,10 +368,7 @@ bool ABOSBall::SetProjectile_3_Validate() //Server function
 void ABOSBall::SetProjectile_4_Implementation() //Server function
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("PROJECTILE_4_ACTIVATED"));
-	bProjectile_1 = false;
-	bProjectile_2 = false;
-	bProjectile_3 = false;
-	bProjectile_4 = true;
+	projType = 4;
 }
 
 bool ABOSBall::SetProjectile_4_Validate() //Server function
@@ -391,4 +388,15 @@ void ABOSBall::Damage_Implementation(float damage)
 bool ABOSBall::Damage_Validate(float damage)
 {
 	return true;
+}
+
+void ABOSBall::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	// Replicate to everyone
+	DOREPLIFETIME(ABOSBall, Health);
+	DOREPLIFETIME(ABOSBall, projType);
+	DOREPLIFETIME(ABOSBall, projectileCooldown);
+	DOREPLIFETIME(ABOSBall, projectile4Count);
 }
