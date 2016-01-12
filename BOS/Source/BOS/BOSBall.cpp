@@ -1,11 +1,11 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 
-#include "UnrealNetwork.h"
 #include "BOS.h"
 #include "BOSBall.h"
 #include "BasicProjectile.h"
 #include "Engine.h"
 #include "BallController.h"
+#include "UnrealNetwork.h"
 
 //debug
 #include "BOSPlayerState.h"
