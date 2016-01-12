@@ -303,7 +303,7 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 						)*/
 					SpawnRotation.Pitch -= 15;
 					Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP4, SpawnLocation, SpawnRotation, SpawnParams);
-					GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.35f, false);
+					GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 3.0f, false);
 					//projectile4Count--;
 				}
 				break;
