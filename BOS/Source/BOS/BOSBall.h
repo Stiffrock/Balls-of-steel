@@ -108,28 +108,24 @@ public:
 
 	float intensity;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Ball)
+	UPROPERTY(Replicated, EditAnywhere, BlueprintReadWrite, Category = Ball)
 	float Health;
 
 	bool bCanJump;
 	bool dashCharging;
-	UPROPERTY(BlueprintReadOnly)
-	bool bProjectile_1;
-	UPROPERTY(BlueprintReadOnly)
-	bool bProjectile_2;
-	UPROPERTY(BlueprintReadOnly)
-	bool bProjectile_3;
-	UPROPERTY(BlueprintReadOnly)
-	bool bProjectile_4;
+
+	UPROPERTY(Replicated, BlueprintReadOnly)
+	int32 projType;
+
 	bool bCameraLag;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Ball)
 	bool bIsDead;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(Replicated, BlueprintReadOnly)
 	int32 projectile4Count;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(Replicated, BlueprintReadOnly)
 	FTimerHandle projectileCooldown;
 	bool projectileAvailable;
 	void projectileCooldownReset();

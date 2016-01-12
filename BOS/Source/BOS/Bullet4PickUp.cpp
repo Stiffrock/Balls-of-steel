@@ -66,11 +66,12 @@ void ABullet4PickUp::Tick(float DeltaTime)
 void ABullet4PickUp::OnBeginOverlap(AActor *OtherActor, UPrimitiveComponent *OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
 	ABOSBall *bosBall;
-	bosBall = Cast<ABOSBall>(UGameplayStatics::GetPlayerPawn(this, 0));
+	bosBall = Cast<ABOSBall>(OtherActor);
 
 	if (bosBall)
 	{
 		bosBall->projectile4Count += 3;
+		bosBall->Health += 40;
 		SetActorLocation(FVector(GetActorLocation().X, GetActorLocation().Y, 8000));
 		GetWorldTimerManager().SetTimer(respawn, this, &ABullet4PickUp::Respawn, 6.0f, false);
 	}
