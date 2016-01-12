@@ -290,7 +290,7 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 				break;
 			case 3:
 				Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP3, SpawnLocation, SpawnRotation, SpawnParams);
-				GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 4.0f, false);
+				GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 3.0f, false);
 				break;
 			case 4:
 				//if (projectile4Count > 0)
@@ -303,7 +303,7 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 						)*/
 					SpawnRotation.Pitch -= 15;
 					Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP4, SpawnLocation, SpawnRotation, SpawnParams);
-					GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.4f, false);
+					GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 0.35f, false);
 					//projectile4Count--;
 				}
 				break;
