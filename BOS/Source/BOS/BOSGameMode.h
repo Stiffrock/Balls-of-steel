@@ -11,7 +11,9 @@ class ABOSGameMode : public AGameMode
 public:
 	ABOSGameMode();
 
+	int nrOfPlayers = 0;
 
+	bool teamsEnabled = true;
 
 	UPROPERTY()
 		TSubclassOf<class ABOSBall> ABOSBall_BP;

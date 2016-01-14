@@ -131,6 +131,8 @@ public:
 	void projectileCooldownReset();
 
 protected:
+	int nrOfLastAttackingPlayer = 0;
+
 	void YawCamera(float Val);
 	void PitchCamera(float Val);
 

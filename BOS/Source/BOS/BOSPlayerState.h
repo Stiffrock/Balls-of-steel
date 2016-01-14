@@ -16,4 +16,7 @@ public:
 		UPROPERTY(Replicated, BlueprintReadOnly, Category = "Defaults")
 		bool bTeamB;
 
+		UPROPERTY(Replicated, BlueprintReadOnly, Category = "Defaults")
+			uint8 playerNumber = 0;
+
 };

@@ -224,13 +224,13 @@ void ABOSBall::Jump()
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Health: %f"), Health));
 	ABallController* BC = Cast<ABallController>(GetController());
 	ABOSPlayerState * PS = Cast<ABOSPlayerState>(BC->PlayerState);
-	if (PS->bTeamB)
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Is team B"), Health));
-	else
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Is team A"), Health));
+	//if (PS->bTeamB)
+	//	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Is team B"), Health));
+	//else
+	//	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Is team A"), Health));
+
 	if (bCanJump)
 	{
-
 		const FVector Impulse = FVector(0.f, 0.f, 5*JumpImpulse);
 		Add_Impulse(Impulse);
 		bCanJump = false;
@@ -303,7 +303,7 @@ void ABOSBall::Server_Fire_Implementation() //Server function
 						)*/
 					SpawnRotation.Pitch -= 15;
 					Projectile = World->SpawnActor<ABasicProjectile>(ABasicProjectile_BP4, SpawnLocation, SpawnRotation, SpawnParams);
-					GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 3.0f, false);
+					GetWorldTimerManager().SetTimer(projectileCooldown, this, &ABOSBall::projectileCooldownReset, 1.5f, false);
 					//projectile4Count--;
 				}
 				break;

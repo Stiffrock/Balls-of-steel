@@ -76,37 +76,40 @@ void ABOSGameMode::RespawnAll()
 void ABOSGameMode::PostLogin(APlayerController *NewPlayer)
 {
 	Super::PostLogin(NewPlayer);
-
 	if (NewPlayer)
 	{
+
 		ABallController* BC = Cast<ABallController>(NewPlayer);
 		ABOSPlayerState * PS = Cast<ABOSPlayerState>(NewPlayer->PlayerState);
 		TeamACount = 0;
 		TeamBCount = 0;
-
 		if (PS && GameState)
 		{
-			for (APlayerState * It : GameState->PlayerArray)
-			{			
-				ABOSPlayerState* OtherPS = Cast<ABOSPlayerState>(It);
-
-				if (OtherPS->bTeamB) //Om spelaren i arrayen har boolen teamB så lägg till 1 i teamBräknaren
-				{			
-					TeamBCount++;
-				}
-				else //Annars om spelaren i arrayen inte har boolen teaB så lägg till 1 i teamAräknaren
-				{
-					TeamACount++;
-				}
-			}
-			if (TeamACount > TeamBCount) //Om det finns fler spelare i teamAcount efter vi har räknat igenom dem så sätt spelarens bTeamB boolean till true
+			if (teamsEnabled == true) 
 			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Added to TeamB"));
-				PS->bTeamB = true;
+				for (APlayerState * It : GameState->PlayerArray)
+				{
+					ABOSPlayerState* OtherPS = Cast<ABOSPlayerState>(It);
+
+					if (OtherPS->bTeamB) //Om spelaren i arrayen har boolen teamB så lägg till 1 i teamBräknaren
+					{
+						TeamBCount++;
+					}
+					else //Annars om spelaren i arrayen inte har boolen teaB så lägg till 1 i teamAräknaren
+					{
+						TeamACount++;
+					}
+				}
+				if (TeamACount > TeamBCount) //Om det finns fler spelare i teamAcount efter vi har räknat igenom dem så sätt spelarens bTeamB boolean till true
+				{
+					//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Added to TeamB"));
+					PS->bTeamB = true;
+				}
 			}
 		}
+		
 
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Respawn"));
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Respawn"));
 		//ChoosePlayerStart(NewPlayer);
 	}
 }
@@ -174,25 +177,30 @@ AActor* ABOSGameMode::ChoosePlayerStart_Implementation(AController* Player)
 void ABOSGameMode::CalculateTeams()
 {
 	NumTeamB = 0;
-	NumTeamA = 0;
-	for (APlayerState * It : GameState->PlayerArray)
+	NumTeamA = 0;	
+	if (teamsEnabled == true) 
 	{
-		ABOSPlayerState* OtherPS = Cast<ABOSPlayerState>(It);
-		if (OtherPS->bTeamB)
-		{
-			NumTeamB++;
 
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TEAM B ++"));
-		}
-		
-		else
+		for (APlayerState * It : GameState->PlayerArray)
 		{
-			NumTeamA++;
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TEAM A ++"));
+			ABOSPlayerState* OtherPS = Cast<ABOSPlayerState>(It);
+			if (OtherPS->bTeamB)
+			{
+				NumTeamB++;
+
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TEAM B ++"));
+			}
+
+			else
+			{
+				NumTeamA++;
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("TEAM A ++"));
+			}
+
 		}
 
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("TeamA =  %i"), NumTeamA));
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("TeamB =  %i"), NumTeamA));
 	}
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("TeamA =  %i"), NumTeamA));
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("TeamB =  %i"), NumTeamA));
 }
